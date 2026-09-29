@@ -267,7 +267,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 
 .nav__dropdown-panel--light{
   overflow:hidden;
-  width:min(280px, calc(100vw - 32px));
+  width:min(360px, calc(100vw - 32px));
   background:linear-gradient(165deg, #FFFFFF 0%, var(--pink-pale) 55%, var(--sky-pale) 100%);
   border:1.5px solid var(--pink-light);
   border-radius:24px;
@@ -294,7 +294,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .nav__dropdown-row__num{ font-family:var(--serif); font-style:italic; font-size:13px; color:var(--pink); min-width:1.6em; }
 .nav__dropdown-row:nth-child(3) .nav__dropdown-row__num,
 .nav__dropdown-row:nth-child(5) .nav__dropdown-row__num{ color:var(--sky); }
-.nav__dropdown-row__name{ font-size:16px; font-weight:400; }
+.nav__dropdown-row__name{ font-size:15.5px; font-weight:400; line-height:1.35; }
 .nav__dropdown-row::after{
   content:""; position:absolute; right:14px; top:50%; transform:translateY(-50%) scale(0.6); width:11px; height:11px; opacity:0;
   background-color:var(--pink-3);
@@ -1175,6 +1175,10 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 
 
 
+
+
+
+
 <style id="restored-content">
 .shot-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 @media (max-width:900px){ .shot-grid{ grid-template-columns:repeat(2,1fr); } }
@@ -1247,6 +1251,42 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .mini-stat strong{ display:block; font-family:var(--serif); font-size:28px; color:var(--pink); font-weight:500; }
 .mini-stat span{ font-size:12.5px; color:var(--gray); }
 .logo-inline{ height:54px; width:auto; object-fit:contain; }
+.seo-stats{ grid-template-columns:repeat(3,1fr); }
+@media (max-width:800px){ .seo-stats{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .seo-stats{ grid-template-columns:1fr; } }
+.exp-stats{ grid-template-columns:repeat(4,1fr); }
+@media (max-width:900px){ .exp-stats{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .exp-stats{ grid-template-columns:1fr; } }
+.dist-bars{ display:flex; flex-direction:column; gap:12px; margin:20px 0 8px; }
+.dist-row{ display:grid; grid-template-columns:150px 1fr 32px; align-items:center; gap:12px; }
+@media (max-width:600px){ .dist-row{ grid-template-columns:108px 1fr 28px; gap:8px; } }
+.dist-row__lbl{ font-size:13.5px; color:var(--ink-soft); }
+.dist-row__track{ height:10px; background:var(--bg-raised); border-radius:999px; overflow:hidden; }
+.dist-row__fill{ height:100%; width:var(--w); border-radius:999px; }
+.dist-row__num{ font-family:var(--serif); font-size:18px; color:var(--pink); text-align:right; }
+.kw-band{ overflow:hidden; margin:18px 0 6px; border:1px solid var(--pink-light); border-radius:999px; background:#fff; }
+.kw-track{ display:flex; gap:22px; width:max-content; padding:11px 0; animation:adMove 72s linear infinite; }
+.kw-band:hover .kw-track{ animation-play-state:paused; }
+.kw-track span{ font-size:13.5px; color:var(--ink-soft); white-space:nowrap; font-weight:300; }
+.kw-track b{ color:var(--pink); font-weight:500; margin-left:4px; }
+.lead-bars{ display:flex; flex-direction:column; gap:12px; margin-top:18px; }
+.lead-bar__k{ display:flex; justify-content:space-between; gap:12px; font-size:13.5px; color:var(--ink-soft); margin-bottom:6px; }
+.lead-bar__track{ height:10px; background:var(--bg-raised); border-radius:999px; overflow:hidden; }
+.lead-bar__fill{ height:100%; width:var(--w); border-radius:999px; background:linear-gradient(90deg, var(--sky), var(--pink)); }
+.career-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+@media (max-width:800px){ .career-steps{ grid-template-columns:1fr 1fr; } }
+.career-step{ background:#fff; border:1px solid var(--line); border-radius:22px; padding:16px 16px 14px; }
+.career-step b{ display:block; font-family:var(--serif); font-style:italic; color:var(--pink); font-weight:500; }
+.career-step strong{ display:block; margin:6px 0 4px; font-size:16px; font-weight:500; }
+.career-step span{ display:block; font-size:13px; color:var(--gray); font-weight:300; line-height:1.45; }
+.toolkit-group{ margin-top:22px; }
+.toolkit-group h3{ font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--pink); font-weight:500; margin:0 0 10px; }
+.toolkit{ display:flex; flex-wrap:wrap; gap:8px; }
+.toolkit span{ background:#fff; border:1px solid var(--pink-light); border-radius:999px; padding:8px 14px; font-size:13.5px; color:var(--ink-soft); font-weight:300; }
+.manifesto{ text-align:center; font-family:var(--serif); font-weight:500; font-size:clamp(28px,4.6vw,48px); line-height:1.25; color:var(--pink); margin:56px auto 8px; max-width:14em; }
+.role-badges{ display:flex; flex-wrap:wrap; gap:8px; padding:12px 4px 0; }
+.role-badges span{ border:1px solid var(--pink-light); background:var(--pink-pale); color:var(--ink); border-radius:999px; padding:6px 12px; font-size:12.5px; }
+.skills-col h4 .count{ display:inline-flex; align-items:center; justify-content:center; margin-left:8px; min-width:22px; height:22px; padding:0 6px; border-radius:999px; background:var(--pink-pale); color:var(--pink); font-family:var(--serif); font-style:italic; font-size:13px; }
 </style>
 
 </head>
@@ -1271,7 +1311,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
           </a>
           <a href="work-luna-ai.html" class="nav__dropdown-row">
             <span class="nav__dropdown-row__num">02</span>
-            <span class="nav__dropdown-row__name">LUNA AI</span>
+            <span class="nav__dropdown-row__name">Luna AI Chat Bot</span>
           </a>
           <a href="work-inspire-wellness.html" class="nav__dropdown-row">
             <span class="nav__dropdown-row__num">03</span>
@@ -1279,7 +1319,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
           </a>
           <a href="work-seo-growth.html" class="nav__dropdown-row">
             <span class="nav__dropdown-row__num">04</span>
-            <span class="nav__dropdown-row__name">SEO Growth</span>
+            <span class="nav__dropdown-row__name">SEO &amp; Organic Growth</span>
           </a>
         </div>
       </div>
@@ -1301,9 +1341,9 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
     <summary>Case Studies</summary>
     <div class="sub-links">
       <a href="work-inspire-ivf.html" class="cat-gold">01 — Inspire IVF</a>
-      <a href="work-luna-ai.html" class="cat-blue">02 — LUNA AI</a>
+      <a href="work-luna-ai.html" class="cat-blue">02 — Luna AI Chat Bot</a>
       <a href="work-inspire-wellness.html" class="cat-pink">03 — Inspire Wellness</a>
-      <a href="work-seo-growth.html" class="cat-green">04 — SEO Growth</a>
+      <a href="work-seo-growth.html" class="cat-green">04 — SEO &amp; Organic Growth</a>
     </div>
   </details>
   <a href="more-projects.html">More Projects</a>
@@ -1326,6 +1366,8 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <div class="seo-stat"><strong>+70%</strong><span>Lead growth in 4 months · Lelux Hospital</span></div>
 <div class="seo-stat"><strong>+50%</strong><span>Ranking opportunity · Master Style</span></div>
 <div class="seo-stat"><strong>−30%</strong><span>Bounce rate after page-speed work</span></div>
+<div class="seo-stat"><strong>90%</strong><span>Page-1 ranking rate</span></div>
+<div class="seo-stat"><strong>10</strong><span>#1 Google rankings</span></div>
 </div>
 <div class="two-col">
 <div>
@@ -1355,6 +1397,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <tr><td>February</td><td>532</td><td>+34%</td></tr>
 </tbody></table></div>
 <p class="growth-note">February split: 330 from blog articles, 202 from the homepage.</p>
+<div class="lead-bars" aria-hidden="true"><div class="lead-bar"><div class="lead-bar__k"><span>November · baseline</span><span>312</span></div><div class="lead-bar__track"><div class="lead-bar__fill" style="--w:59%"></div></div></div><div class="lead-bar"><div class="lead-bar__k"><span>December · +12%</span><span>350</span></div><div class="lead-bar__track"><div class="lead-bar__fill" style="--w:66%"></div></div></div><div class="lead-bar"><div class="lead-bar__k"><span>January · +13%</span><span>397</span></div><div class="lead-bar__track"><div class="lead-bar__fill" style="--w:75%"></div></div></div><div class="lead-bar"><div class="lead-bar__k"><span>February · +34%</span><span>532</span></div><div class="lead-bar__track"><div class="lead-bar__fill" style="--w:100%"></div></div></div></div>
 <ul class="heart-bullet" style="margin-top:14px;color:var(--ink-soft);font-weight:300">
 <li>Rebuilt site structure and URL hierarchy</li>
 <li>Fixed Core Web Vitals and page speed</li>
@@ -1365,6 +1408,8 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <div class="case__block">
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:8px">29 keywords, two industries.</h2>
 <p class="case__prose">Every keyword below is a tracked ranking, across aesthetic clinics and industrial manufacturing. 10 at #1, 1 featured snippet, 7 in the top 3, 8 in the top 10, 3 on page 2.</p>
+<div class="dist-bars"><div class="dist-row"><div class="dist-row__lbl">#1 ranking</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:35%;background:var(--pink)"></div></div><div class="dist-row__num">10</div></div><div class="dist-row"><div class="dist-row__lbl">Featured snippet</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:8%;background:var(--sky)"></div></div><div class="dist-row__num">1</div></div><div class="dist-row"><div class="dist-row__lbl">Top 3</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:24%;background:var(--pink-2)"></div></div><div class="dist-row__num">7</div></div><div class="dist-row"><div class="dist-row__lbl">Top 10</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:28%;background:var(--sky)"></div></div><div class="dist-row__num">8</div></div><div class="dist-row"><div class="dist-row__lbl">Page 2</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:12%;background:var(--gray)"></div></div><div class="dist-row__num">3</div></div></div>
+<div class="kw-band" aria-hidden="true"><div class="kw-track"><span>Nu Pico <b>#1</b></span><span>Filler augmentation <b>#1</b></span><span>Injectable removal <b>#1</b></span><span>Eye-bag removal <b>#1</b></span><span>Hip filler <b>#1</b></span><span>Double-chin lipo <b>#1</b></span><span>Buccal fat removal <b>#1</b></span><span>Emface Submentum <b>Snippet</b></span><span>Emface <b>#2</b></span><span>Radiesse Plus <b>#2</b></span><span>Oligio <b>#2</b></span><span>Male enhancement <b>#3</b></span><span>Silicone rhinoplasty <b>#3</b></span><span>Foxy Eyes <b>#3</b></span><span>V-Line contouring <b>#4</b></span><span>Forehead augmentation <b>#4</b></span><span>Open rhinoplasty <b>#5</b></span><span>Ultraformer MPT <b>#7</b></span><span>Bloodless circumcision <b>#8</b></span><span>Filler, Chonburi <b>#10</b></span><span>Sculptra <b>#12</b></span><span>Ulthera SPT <b>#12</b></span><span>Belotero Revive <b>#12</b></span><span>Sisal wheel <b>#1</b></span><span>PME compound <b>#1</b></span><span>Solid compound <b>#1</b></span><span>Tosa compound <b>#2</b></span><span>Felt wheel <b>#4</b></span><span>Buff wheel <b>#6</b></span><span>Nu Pico <b>#1</b></span><span>Filler augmentation <b>#1</b></span><span>Injectable removal <b>#1</b></span><span>Eye-bag removal <b>#1</b></span><span>Hip filler <b>#1</b></span><span>Double-chin lipo <b>#1</b></span><span>Buccal fat removal <b>#1</b></span><span>Emface Submentum <b>Snippet</b></span><span>Emface <b>#2</b></span><span>Radiesse Plus <b>#2</b></span><span>Oligio <b>#2</b></span><span>Male enhancement <b>#3</b></span><span>Silicone rhinoplasty <b>#3</b></span><span>Foxy Eyes <b>#3</b></span><span>V-Line contouring <b>#4</b></span><span>Forehead augmentation <b>#4</b></span><span>Open rhinoplasty <b>#5</b></span><span>Ultraformer MPT <b>#7</b></span><span>Bloodless circumcision <b>#8</b></span><span>Filler, Chonburi <b>#10</b></span><span>Sculptra <b>#12</b></span><span>Ulthera SPT <b>#12</b></span><span>Belotero Revive <b>#12</b></span><span>Sisal wheel <b>#1</b></span><span>PME compound <b>#1</b></span><span>Solid compound <b>#1</b></span><span>Tosa compound <b>#2</b></span><span>Felt wheel <b>#4</b></span><span>Buff wheel <b>#6</b></span></div></div>
 <h3 style="margin:22px 0 8px;font-size:18px">Beauty and aesthetic clinics · 23 keywords</h3>
 <div style="overflow-x:auto"><table class="rank-table"><thead><tr><th>Keyword</th><th>Rank</th><th>Industry</th></tr></thead><tbody><tr><td>Nu Pico</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Filler augmentation</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Injectable substance removal</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Eye-bag removal, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Local · beauty clinic</td></tr><tr><td>Hip filler, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Local · beauty clinic</td></tr><tr><td>Double-chin liposuction, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Local · beauty clinic</td></tr><tr><td>Buccal fat removal, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">Local · beauty clinic</td></tr><tr><td>Emface Submentum</td><td><span class="rank-badge">★</span></td><td data-label="Industry">Featured on Google</td></tr><tr><td>Emface</td><td><span class="rank-badge">2</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Radiesse Plus</td><td><span class="rank-badge">2</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Oligio</td><td><span class="rank-badge">2</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Male enhancement treatment</td><td><span class="rank-badge">3</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Silicone rhinoplasty</td><td><span class="rank-badge">3</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Foxy Eyes</td><td><span class="rank-badge">3</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>V-Line contouring</td><td><span class="rank-badge">4</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Forehead augmentation, Chonburi</td><td><span class="rank-badge">4</span></td><td data-label="Industry">Local · beauty clinic</td></tr><tr><td>Open rhinoplasty</td><td><span class="rank-badge">5</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Ultraformer MPT</td><td><span class="rank-badge">7</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Bloodless circumcision</td><td><span class="rank-badge">8</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Filler, Chonburi</td><td><span class="rank-badge">10</span></td><td data-label="Industry">Local · beauty clinic</td></tr><tr><td>Sculptra</td><td><span class="rank-badge">12</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Ulthera SPT</td><td><span class="rank-badge">12</span></td><td data-label="Industry">Beauty clinic</td></tr><tr><td>Belotero Revive</td><td><span class="rank-badge">12</span></td><td data-label="Industry">Beauty clinic</td></tr></tbody></table></div>
 <h3 style="margin:22px 0 8px;font-size:18px">Industrial manufacturing · 6 keywords</h3>
@@ -1381,11 +1426,17 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 </div>
 <div class="case__block">
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:14px">Growing scope, growing numbers.</h2>
-<div class="exp-stats">
-<div class="exp-stat"><strong>+20% / +35%</strong><span>Grand Esta · Instagram / Facebook</span></div>
-<div class="exp-stat"><strong>+50% / −30%</strong><span>Master Style · keywords / bounce</span></div>
-<div class="exp-stat"><strong>+70%</strong><span>Lelux Hospital · leads in 4 months</span></div>
+<div class="career-steps">
+<article class="career-step"><b>01</b><strong>Grand Esta Clinic</strong><span>IG +20% · FB +35%</span></article>
+<article class="career-step"><b>02</b><strong>Master Style</strong><span>Keyword +50% · Bounce −30%</span></article>
+<article class="career-step"><b>03</b><strong>Lelux Hospital</strong><span>Leads +70% in 4 months</span></article>
+<article class="career-step"><b>04</b><strong>Inspire IVF</strong><span>Website &amp; SEO · Current</span></article>
 </div>
+</div>
+<div class="case__block">
+<p class="eyebrow">Toolkit</p>
+<h2 style="font-size:clamp(26px,3vw,34px);margin:8px 0 4px">What I use day to day.</h2>
+<div class="toolkit-group"><h3>Platforms</h3><div class="toolkit"><span>WordPress</span><span>Elementor</span><span>Gutenberg</span><span>RankMath / Yoast SEO</span></div></div><div class="toolkit-group"><h3>Technical and on-page</h3><div class="toolkit"><span>Schema markup</span><span>XML Sitemaps</span><span>Robots.txt</span><span>Header hierarchy H1–H6</span><span>Internal linking</span><span>Core Web Vitals</span></div></div><div class="toolkit-group"><h3>Analytics and research</h3><div class="toolkit"><span>Google Analytics 4</span><span>Search Console</span><span>Ahrefs</span><span>Ubersuggest</span><span>Moz Bar</span><span>Keyword Planner</span><span>PageSpeed Insights</span></div></div>
 </div>
 </div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="work-inspire-wellness.html"><span class="dir">Previous</span><span class="title">Inspire Wellness</span></a><a class="case-nav__link case-nav__link--next" href="experience.html"><span class="dir">Experience</span><span class="title">Experience</span></a></div></div></section>
 <footer class="ftr">

@@ -267,7 +267,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 
 .nav__dropdown-panel--light{
   overflow:hidden;
-  width:min(280px, calc(100vw - 32px));
+  width:min(360px, calc(100vw - 32px));
   background:linear-gradient(165deg, #FFFFFF 0%, var(--pink-pale) 55%, var(--sky-pale) 100%);
   border:1.5px solid var(--pink-light);
   border-radius:24px;
@@ -294,7 +294,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .nav__dropdown-row__num{ font-family:var(--serif); font-style:italic; font-size:13px; color:var(--pink); min-width:1.6em; }
 .nav__dropdown-row:nth-child(3) .nav__dropdown-row__num,
 .nav__dropdown-row:nth-child(5) .nav__dropdown-row__num{ color:var(--sky); }
-.nav__dropdown-row__name{ font-size:16px; font-weight:400; }
+.nav__dropdown-row__name{ font-size:15.5px; font-weight:400; line-height:1.35; }
 .nav__dropdown-row::after{
   content:""; position:absolute; right:14px; top:50%; transform:translateY(-50%) scale(0.6); width:11px; height:11px; opacity:0;
   background-color:var(--pink-3);
@@ -1175,6 +1175,10 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 
 
 
+
+
+
+
 <style id="restored-content">
 .shot-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 @media (max-width:900px){ .shot-grid{ grid-template-columns:repeat(2,1fr); } }
@@ -1247,6 +1251,42 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .mini-stat strong{ display:block; font-family:var(--serif); font-size:28px; color:var(--pink); font-weight:500; }
 .mini-stat span{ font-size:12.5px; color:var(--gray); }
 .logo-inline{ height:54px; width:auto; object-fit:contain; }
+.seo-stats{ grid-template-columns:repeat(3,1fr); }
+@media (max-width:800px){ .seo-stats{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .seo-stats{ grid-template-columns:1fr; } }
+.exp-stats{ grid-template-columns:repeat(4,1fr); }
+@media (max-width:900px){ .exp-stats{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .exp-stats{ grid-template-columns:1fr; } }
+.dist-bars{ display:flex; flex-direction:column; gap:12px; margin:20px 0 8px; }
+.dist-row{ display:grid; grid-template-columns:150px 1fr 32px; align-items:center; gap:12px; }
+@media (max-width:600px){ .dist-row{ grid-template-columns:108px 1fr 28px; gap:8px; } }
+.dist-row__lbl{ font-size:13.5px; color:var(--ink-soft); }
+.dist-row__track{ height:10px; background:var(--bg-raised); border-radius:999px; overflow:hidden; }
+.dist-row__fill{ height:100%; width:var(--w); border-radius:999px; }
+.dist-row__num{ font-family:var(--serif); font-size:18px; color:var(--pink); text-align:right; }
+.kw-band{ overflow:hidden; margin:18px 0 6px; border:1px solid var(--pink-light); border-radius:999px; background:#fff; }
+.kw-track{ display:flex; gap:22px; width:max-content; padding:11px 0; animation:adMove 72s linear infinite; }
+.kw-band:hover .kw-track{ animation-play-state:paused; }
+.kw-track span{ font-size:13.5px; color:var(--ink-soft); white-space:nowrap; font-weight:300; }
+.kw-track b{ color:var(--pink); font-weight:500; margin-left:4px; }
+.lead-bars{ display:flex; flex-direction:column; gap:12px; margin-top:18px; }
+.lead-bar__k{ display:flex; justify-content:space-between; gap:12px; font-size:13.5px; color:var(--ink-soft); margin-bottom:6px; }
+.lead-bar__track{ height:10px; background:var(--bg-raised); border-radius:999px; overflow:hidden; }
+.lead-bar__fill{ height:100%; width:var(--w); border-radius:999px; background:linear-gradient(90deg, var(--sky), var(--pink)); }
+.career-steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+@media (max-width:800px){ .career-steps{ grid-template-columns:1fr 1fr; } }
+.career-step{ background:#fff; border:1px solid var(--line); border-radius:22px; padding:16px 16px 14px; }
+.career-step b{ display:block; font-family:var(--serif); font-style:italic; color:var(--pink); font-weight:500; }
+.career-step strong{ display:block; margin:6px 0 4px; font-size:16px; font-weight:500; }
+.career-step span{ display:block; font-size:13px; color:var(--gray); font-weight:300; line-height:1.45; }
+.toolkit-group{ margin-top:22px; }
+.toolkit-group h3{ font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--pink); font-weight:500; margin:0 0 10px; }
+.toolkit{ display:flex; flex-wrap:wrap; gap:8px; }
+.toolkit span{ background:#fff; border:1px solid var(--pink-light); border-radius:999px; padding:8px 14px; font-size:13.5px; color:var(--ink-soft); font-weight:300; }
+.manifesto{ text-align:center; font-family:var(--serif); font-weight:500; font-size:clamp(28px,4.6vw,48px); line-height:1.25; color:var(--pink); margin:56px auto 8px; max-width:14em; }
+.role-badges{ display:flex; flex-wrap:wrap; gap:8px; padding:12px 4px 0; }
+.role-badges span{ border:1px solid var(--pink-light); background:var(--pink-pale); color:var(--ink); border-radius:999px; padding:6px 12px; font-size:12.5px; }
+.skills-col h4 .count{ display:inline-flex; align-items:center; justify-content:center; margin-left:8px; min-width:22px; height:22px; padding:0 6px; border-radius:999px; background:var(--pink-pale); color:var(--pink); font-family:var(--serif); font-style:italic; font-size:13px; }
 </style>
 
 </head>
@@ -1271,7 +1311,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
           </a>
           <a href="work-luna-ai-th.html" class="nav__dropdown-row">
             <span class="nav__dropdown-row__num">02</span>
-            <span class="nav__dropdown-row__name">LUNA AI</span>
+            <span class="nav__dropdown-row__name">Luna AI Chat Bot</span>
           </a>
           <a href="work-inspire-wellness-th.html" class="nav__dropdown-row">
             <span class="nav__dropdown-row__num">03</span>
@@ -1279,7 +1319,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
           </a>
           <a href="work-seo-growth-th.html" class="nav__dropdown-row">
             <span class="nav__dropdown-row__num">04</span>
-            <span class="nav__dropdown-row__name">SEO Growth</span>
+            <span class="nav__dropdown-row__name">SEO &amp; Organic Growth</span>
           </a>
         </div>
       </div>
@@ -1301,9 +1341,9 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
     <summary>เคสสตัดดี้</summary>
     <div class="sub-links">
       <a href="work-inspire-ivf-th.html" class="cat-gold">01 — Inspire IVF</a>
-      <a href="work-luna-ai-th.html" class="cat-blue">02 — LUNA AI</a>
+      <a href="work-luna-ai-th.html" class="cat-blue">02 — Luna AI Chat Bot</a>
       <a href="work-inspire-wellness-th.html" class="cat-pink">03 — Inspire Wellness</a>
-      <a href="work-seo-growth-th.html" class="cat-green">04 — SEO Growth</a>
+      <a href="work-seo-growth-th.html" class="cat-green">04 — SEO &amp; Organic Growth</a>
     </div>
   </details>
   <a href="more-projects-th.html">โปรเจกต์อื่น</a>
@@ -1328,10 +1368,12 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <p>ที่ Inspire IVF สัญชาตญาณเดียวกันมาสู่งานผลิตภัณฑ์ LUNA คือแชทบอทที่รู้ว่าเมื่อไหร่ควรส่งผู้ป่วยให้คนจริง เครื่องมือเปลี่ยน แต่คำถามไม่เปลี่ยน คือสิ่งที่สร้างขึ้นใช้งานได้จริงสำหรับคนอีกฝั่งหรือไม่</p>
 <blockquote class="callout">“เทคโนโลยีไม่ใช่แค่เครื่องมือ แต่เป็นสะพานเชื่อมระหว่างผู้คนกับความเป็นไปได้ที่ดีกว่า”</blockquote>
 </div>
-<figure class="portrait"><img src="assets/restored/pritsana-keram-44f064532e.jpg" alt="Pritsana Keram"><figcaption style="padding:12px 4px 0;font-size:13px;color:var(--gray)">Pritsana Keram · Bangkok</figcaption></figure>
+<figure class="portrait"><img src="assets/restored/pritsana-keram-44f064532e.jpg" alt="Pritsana Keram"><figcaption style="padding:12px 4px 0;font-size:13px;color:var(--gray)">Pritsana Keram · Bangkok</figcaption>
+<div class="role-badges"><span>Website &amp; SEO Specialist</span><span>กรุงเทพฯ ประเทศไทย</span></div></figure>
 </div>
 <div class="timeline" style="margin-top:48px"><div class="timeline-item"><div class="years">2019 — 2022</div><div><h3>การตลาดดิจิทัล · Grand Esta Clinic</h3></div></div><div class="timeline-item"><div class="years">2022 — 2024</div><div><h3>ผู้เชี่ยวชาญ SEO · Master Style</h3></div></div><div class="timeline-item"><div class="years">2024 — 2025</div><div><h3>หัวหน้าฝ่ายเว็บไซต์ · Lelux Hospital</h3></div></div><div class="timeline-item"><div class="years">2025 — Present</div><div><h3>Website & SEO Specialist · Inspire IVF</h3></div></div></div>
-<div class="section-head" style="margin-top:56px"><p class="eyebrow">วิธีทำงาน</p><h2>หลักการที่ยึดเสมอ</h2></div>
+<p class="manifesto">จัดโครงสร้างก่อน สิ่งอื่นตามมาเอง</p>
+<div class="section-head" style="margin-top:28px"><p class="eyebrow">วิธีทำงาน</p><h2>หลักการที่ยึดเสมอ</h2></div>
 <div class="values-grid"><article class="values-card cat-gold"><div class="values-num">01</div><h4>โครงสร้างมาก่อนเนื้อหา</h4><p>โครงสร้างข้อมูลและ SEO เชิงเทคนิคกำหนดเพดานการติดอันดับและการแปลง แก้ฐานรากก่อนเนื้อหา</p></article><article class="values-card cat-blue"><div class="values-num">02</div><h4>ตัดสินใจด้วยข้อมูล</h4><p>ใช้ GA4, Search Console และบทสนทนาจริง ถ้าชี้ตัวเลขเบื้องหลังการตัดสินใจไม่ได้ จะไปหามันก่อน</p></article><article class="values-card cat-pink"><div class="values-num">03</div><h4>AI ที่รู้ขีดจำกัดของตัวเอง</h4><p>LUNA สอนว่าผลิตภัณฑ์ AI ที่ดีไม่ใช่ตัวที่ตอบเสมอไป แต่คือตัวที่รู้ว่าเมื่อไหร่ควรส่งต่อ</p></article><article class="values-card cat-green"><div class="values-num">04</div><h4>ส่งมอบ แล้วตรวจสอบ</h4><p>เครื่องมืออย่าง Claude Code ช่วยให้ทำงานเร็วขึ้น แต่ทุกการเปลี่ยนแปลงถูกทดสอบกับของจริงก่อนขึ้นใช้งาน</p></article></div>
 </div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="experience-th.html"><span class="dir">ประสบการณ์</span><span class="title">ประสบการณ์</span></a><a class="case-nav__link case-nav__link--next" href="index-th.html#contact"><span class="dir">ติดต่อ</span><span class="title">ติดต่อ</span></a></div></div></section>
 <footer class="ftr">
