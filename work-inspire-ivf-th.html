@@ -1436,6 +1436,227 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 .nav__logo{ overflow:hidden; background:#fff; }
 .nav__logo img{ width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; border-radius:50%; }
 .nav__brand:hover .nav__logo{ transform:scale(1.06); }
+
+/* Inspire IVF story decks */
+:root{ --heart: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E"); }
+.subpage-head .case__title{ position:relative; }
+.subpage-head .case__title::after{
+  content:""; display:inline-block; width:16px; height:16px; margin-left:10px;
+  vertical-align:middle; position:relative; top:-0.18em;
+  background:var(--pink);
+  -webkit-mask:var(--heart) center/contain no-repeat;
+  mask:var(--heart) center/contain no-repeat;
+  animation:logoHeart 1.7s ease-in-out infinite;
+}
+.ivf-logo-wrap{ position:relative; margin-top:18px; animation:ivfLogoFloat 5.6s ease-in-out infinite; max-width:100%; }
+.ivf-logo-wrap:hover{ animation-play-state:paused; }
+.two-col.ivf-intro{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.two-col.ivf-intro > *{ min-width:0; }
+.ivf-logo, .ivf-logo img{ max-width:100%; }
+.story, .story__viewport{ min-width:0; max-width:100%; }
+@media (max-width:760px){
+  .two-col.ivf-intro{ grid-template-columns:minmax(0,1fr); }
+}
+.ivf-logo.feature-shot{ margin-top:0; box-shadow:0 22px 40px -30px rgba(255,69,115,.5); }
+.ivf-logo__heart{
+  position:absolute; top:-10px; right:-8px; width:30px; height:30px; border-radius:50%;
+  background:#fff; box-shadow:0 8px 16px -8px rgba(255,69,115,.85); z-index:2;
+}
+.ivf-logo__heart::after{
+  content:""; position:absolute; inset:6px;
+  background:linear-gradient(180deg, var(--pink), var(--pink-2));
+  -webkit-mask:var(--heart) center/contain no-repeat;
+  mask:var(--heart) center/contain no-repeat;
+  animation:logoHeart 1.7s ease-in-out infinite;
+}
+@keyframes ivfLogoFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+
+.story{ position:relative; margin-top:28px; }
+.story--steps, .story--note{
+  margin-top:56px; padding:26px 22px 16px; border-radius:36px;
+  background:
+    radial-gradient(440px 170px at 6% 0%, rgba(255,230,230,.95), transparent 72%),
+    radial-gradient(380px 190px at 100% 100%, rgba(225,241,251,.95), transparent 70%),
+    #fff;
+  border:1px solid #ffe0ea;
+  box-shadow:0 24px 44px -36px rgba(255,69,115,.55);
+}
+.story--note{
+  border-color:#d7ebf8;
+  background:
+    radial-gradient(420px 170px at 100% 0%, rgba(225,241,251,.95), transparent 72%),
+    radial-gradient(360px 180px at 0% 100%, rgba(255,230,230,.8), transparent 70%),
+    #fff;
+}
+.story--steps::before, .story--note::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background-image:radial-gradient(circle, rgba(255,166,166,.32) 1.15px, transparent 1.45px);
+  background-size:22px 22px;
+  -webkit-mask:linear-gradient(180deg, #000 0%, transparent 78%);
+  mask:linear-gradient(180deg, #000 0%, transparent 78%);
+}
+.story--note::before{
+  background-image:radial-gradient(circle, rgba(107,169,214,.28) 1.15px, transparent 1.45px);
+}
+.story__head, .story__viewport, .story__bar{ position:relative; z-index:1; }
+.story__head{ margin:0 6px 4px; }
+.story__head .case__block-title{
+  margin:0; display:inline-flex; align-items:center; gap:8px; color:var(--pink); font-weight:300;
+}
+.story__head .case__block-title::before{
+  content:""; width:12px; height:12px; background:currentColor; flex:none;
+  -webkit-mask:var(--heart) center/contain no-repeat;
+  mask:var(--heart) center/contain no-repeat;
+  animation:logoHeart 1.8s ease-in-out infinite;
+}
+.story--note .story__head .case__block-title{ color:var(--sky); }
+.story__head h2{
+  font-size:clamp(26px,3vw,34px); font-weight:300; line-height:1.28;
+  margin-top:8px; max-width:18em;
+}
+.story__viewport{
+  overflow:hidden; outline:none; cursor:grab; touch-action:pan-y;
+  border-radius:24px;
+}
+.story__viewport.is-drag{ cursor:grabbing; }
+.story__viewport:focus-visible{ outline:2px solid var(--pink-2); outline-offset:3px; }
+.story__track{
+  position:relative; z-index:1;
+  display:flex; gap:16px; align-items:stretch;
+  padding:14px 4px 26px;
+  transition:transform .62s cubic-bezier(.22,.85,.28,1);
+  will-change:transform;
+}
+.story-card{
+  position:relative; flex:0 0 30%; min-width:0; min-height:236px;
+  border-radius:30px; padding:22px 20px 18px; overflow:hidden;
+  background:
+    radial-gradient(120px 80px at 100% 0%, rgba(255,255,255,.95), transparent 70%),
+    linear-gradient(165deg, #fff 0%, #fff5f7 58%, #f4faff 100%);
+  border:1px solid #ffd5e0;
+  box-shadow:0 18px 34px -28px rgba(255,69,115,.65);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.story-card:nth-child(even){
+  background:
+    radial-gradient(120px 80px at 0% 100%, rgba(255,255,255,.95), transparent 70%),
+    linear-gradient(165deg, #fff 0%, #f4faff 52%, #fff6f8 100%);
+  border-color:#d5eaf8;
+  box-shadow:0 18px 34px -28px rgba(107,169,214,.6);
+}
+.story-card.is-active{ box-shadow:0 22px 40px -26px rgba(255,69,115,.5); }
+.story-card:hover{ transform:translateY(-6px); z-index:2; }
+.story__viewport.is-drag .story-card:hover{ transform:none; }
+.story--goals .story-card{ flex-basis:86%; min-height:148px; display:flex; flex-direction:column; justify-content:space-between; }
+.story--steps .story-card{ display:flex; flex-direction:column; justify-content:flex-end; gap:14px; }
+.story--note .story-card{ flex-basis:46%; min-height:250px; padding:34px 24px 22px; }
+.story-card__top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.story-card__num{
+  font-family:var(--serif); font-weight:300; font-size:28px; line-height:1; color:var(--pink); letter-spacing:-.03em;
+}
+.story-card:nth-child(even) .story-card__num{ color:var(--sky); }
+.story--steps .story-card__num{
+  position:absolute; top:6px; right:14px; font-size:74px; opacity:.16; pointer-events:none;
+}
+.story--note .story-card__num{ font-size:15px; letter-spacing:.16em; }
+.story-card h3{ font-size:clamp(20px,2vw,26px); font-weight:300; line-height:1.3; margin:0; position:relative; z-index:1; max-width:12em; }
+.story--note .story-card h3{ font-size:22px; max-width:none; margin:12px 0 8px; }
+.story-card p{ margin:0; font-size:15px; font-weight:200; line-height:1.7; color:var(--ink-soft); }
+.story--goals .story-card p{ font-size:14.5px; color:var(--ink); }
+.story-card__mini, .story-card__stamp i, .story-card__trail i{
+  display:block; background:var(--pink);
+  -webkit-mask:var(--heart) center/contain no-repeat;
+  mask:var(--heart) center/contain no-repeat;
+}
+.story-card:nth-child(even) .story-card__mini,
+.story-card:nth-child(even) .story-card__stamp i{ background:var(--sky); }
+.story-card__mini{ width:16px; height:16px; animation:logoHeart 1.8s ease-in-out infinite; }
+.story-card__cloud{
+  position:absolute; top:26px; left:22px; width:58px; height:18px; background:#fff; border-radius:20px;
+  box-shadow:0 8px 14px -10px rgba(107,169,214,.9);
+}
+.story-card__cloud::before, .story-card__cloud::after{ content:""; position:absolute; background:#fff; border-radius:50%; }
+.story-card__cloud::before{ width:24px; height:24px; top:-13px; left:8px; }
+.story-card__cloud::after{ width:16px; height:16px; top:-8px; left:28px; }
+.story-card__trail{ display:flex; gap:7px; position:relative; z-index:1; }
+.story-card__trail i{ width:13px; height:13px; background:#ffd6e2; opacity:.38; }
+.story--steps .story-card:nth-child(even) .story-card__trail i{ background:#d7ecf8; }
+.story--steps .story-card:nth-child(1) .story-card__trail i:nth-child(-n+1),
+.story--steps .story-card:nth-child(3) .story-card__trail i:nth-child(-n+3),
+.story--steps .story-card:nth-child(5) .story-card__trail i:nth-child(-n+5){ background:var(--pink); opacity:1; }
+.story--steps .story-card:nth-child(2) .story-card__trail i:nth-child(-n+2),
+.story--steps .story-card:nth-child(4) .story-card__trail i:nth-child(-n+4){ background:var(--sky); opacity:1; }
+.story--steps .story-card:nth-child(1) .story-card__trail i:nth-child(1),
+.story--steps .story-card:nth-child(2) .story-card__trail i:nth-child(2),
+.story--steps .story-card:nth-child(3) .story-card__trail i:nth-child(3),
+.story--steps .story-card:nth-child(4) .story-card__trail i:nth-child(4),
+.story--steps .story-card:nth-child(5) .story-card__trail i:nth-child(5){ animation:logoHeart 1.7s ease-in-out infinite; }
+.story--steps .story__viewport::after{
+  content:""; position:absolute; left:7%; right:7%; top:58px; height:2px; z-index:0; pointer-events:none;
+  background:repeating-linear-gradient(90deg, #ffd0dc 0 9px, transparent 9px 17px);
+}
+.story-card__tape{
+  position:absolute; top:12px; left:50%; width:84px; height:16px; border-radius:3px;
+  background:rgba(255,166,166,.55); transform:translateX(-50%) rotate(-2deg);
+}
+.story-card:nth-child(even) .story-card__tape{ background:rgba(197,227,246,.8); transform:translateX(-50%) rotate(2deg); }
+.story-card__stamp{
+  width:48px; height:48px; border-radius:50%; border:1.5px dashed var(--pink-2);
+  display:grid; place-items:center; transform:rotate(-12deg); flex:none;
+}
+.story-card:nth-child(even) .story-card__stamp{ border-color:var(--sky-light); }
+.story-card.is-active .story-card__stamp{ animation:stampWiggle 3.6s ease-in-out infinite; }
+.story-card__stamp i{ width:20px; height:20px; }
+@keyframes stampWiggle{ 0%,100%{ transform:rotate(-12deg); } 50%{ transform:rotate(-4deg); } }
+.story__bar{
+  display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:2px;
+}
+.story__btn{
+  width:44px; height:44px; border-radius:50%; border:1px solid var(--pink-light); background:#fff; color:var(--pink);
+  display:grid; place-items:center; cursor:pointer; flex:none;
+  box-shadow:0 10px 18px -14px rgba(255,69,115,.9);
+  transition:transform .25s var(--ease), background .25s ease, color .25s ease;
+}
+.story__btn svg{ width:18px; height:18px; display:block; }
+.story__btn:hover:not(:disabled){ background:var(--pink); color:#fff; transform:translateY(-2px) rotate(-8deg); }
+.story__btn:active:not(:disabled){ transform:scale(.92); }
+.story__btn:disabled{ opacity:.38; cursor:default; box-shadow:none; }
+.story__btn:focus-visible{ outline:2px solid var(--pink); outline-offset:3px; }
+.story--note .story__btn{ border-color:var(--sky-lighter); color:var(--sky); }
+.story--note .story__btn:hover:not(:disabled){ background:var(--sky); color:#fff; }
+.story__count{
+  margin:0; min-width:58px; text-align:center; font-family:var(--serif); font-weight:300; color:var(--gray); font-size:13px;
+}
+.story__count b{ color:var(--pink); font-weight:400; font-size:18px; }
+.story--note .story__count b{ color:var(--sky); }
+.story__dots{ display:flex; align-items:center; gap:7px; }
+.story__dots button{
+  width:11px; height:11px; padding:0; border:0; cursor:pointer; background:#ffd0dc;
+  -webkit-mask:var(--heart) center/contain no-repeat;
+  mask:var(--heart) center/contain no-repeat;
+}
+.story--note .story__dots button{ background:#cfe6f6; }
+.story__dots button.is-on{ width:15px; height:15px; background:var(--pink); }
+.story--note .story__dots button.is-on{ background:var(--sky); }
+.story__dots button:focus-visible{ outline:2px solid var(--pink); outline-offset:3px; }
+.story__live{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+@media (max-width:900px){
+  .story--steps .story-card, .story--note .story-card{ flex-basis:78%; }
+  .story--steps, .story--note{ padding:22px 14px 12px; }
+}
+@media (max-width:640px){
+  .story--goals .story-card, .story--steps .story-card, .story--note .story-card{ flex-basis:86%; }
+  .story--steps .story-card{ min-height:210px; }
+  .story--note .story-card{ min-height:0; }
+  .story__head h2{ font-size:clamp(24px,7vw,32px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .ivf-logo-wrap, .story-card__mini, .story-card__stamp, .story-card__trail i, .subpage-head .case__title::after{ animation:none; }
+  .story__track{ transition:none; }
+}
 </style>
 
 </head>
@@ -1510,23 +1731,22 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <p class="case__sub">โครงสร้างเว็บไซต์ โครงสร้างข้อมูล และ SEO สำหรับคลินิกรักษาผู้มีบุตรยาก ออกแบบรอบหัวข้อละเอียดอ่อน ความถูกต้องทางการแพทย์ และความไว้ใจก่อนตัดสินใจโทร</p>
 </div></section>
 <section class="section-pad"><div class="wrap">
-<div class="two-col">
+<div class="two-col ivf-intro">
 <div>
-<p class="case__role-label">Website & SEO Specialist · 2025 — ปัจจุบัน · WordPress · Technical SEO</p>
-<div class="feature-shot"><img src="assets/restored/inspire-ivf-logo-5f8426e13f.png" alt="Inspire IVF logo"><figcaption><a href="https://inspireivfthailand.com/" target="_blank" rel="noopener">inspireivfthailand.com ↗</a></figcaption></div>
+<p class="case__role-label">Website &amp; SEO Specialist · 2025 — ปัจจุบัน · WordPress · Technical SEO</p>
+<div class="ivf-logo-wrap">
+<div class="feature-shot ivf-logo"><img src="assets/restored/inspire-ivf-logo-5f8426e13f.png" alt="Inspire IVF logo"><figcaption><a href="https://inspireivfthailand.com/" target="_blank" rel="noopener">inspireivfthailand.com ↗</a></figcaption></div>
+<i class="ivf-logo__heart" aria-hidden="true"></i>
+</div>
 </div>
 <div>
 <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:12px">เว็บไซต์คลินิกต้องสร้างความไว้วางใจก่อนจะได้คลิก</h2>
 <p class="case__prose">IVF, ICSI และ PGT ไม่ใช่การค้นหาทั่วไป ผู้คนมากังวล และมักอ่านเป็นภาษาที่สอง เว็บต้องอธิบายขั้นตอนให้ชัด รักษาความถูกต้องของราคาและอัตราความสำเร็จ และจัดการกฎหมายการอุ้มบุญโดยไม่ดูเย็นชา</p>
 <p class="case__prose">นี่คือโจทย์โครงสร้างก่อนเนื้อหา บริการไหนควรมีหน้าของตัวเอง รายละเอียดควรลึกแค่ไหนก่อนต้องคุยกับคน และยังต้องแข่งอันดับการค้นหา</p>
-<ul class="heart-bullet" style="margin-top:16px;color:var(--ink-soft);font-weight:300"><li>อธิบาย IVF, ICSI และ PGT ให้ชัดสำหรับผู้อ่านที่ไม่ใช่แพทย์</li><li>รักษาความถูกต้องของราคาและผลลัพธ์ให้อ้างอิงได้</li><li>จัดการราคา อัตราความสำเร็จ และการอุ้มบุญอย่างระมัดระวัง</li><li>เปลี่ยนการค้นคว้าให้เป็นการจองปรึกษา</li><li>แข่งอันดับกับคลินิกรักษาผู้มีบุตรยากอื่น</li></ul>
+<div class="story story--goals" data-deck role="region" aria-roledescription="carousel" aria-label="สิ่งที่เว็บไซต์ต้องทำ"><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><div class="story-card__top"><span class="story-card__num">01</span><i class="story-card__mini" aria-hidden="true"></i></div><p>อธิบาย IVF, ICSI และ PGT ให้ชัดสำหรับผู้อ่านที่ไม่ใช่แพทย์</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">02</span><i class="story-card__mini" aria-hidden="true"></i></div><p>รักษาความถูกต้องของราคาและผลลัพธ์ให้อ้างอิงได้</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">03</span><i class="story-card__mini" aria-hidden="true"></i></div><p>จัดการราคา อัตราความสำเร็จ และการอุ้มบุญอย่างระมัดระวัง</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">04</span><i class="story-card__mini" aria-hidden="true"></i></div><p>เปลี่ยนการค้นคว้าให้เป็นการจองปรึกษา</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">05</span><i class="story-card__mini" aria-hidden="true"></i></div><p>แข่งอันดับกับคลินิกรักษาผู้มีบุตรยากอื่น</p></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 05</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button><button type="button" tabindex="-1" data-go="4" aria-label="การ์ด 5"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
 </div></div>
-<div class="case__block"><div class="case__block-head"><span class="case__block-title">แนวทาง</span></div>
-<h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:16px">จัดโครงสร้างตามวิธีคิดจริงของผู้ป่วย</h2>
-<div class="step-row"><span class="step-pill"><b>01</b>วางเส้นทางผู้ป่วย</span><span class="step-pill"><b>02</b>สร้างโครงสร้างหน้าบริการ</span><span class="step-pill"><b>03</b>ยึดเนื้อหาและราคากับความจริง</span><span class="step-pill"><b>04</b>SEO เชิงเทคนิคและความเร็ว</span><span class="step-pill"><b>05</b>ส่งต่อ LUNA ในจุดที่เหมาะ</span></div></div>
-<div class="case__block"><div class="case__block-head"><span class="case__block-title">สิ่งที่ดูแล</span></div>
-<h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:16px">เว็บไซต์และ SEO ตั้งแต่ต้นจนจบ</h2>
-<div class="sys-grid"><article class="sys-card"><h3>โครงสร้างข้อมูล</h3><p>หน้าบริการ IVF, ICSI และ PGT จัดตามวิธีที่ผู้ป่วยค้นหาและเปรียบเทียบ ไม่ใช่ตามโครงสร้างภายในคลินิก</p></article><article class="sys-card"><h3>SEO เชิงเทคนิคและบนหน้าเว็บ</h3><p>Schema ลำดับหัวข้อ Internal Linking และ Core Web Vitals พื้นฐานเดียวกับทุกเว็บในพอร์ตนี้ ใช้กับบริบทสุขภาพ</p></article><article class="sys-card"><h3>ความถูกต้องของเนื้อหา</h3><p>คำอธิบายขั้นตอน ราคา และผลลัพธ์ตรวจกับทีมคลินิก เนื้อหาละเอียดอ่อนไม่เขียนจากการเดา</p></article><article class="sys-card"><h3>จุดที่ LUNA เข้ามา</h3><p>เว็บไซต์รับการค้นคว้า LUNA รับบทสนทนา การส่งต่อจากหน้า ICSI ไปคุยกับ LUNA เป็นประสบการณ์เดียวกัน</p></article></div></div>
+<div class="story story--steps" data-deck role="region" aria-roledescription="carousel" aria-label="แนวทาง"><div class="story__head"><p class="case__block-title">แนวทาง</p><h2>จัดโครงสร้างตามวิธีคิดจริงของผู้ป่วย</h2></div><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">01</span><h3>วางเส้นทางผู้ป่วย</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">02</span><h3>สร้างโครงสร้างหน้าบริการ</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">03</span><h3>ยึดเนื้อหาและราคากับความจริง</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">04</span><h3>SEO เชิงเทคนิคและความเร็ว</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">05</span><h3>ส่งต่อ LUNA ในจุดที่เหมาะ</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 05</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button><button type="button" tabindex="-1" data-go="4" aria-label="การ์ด 5"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
+<div class="story story--note" data-deck role="region" aria-roledescription="carousel" aria-label="สิ่งที่ดูแล" data-auto="1"><div class="story__head"><p class="case__block-title">สิ่งที่ดูแล</p><h2>เว็บไซต์และ SEO ตั้งแต่ต้นจนจบ</h2></div><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">01</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>โครงสร้างข้อมูล</h3><p>หน้าบริการ IVF, ICSI และ PGT จัดตามวิธีที่ผู้ป่วยค้นหาและเปรียบเทียบ ไม่ใช่ตามโครงสร้างภายในคลินิก</p></article><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">02</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>SEO เชิงเทคนิคและบนหน้าเว็บ</h3><p>Schema ลำดับหัวข้อ Internal Linking และ Core Web Vitals พื้นฐานเดียวกับทุกเว็บในพอร์ตนี้ ใช้กับบริบทสุขภาพ</p></article><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">03</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>ความถูกต้องของเนื้อหา</h3><p>คำอธิบายขั้นตอน ราคา และผลลัพธ์ตรวจกับทีมคลินิก เนื้อหาละเอียดอ่อนไม่เขียนจากการเดา</p></article><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">04</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>จุดที่ LUNA เข้ามา</h3><p>เว็บไซต์รับการค้นคว้า LUNA รับบทสนทนา การส่งต่อจากหน้า ICSI ไปคุยกับ LUNA เป็นประสบการณ์เดียวกัน</p></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 04</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
 </div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="index-th.html"><span class="dir">หน้าแรก</span><span class="title">หน้าแรก</span></a><a class="case-nav__link case-nav__link--next" href="work-luna-ai-th.html"><span class="dir">ถัดไป</span><span class="title">LUNA AI</span></a></div></div></section>
 <footer class="ftr">
   <div class="ftr__wave" aria-hidden="true">
@@ -1778,5 +1998,188 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 })();
 
 </script>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  function labelOf(card) {
+    var h = card.querySelector("h3");
+    var p = card.querySelector("p");
+    var el = h || p;
+    return el ? el.textContent.replace(/\s+/g, " ").trim() : "";
+  }
+
+  document.querySelectorAll("[data-deck]").forEach(function (deck) {
+    var viewport = deck.querySelector(".story__viewport");
+    var track = deck.querySelector(".story__track");
+    var cards = Array.prototype.slice.call(track.children);
+    var prev = deck.querySelector("[data-prev]");
+    var next = deck.querySelector("[data-next]");
+    var dots = Array.prototype.slice.call(deck.querySelectorAll("[data-go]"));
+    var count = deck.querySelector(".story__count b");
+    var live = deck.querySelector(".story__live");
+    var index = 0;
+    var timer = null;
+    var userTookOver = false;
+    var dragging = false;
+    var moved = false;
+    var startX = 0;
+    var startY = 0;
+    var origin = 0;
+    var locked = "";
+
+    if (!cards.length || !viewport || !track) return;
+    deck.classList.add("is-ready");
+
+    function maxScroll() {
+      return Math.max(0, track.scrollWidth - viewport.clientWidth);
+    }
+    function scrollFor(i) {
+      var raw = cards[i].offsetLeft - cards[0].offsetLeft;
+      return Math.max(0, Math.min(raw, maxScroll()));
+    }
+    function paint(i, instant) {
+      i = Math.max(0, Math.min(cards.length - 1, i));
+      var left = Math.round(scrollFor(i));
+      track.style.transition = instant ? "none" : "";
+      track.style.transform = "translate3d(" + (-left) + "px,0,0)";
+      index = i;
+      if (count) count.textContent = pad(i + 1);
+      cards.forEach(function (card, n) {
+        var on = n === i;
+        card.classList.toggle("is-active", on);
+        if (on && !instant) {
+          card.classList.remove("is-spark");
+          void card.offsetWidth;
+          card.classList.add("is-spark");
+        }
+      });
+      dots.forEach(function (dot, n) {
+        var on = n === i;
+        dot.classList.toggle("is-on", on);
+        if (on) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+      if (prev) prev.disabled = left <= 1;
+      if (next) next.disabled = maxScroll() - left <= 1;
+      if (!instant && live) {
+        live.textContent = labelOf(cards[i]) + " · " + (i + 1) + " / " + cards.length;
+      }
+      if (instant) {
+        requestAnimationFrame(function () { track.style.transition = ""; });
+      }
+    }
+    function stepTo(dir) {
+      var left = scrollFor(index);
+      var target = index;
+      if (dir > 0) {
+        do { target += 1; }
+        while (target < cards.length - 1 && scrollFor(target) <= left + 1);
+      } else {
+        do { target -= 1; }
+        while (target > 0 && scrollFor(target) >= left - 1);
+      }
+      paint(target, false);
+    }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+    function start() {
+      if (!deck.hasAttribute("data-auto") || reduce || userTookOver) return;
+      stop();
+      timer = setInterval(function () {
+        if (document.hidden) return;
+        if (next && next.disabled) paint(0, false);
+        else stepTo(1);
+      }, 6800);
+    }
+    function takeOver() { userTookOver = true; stop(); }
+
+    paint(0, true);
+
+    if (prev) prev.addEventListener("click", function () { takeOver(); stepTo(-1); });
+    if (next) next.addEventListener("click", function () { takeOver(); stepTo(1); });
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        takeOver();
+        paint(parseInt(dot.getAttribute("data-go"), 10) || 0, false);
+      });
+    });
+    cards.forEach(function (card, n) {
+      card.addEventListener("click", function () {
+        if (moved || n === index) return;
+        takeOver();
+        paint(n, false);
+      });
+    });
+
+    viewport.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { takeOver(); stepTo(1); e.preventDefault(); }
+      else if (e.key === "ArrowLeft") { takeOver(); stepTo(-1); e.preventDefault(); }
+    });
+    deck.addEventListener("keydown", function (e) {
+      if (e.target === viewport) return;
+      if (e.key === "ArrowRight") { takeOver(); stepTo(1); e.preventDefault(); }
+      else if (e.key === "ArrowLeft") { takeOver(); stepTo(-1); e.preventDefault(); }
+    });
+
+    viewport.addEventListener("pointerdown", function (e) {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      dragging = true;
+      moved = false;
+      locked = "";
+      startX = e.clientX;
+      startY = e.clientY;
+      origin = scrollFor(index);
+      takeOver();
+      viewport.setPointerCapture(e.pointerId);
+    });
+    viewport.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      if (!locked) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        locked = Math.abs(dy) > Math.abs(dx) ? "y" : "x";
+        if (locked === "y") { dragging = false; return; }
+        viewport.classList.add("is-drag");
+        track.style.transition = "none";
+      }
+      if (locked !== "x") return;
+      moved = true;
+      var nextLeft = Math.max(0, Math.min(maxScroll(), origin - dx));
+      track.style.transform = "translate3d(" + (-Math.round(nextLeft)) + "px,0,0)";
+    });
+    function endDrag(e) {
+      if (!dragging && !viewport.classList.contains("is-drag")) return;
+      var wasDrag = moved && locked === "x";
+      dragging = false;
+      locked = "";
+      viewport.classList.remove("is-drag");
+      track.style.transition = "";
+      if (!wasDrag) return;
+      var dx = e.clientX - startX;
+      if (dx < -36) stepTo(1);
+      else if (dx > 36) stepTo(-1);
+      else paint(index, false);
+    }
+    viewport.addEventListener("pointerup", endDrag);
+    viewport.addEventListener("pointercancel", endDrag);
+
+    window.addEventListener("resize", function () { paint(index, true); });
+
+    if (deck.hasAttribute("data-auto") && !reduce) {
+      deck.addEventListener("mouseenter", stop);
+      deck.addEventListener("mouseleave", function () { if (!userTookOver) start(); });
+      setTimeout(function () { if (!userTookOver) start(); }, 2600);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
