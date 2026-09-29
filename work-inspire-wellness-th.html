@@ -234,7 +234,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
   .nav__mobile{ display:flex; }
 }
 
-/* mega-menu dropdown */
+/* mega-menu dropdown — light, cute, matches the site */
 .nav__dropdown{ position:relative; }
 .nav__dropdown-trigger{
   position:relative; z-index:1;
@@ -258,52 +258,51 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .nav__dropdown.is-open .nav__dropdown-trigger::before{ opacity:1; transform:scale(1); }
 
 .nav__dropdown-panel{
-  position:fixed; top:88px; left:50%; transform:translateX(-50%) translateY(8px);
-  width:min(620px, calc(100vw - 48px));
-  background:#fff;
-  border:1px solid var(--line); border-radius:var(--radius); padding:20px;
-  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  position:absolute; top:calc(100% + 12px); left:0;
+  transform:translateY(8px);
   opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease;
-  box-shadow:0 30px 60px -30px rgba(107,169,214,0.4);
   z-index:120;
 }
-.nav__dropdown-panel__eyebrow{ grid-column:1 / -1; font-size:11px; letter-spacing:0.14em; color:var(--gray); padding:2px 6px 10px; display:flex; align-items:center; gap:10px; }
-.nav__dropdown-panel__eyebrow::after{ content:""; flex:1; height:1px; background:linear-gradient(90deg, var(--line), rgba(255,69,115,0)); }
-.nav__dropdown.is-open .nav__dropdown-panel{ opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.nav__dropdown.is-open .nav__dropdown-panel{ opacity:1; pointer-events:auto; transform:translateY(0); }
 
-.nav__dropdown-item{
-  position:relative; display:flex; flex-direction:column; gap:9px; padding:18px; border-radius:var(--r-lg);
-  border:1px solid var(--line); background:var(--bg-raised);
-  transition:border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+.nav__dropdown-panel--light{
+  overflow:hidden;
+  width:min(280px, calc(100vw - 32px));
+  background:linear-gradient(165deg, #FFFFFF 0%, var(--pink-pale) 55%, var(--sky-pale) 100%);
+  border:1.5px solid var(--pink-light);
+  border-radius:24px;
+  padding:18px 8px 10px;
+  display:flex; flex-direction:column;
+  box-shadow:0 30px 60px -26px rgba(255,69,115,0.28), 0 0 0 1px rgba(255,255,255,0.6) inset;
 }
-.nav__dropdown-item:hover{ transform:translateY(-3px); padding-left:22px; }
-.nav__dropdown-item.cat-gold{ --item-c:var(--pink); }
-.nav__dropdown-item.cat-blue{ --item-c:var(--sky); }
-.nav__dropdown-item.cat-pink{ --item-c:var(--pink-3); }
-.nav__dropdown-item.cat-green{ --item-c:var(--green); }
-.nav__dropdown-item.cat-gold:hover{ background:var(--pink-pale); border-color:var(--pink-light); box-shadow:0 12px 28px -14px rgba(255,69,115,0.25); }
-.nav__dropdown-item.cat-blue:hover{ background:var(--sky-pale); border-color:var(--sky-light); box-shadow:0 12px 28px -14px rgba(107,169,214,0.25); }
-.nav__dropdown-item.cat-pink:hover{ background:var(--pink-pale); border-color:var(--pink-light); box-shadow:0 12px 28px -14px rgba(255,142,142,0.25); }
-.nav__dropdown-item.cat-green:hover{ background:var(--sky-pale); border-color:var(--sky-light); box-shadow:0 12px 28px -14px rgba(74,143,194,0.25); }
-.nav__dropdown-item::before, .nav__dropdown-item::after{ content:none; }
-.nav__dropdown-item .tag{
-  width:28px; height:28px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
-  font-size:10.5px; font-family:var(--sans); font-weight:400; border:1px solid currentColor;
+.nav__dropdown-panel--light::before{
+  content:""; position:absolute; top:-30px; right:-30px; width:90px; height:90px; border-radius:50%;
+  background:radial-gradient(circle, var(--sky-light) 0%, transparent 70%); opacity:.8; pointer-events:none;
 }
-.tag--gold{ color:var(--pink); }
-.tag--blue{ color:var(--sky); }
-.tag--pink{ color:var(--pink-3); }
-.tag--green{ color:var(--green); }
-.nav__dropdown-icon{
-  width:42px; height:42px; border-radius:14px; display:inline-flex; align-items:center; justify-content:center;
-  color:#fff; background:var(--item-c, var(--pink));
-  box-shadow:0 10px 20px -10px color-mix(in srgb, var(--item-c, var(--pink)) 70%, transparent);
-  transition:transform .35s var(--ease);
+.nav__dropdown-open{
+  position:relative; text-align:center; font-size:10.5px; letter-spacing:0.22em; font-weight:500;
+  color:var(--pink); margin-bottom:6px; display:flex; align-items:center; justify-content:center; gap:8px;
 }
-.nav__dropdown-icon svg{ width:20px; height:20px; }
-.nav__dropdown-item:hover .nav__dropdown-icon{ transform:scale(1.1) rotate(-6deg); }
-.nav__dropdown-item .item-title{ font-family:var(--serif); font-size:19px; font-weight:400; color:var(--ink); }
-.nav__dropdown-item .item-desc{ font-size:11.5px; color:var(--gray); letter-spacing:0.02em; }
+.nav__dropdown-open::before, .nav__dropdown-open::after{ content:""; width:16px; height:1px; background:var(--pink-light); }
+.nav__dropdown-row{
+  position:relative; display:flex; align-items:baseline; gap:14px; padding:13px 16px; border-radius:14px;
+  color:var(--ink); border-top:1px solid var(--pink-light);
+  transition:background .25s ease, padding-left .25s ease;
+}
+.nav__dropdown-row:first-of-type{ border-top:none; }
+.nav__dropdown-row:hover{ background:rgba(255,255,255,0.8); padding-left:20px; }
+.nav__dropdown-row__num{ font-family:var(--serif); font-style:italic; font-size:13px; color:var(--pink); min-width:1.6em; }
+.nav__dropdown-row:nth-child(3) .nav__dropdown-row__num,
+.nav__dropdown-row:nth-child(5) .nav__dropdown-row__num{ color:var(--sky); }
+.nav__dropdown-row__name{ font-size:16px; font-weight:400; }
+.nav__dropdown-row::after{
+  content:""; position:absolute; right:14px; top:50%; transform:translateY(-50%) scale(0.6); width:11px; height:11px; opacity:0;
+  background-color:var(--pink-3);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  transition:opacity .25s ease, transform .25s ease;
+}
+.nav__dropdown-row:hover::after{ opacity:1; transform:translateY(-50%) scale(1); }
 
 /* ============================================================
    BUTTONS — pill with slide-fill hover
@@ -1185,27 +1184,23 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
     <div class="nav__links">
       <div class="nav__dropdown" id="workDropdown">
         <button class="nav__dropdown-trigger" type="button">เคสสตัดดี้ <span class="chev"></span></button>
-        <div class="nav__dropdown-panel holo-border">
-          <div class="nav__dropdown-panel__eyebrow">ผลงานที่คัดสรร</div>
-          <a href="work-inspire-ivf-th.html" class="nav__dropdown-item cat-gold">
-            <span class="nav__dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
-            <span class="item-title">Inspire IVF</span>
-            <span class="item-desc">สุขภาพ · Technical SEO</span>
+        <div class="nav__dropdown-panel nav__dropdown-panel--light">
+          <div class="nav__dropdown-open">เปิด</div>
+          <a href="work-inspire-ivf-th.html" class="nav__dropdown-row">
+            <span class="nav__dropdown-row__num">01</span>
+            <span class="nav__dropdown-row__name">Inspire IVF</span>
           </a>
-          <a href="work-luna-ai-th.html" class="nav__dropdown-item cat-blue">
-            <span class="nav__dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><circle cx="9" cy="10.5" r=".6" fill="currentColor" stroke="none"/><circle cx="12.5" cy="10.5" r=".6" fill="currentColor" stroke="none"/><circle cx="16" cy="10.5" r=".6" fill="currentColor" stroke="none"/></svg></span>
-            <span class="item-title">LUNA AI</span>
-            <span class="item-desc">แชตบอต AI · ผลิตภัณฑ์</span>
+          <a href="work-luna-ai-th.html" class="nav__dropdown-row">
+            <span class="nav__dropdown-row__num">02</span>
+            <span class="nav__dropdown-row__name">LUNA AI</span>
           </a>
-          <a href="work-inspire-wellness-th.html" class="nav__dropdown-item cat-pink">
-            <span class="nav__dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z"/></svg></span>
-            <span class="item-title">Inspire Wellness</span>
-            <span class="item-desc">สุขภาพ · UX</span>
+          <a href="work-inspire-wellness-th.html" class="nav__dropdown-row">
+            <span class="nav__dropdown-row__num">03</span>
+            <span class="nav__dropdown-row__name">Inspire Wellness</span>
           </a>
-          <a href="work-seo-growth-th.html" class="nav__dropdown-item cat-green">
-            <span class="nav__dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-            <span class="item-title">SEO Growth</span>
-            <span class="item-desc">Technical SEO · การค้นหา</span>
+          <a href="work-seo-growth-th.html" class="nav__dropdown-row">
+            <span class="nav__dropdown-row__num">04</span>
+            <span class="nav__dropdown-row__name">SEO Growth</span>
           </a>
         </div>
       </div>
