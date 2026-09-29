@@ -1,29 +1,28 @@
-# Pritsana Keram — Portfolio Site
+# Pritsana Keram — Portfolio
 
-Personal portfolio website for **Pritsana Keram — Web Lead & Digital Product Builder**.
+เว็บพอร์ตโฟลิโอของ **Pritsana Keram · Web Lead & Digital Product Builder** ตามดีไซน์ล่าสุด โทนชมพูและฟ้าของ Inspire IVF ฟอนต์ Prompt มุมโค้ง
 
-A single-page site presenting work, process, and skills across web development, SEO, digital product design, and AI — from strategy through to production.
+สลับภาษาได้จากปุ่ม **TH / EN** บนทุกหน้า
 
-## Sections
+## หน้าในเว็บ
 
-- **Hero** — introduction and headline statement
-- **Selected Work** — showcase of featured projects
-- **Process** — how the work gets done, step by step
-- **Skills** — full-stack toolset across the digital product lifecycle
-- **Contact** — get in touch
+| หน้า | อังกฤษ | ไทย |
+| --- | --- | --- |
+| หน้าแรก | `index.html` | `index-th.html` |
+| Inspire IVF | `work-inspire-ivf.html` | `work-inspire-ivf-th.html` |
+| LUNA AI | `work-luna-ai.html` | `work-luna-ai-th.html` |
+| Inspire Wellness | `work-inspire-wellness.html` | `work-inspire-wellness-th.html` |
+| SEO Growth | `work-seo-growth.html` | `work-seo-growth-th.html` |
+| More Projects | `more-projects.html` | `more-projects-th.html` |
+| About | `about.html` | `about-th.html` |
+| Experience | `experience.html` | `experience-th.html` |
 
-## Tech
+เรซูเม่ฝังอยู่ในปุ่มดาวน์โหลดของแต่ละหน้า รูปโปรไฟล์อยู่ในหน้าเว็บเอง
 
-Static single-page site — plain HTML/CSS, no build step or dependencies. Fonts loaded from Google Fonts (Cormorant Garamond, Jost).
+## รันในเครื่อง
 
-## Project structure
-
+```bash
+python3 -m http.server 41731
 ```
-.
-├── index.html   # the entire site
-└── README.md
-```
 
-## Deployment
-
-Hosted via [GitHub Pages](https://pages.github.com/), served directly from `index.html` at the repository root.
+แล้วเปิด [http://127.0.0.1:41731](http://127.0.0.1:41731)
