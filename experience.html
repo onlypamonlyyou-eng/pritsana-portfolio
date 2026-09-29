@@ -1170,6 +1170,85 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <link rel="alternate" hreflang="en" href="experience.html">
 <link rel="alternate" hreflang="th" href="experience-th.html">
 <link rel="alternate" hreflang="x-default" href="experience.html">
+
+
+
+
+
+<style id="restored-content">
+.shot-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+@media (max-width:900px){ .shot-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .shot-grid{ grid-template-columns:1fr; } }
+.shot-card{ background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:0 18px 36px -28px rgba(107,169,214,.45); }
+.shot-card img{ width:100%; height:200px; object-fit:cover; object-position:top; display:block; }
+.shot-card figcaption{ padding:12px 14px 14px; font-size:13.5px; }
+.brand-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+@media (max-width:860px){ .brand-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .brand-grid{ grid-template-columns:1fr; } }
+.brand-card{ display:flex; flex-direction:column; background:#fff; border:1px solid var(--line); border-radius:28px; padding:22px 22px 18px; min-height:250px; transition:transform .3s ease, box-shadow .3s ease; }
+.brand-card:hover{ transform:translateY(-4px); box-shadow:0 24px 40px -26px rgba(255,69,115,.32); }
+.brand-card__logo{ height:78px; display:flex; align-items:center; }
+.brand-card__logo img{ max-height:64px; max-width:160px; object-fit:contain; }
+.brand-card--dark .brand-card__logo{ background:#241c33; border-radius:16px; padding:10px 14px; width:fit-content; }
+.brand-card .tag{ font-size:12.5px; color:var(--pink); margin:12px 0 6px; font-weight:400; }
+.brand-card h3{ font-size:20px; margin-bottom:8px; }
+.brand-card p{ font-size:14.5px; color:var(--ink-soft); font-weight:300; margin:0; flex:1; }
+.brand-card__links{ display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; }
+.brand-card__links a{ font-size:13.5px; color:var(--pink); font-weight:400; }
+.ad-marquee{ display:flex; flex-direction:column; gap:12px; }
+.ad-row{ overflow:hidden; }
+.ad-row__track{ display:flex; gap:14px; width:max-content; animation:adMove 80s linear infinite; }
+.ad-row--b .ad-row__track{ animation-duration:96s; animation-direction:reverse; }
+.ad-row--c .ad-row__track{ animation-duration:88s; }
+.ad-row:hover .ad-row__track{ animation-play-state:paused; }
+@keyframes adMove{ to{ transform:translateX(-50%); } }
+.ad-row img{ height:250px; width:auto; border-radius:20px; border:1px solid var(--line); background:#fff; }
+@media (max-width:700px){ .ad-row img{ height:180px; } }
+@media (prefers-reduced-motion: reduce){ .ad-row__track{ animation:none; flex-wrap:wrap; width:auto; } }
+.quote-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:760px){ .quote-grid{ grid-template-columns:1fr; } }
+.quote-card{ border-radius:24px; padding:22px; border:1px solid var(--line); background:#fff; }
+.quote-card--after{ background:linear-gradient(165deg,#fff,var(--pink-pale) 80%); border-color:var(--pink-light); }
+.quote-card h5{ font-size:12px; letter-spacing:.08em; color:var(--pink); font-weight:500; margin:0 0 12px; }
+.quote-card--before h5{ color:var(--gray); }
+.quote-card p{ margin:0; font-size:15px; color:var(--ink-soft); font-weight:300; line-height:1.65; }
+.sys-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:800px){ .sys-grid{ grid-template-columns:1fr; } }
+.sys-card{ background:#fff; border:1px solid var(--sky-lighter); border-radius:22px; padding:20px 18px; }
+.sys-card .num{ font-family:var(--serif); font-style:italic; color:var(--sky); font-size:14px; }
+.sys-card h3{ font-size:18px; margin:8px 0; }
+.sys-card p{ margin:0; font-size:14.5px; color:var(--ink-soft); font-weight:300; }
+.luna-chat{ background:#fff; border:1.5px solid var(--sky-lighter); border-radius:28px; padding:18px 16px 14px; box-shadow:0 24px 40px -28px rgba(107,169,214,.5); }
+.luna-chat__url{ font-size:12px; color:var(--gray); margin-bottom:12px; }
+.bubble{ border-radius:18px; padding:11px 14px; font-size:14px; margin:8px 0; max-width:92%; font-weight:300; line-height:1.5; }
+.bubble--bot{ background:var(--sky-pale); }
+.bubble--user{ background:var(--pink-pale); margin-left:auto; }
+.luna-chat__input{ margin-top:8px; border:1px solid var(--line); border-radius:999px; padding:10px 16px; color:var(--gray); font-size:13px; }
+.gov-item{ padding:16px 0; border-top:1px solid var(--line); }
+.gov-item h3{ font-size:17px; margin:0 0 6px; }
+.gov-item p{ margin:0; font-size:14.5px; color:var(--ink-soft); font-weight:300; }
+.portrait{ border-radius:28px; overflow:hidden; border:1px solid var(--pink-light); box-shadow:0 28px 48px -30px rgba(255,69,115,.4); background:#fff; }
+.portrait img{ width:100%; display:block; object-fit:cover; max-height:560px; }
+.exp-layout{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:40px; align-items:start; }
+@media (max-width:860px){ .exp-layout{ grid-template-columns:1fr; } .exp-layout .portrait{ order:-1; max-width:280px; } }
+.feature-shot{ border-radius:28px; overflow:hidden; border:1px solid var(--line); background:#fff; margin-top:18px; }
+.feature-shot img{ width:100%; display:block; }
+.feature-shot figcaption{ padding:12px 16px 14px; font-size:13.5px; color:var(--ink-soft); }
+.step-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.step-pill{ background:#fff; border:1px solid var(--pink-light); border-radius:999px; padding:10px 16px; font-size:14px; color:var(--ink-soft); }
+.step-pill b{ color:var(--pink); font-weight:500; margin-right:6px; }
+.work-card__photo{ position:relative; z-index:1; width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+.work-card__photo--logo{ object-fit:contain; padding:16px 18px; background:linear-gradient(180deg,#fff,var(--pink-pale)); }
+.skills-grid{ grid-template-columns:repeat(4,1fr); row-gap:28px; }
+@media (max-width:900px){ .skills-grid{ grid-template-columns:repeat(2,1fr); } }
+.mini-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:28px; }
+@media (max-width:800px){ .mini-stats{ grid-template-columns:1fr 1fr; } }
+.mini-stat{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:16px; }
+.mini-stat strong{ display:block; font-family:var(--serif); font-size:28px; color:var(--pink); font-weight:500; }
+.mini-stat span{ font-size:12.5px; color:var(--gray); }
+.logo-inline{ height:54px; width:auto; object-fit:contain; }
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1234,95 +1313,31 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
   <a class="lang-switch" href="experience-th.html" hreflang="th">TH</a>
       <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9TeW1ib2wgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTAgMCBSIC9NZWRpYUJveCBbIDAgMCA2MTIgNzkyIF0gL1BhcmVudCA5IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago2IDAgb2JqCjw8Ci9Db250ZW50cyAxMSAwIFIgL01lZGlhQm94IFsgMCAwIDYxMiA3OTIgXSAvUGFyZW50IDkgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjcgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyA5IDAgUiAvVHlwZSAvQ2F0YWxvZwo+PgplbmRvYmoKOCAwIG9iago8PAovQXV0aG9yIChcKGFub255bW91c1wpKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwOTEwMDQwOTQ4KzAwJzAwJykgL0NyZWF0b3IgKFwodW5zcGVjaWZpZWRcKSkgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwOTEwMDQwOTQ4KzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKFwodW5zcGVjaWZpZWRcKSkgL1RpdGxlIChcKGFub255bW91c1wpKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjkgMCBvYmoKPDwKL0NvdW50IDIgL0tpZHMgWyA1IDAgUiA2IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMjM1Nwo+PgpzdHJlYW0KR2F1YFVmaUhpdSY6Tl5sbD1EcWNPRy5sMkdvRl5fS1ohdXUzQVlzPVYzME48IyRKKFUhY2JyJ0RSXFtRXytTMGAxMnI3YltBPChrRFZfPVU5ZXUzVldtPldSb09eTChEYlZ1PSlHUzpwRkdFPGZsQXB1KTNBUidjPnRdKyJEZ00wZUIzPGNGW1VtJy9rc2ldSTQhKlhgaU83SlZqaj1ablI3bUA7MWtUViYvMScnQVV1W2B1Yy9nQTtJZEdMPHJfPC5QJ29pM2lkSTIrbjpcYXJ1O200WVZEIy4sOldUOjEnZjFqVF0lQipkaSo9RVsrI0tkcCRXJ3IoYG5OLlkuMlBzdEZPLyczcSNuOnIxWS82QFk8LGpcVTNTZGwpOlwpNShiT1sxSD9lOFk2XU5tKzQwREZcdHFdIzQ6Rl1XOXAwL1cuPSJmVWshOjwwU1hvXk0mKD1GNClLNTBXJm0/bidQaG49N2MmTGg4MjVvTT9aTjhyIihaOyNRQnBCS0lmYEZCWkU5MGZOQVs+XmwlU1ZNLkZpZmxVJCpCIjpHV3FILmE3ZDFuaWJLI09iLktDIzIrcWIvcWFkbDFNZEZNaHI8akxiJj9iTzpNYVtQLSNxSEZuL19nTjotOzdsTTVTV0hya1tZMktESCJzanQiZ3NJbSJHOVBSUStESyNPTTUoNlo6UVQ6WzIpTFgjME5EWTY6QEZHMFNFMHBuLj8waERMRV1IPD1OOWpKPnVlZmwwKypSPjkrJFpZIW0nPi0xUzJXTCVDbnJoISlVZVRCZHNgLWJyJHNuLz1eSDNBZ0pbZk5XQy8rK2dJW2soT25lZ1oxLW9fOldLUzhadUR0WzM2O2NvMzFZa1FgbF9EWixYb1w2PzwwJ2ZfVU0+IyNUWTN0YkByVC9CTSwsOi9sSz1gWEVbRWE/OzBCUTRqZz50ZzJicSZjT3F0KW5bLWVpTFh0aVAubj1NUFtkUUByZVZLUEM/bEJEWy5vNW9TJS9WdU1ySyJZa2VtMUY3cEJZRzdtVjhbLm9jPlVRJTQwQUk2PFBBX2NmNkwlV01OYmhUW0locVBOalszJzFGNyFZWjRLUnAydC9dajQ3SmxhOUNJUDppMHFiUTtbbG5SLkNBZkgqWm46TlI7YiU8SFM1QCVMXiMrIXNpWkdMYylgIU1XbGRdWTBPKGpZMW84OlAobGRYSmhnc2JPNWEhdDtELVVIYFxRSTEoOC5mKVMnOGI8QEsuIk9KcklkNTxsZTAkPy45aDsjcmJlTVpjPDNMYkE5Lm1QVk4zTFtePSJzVVYxLUNUNCZhXT1WLjQyTlxaIidGLzsnRktMQWtcWmhVIkZqWWNdNkNsZmg5O28wKlEiKUhAYG5qSD4hV0VCXWhcTlAzc1xmLiszSyZIIURFO044JjQmSlJAZFQuNGI2ZGZuXWFsdHBPOGJecWxwcEElZHI0cC5Hci4tND5QPEFGVFpqOGBkYCluSnVHKz5JSEw5a0hRMWpbSWg9OmpWNzxsLyN1aixZRCEtVG88azUyMjs4aF0oUmViTVsyNXBCQEtYI0NqM3RJLjhwOzg8JkAnQU8yLjk2QVImSydJXkNbXVtCLilvVSU4Qk5lLyxVV19oPU0sXGJEKDtHSlsybydqQkdAdTAvLyllRnJfZ0NDVGYxMGkjRlRbWG9bLj9jVlZWOilBM2FKRWp1YXViMGdrRzRIS0M8V1k9XVkmWkghOU9nPytPYCM+JltvOEM1LzhOUVozQEtlKEZZS0VmMylfOkk0PzlPNSlzbVJOWU87c1pULWBRXj9tZj81Okh1I2txLCdpWDM4P3AublklPS4tQ3A6RlthLUhfXiFAQmNXKCtnWVpLY1lZNm1ndCU1SyFFLztdOUpsIkBLXSI3bGY+OlNlUTJdO2Q7Y19LSURANDlIYT9QXmlyYSo5QSg1MHBEZyVIR1BOTmtuLUBwI0FMV3UzQT1yamksYGtnUXQtWS1YRGtoTEkwUEMoPFFZSGAxTSM5bkFFcmVuL3I7K21IIS10YDNUJFNmNHVcaGNRZy9zaFtcTy4uPWZtT180M2RTc09BJlwyPlc2NjkqNWwuND9rZG4pOmwsSylGWV5mJ2UyO14wVVU5RC9mWzMnY0VLUDgxbnA4dSolJDRObUZuJTQ9aWIyTGZAa14pWExlQW4wO2csNVk5O1ZbQT5QZV4+PktyRzIocScqQUQ+RHFCYlZvRCFOUTxfbVIzJGN1Jl8nL2EnU2pHXmMtNElyYylkT0kxQ01bUF86V1FZZVIsVFpTc09lbjRqM1IwOVBFJCxyNjxYOTIjRkpmZFxfJy0nVTZFX0tWVmo+ZitHPlA4cFxMLjFUTlQsSic9JEwlcFVFP2xvRThecm8hSzwlXk0iPmN1WDZTMS1dN149V1M9RGhTLl49WnN0MzFaVWpcTjc7KlE5LCpHPlZVKmxYNWJQNGYsW2stVGE2Sk41TVVTYSRIO3FwLGxcc0RHIlxDJ2NNPWlUR0w/K15qT1VEQGpTPzQlTmFlblEsVVVTJDVyNVY7OGFNMTQ7QGZZQVBVXC9ZcC9oODs4cnBqdVopMW8tYU1wMjcuQTUuMStBQ2ZhRicoSDEiRDJYc3I3bko8W2VTQmZNdG9GbHAoT19dJjkrW1BPQE5xJFt0KHQ3XScoRSZcJDNmVzI/ZjNLPWpbcWVZWGlyRGdUT21JN0ttcXFSOWI2SWFoRVxLXmFtajBlOWpfP1BYMmRXNlpBJ2cwS29dOWdRIUw+SixiTSw8KmE5cnApV1tINVw2YzlNMW4uK1dsclcvTzVoQXBgX0hkREJXa0lsNXRhcGpeUVtFWD8iZiFKaihJMFI5Py5SSz4nQzMxYzlDIS9EVS1wKCVtbXI0Kk0rIWVzXzJxUjViSF9dRCdaMk1UOEEyMSpFVkA9KyNaW0NnMCg7KC1BRkUuLkdWVW4lNFM/IjJvTWB0Ulc9M21UUkQ6YFBUaT0+JTwwRSNgdGgpLjlDKC9TPVdUJmwyQkY4VGJnZkFyJU1DUE1KJk5ZWFMoQkkjdXQxNlghK0FcR0xuSSFOb0kkRk48Zyw8WXI4Tko8Zm9bJ2VkSzonKj80amReNGc2azMyQElRXUU3YiNgX3A3UyFJWyZtZzplfj5lbmRzdHJlYW0KZW5kb2JqCjExIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDc0MAo+PgpzdHJlYW0KR2F0PWc5MmpTISdTWjtXJ2tjJ09OXFFbVixhX2pFTDhJWmErPi5LXy4oMStSYiMwXzRWPl4vJUVlJG8xJGsyLzY4WWE8ZDNoTlNtIzUjMSdjImw2SUw6cSgkKCpQM0VpXDNoWzgiMCsicD1TY1g7JiZHLiZnYyZpMjlnbm0qKT9jS0tbREsxKSJmVVZgZS9dbEZjWEpuXW1eWlVPT14tSkpJVk9Fb1M2YmReSipoVEA/cXRub1ItMXM3YHVmX2Y+cC4jaF9ZKk1HYFMnWVNiSVU8Q3BKMWs2ZjYzT1Zkc1FXN2BnMHVLbEg2OzdYWytOJz1vQ2ExWWxsQydwcjhIR0lCXjZtQVc6UFUxZi1TSmgncGFTMlQyWjw/biVvSkNMRiMyMFtKXkUxOW9jUkNoJS0hJlVYXWJka1NQKHFtUT9DT3AnLiNdUHFacDg3KGBRZiElYWdoOChCXTFeanJTOEM/QW4+NVhFMloyVSNJMjM8Yl5fNERRYWVfZytNbChiVyhtTlYkXD1wNypqZ0JXPlhELTkkJExwYjtaYCxCbko8X2lSVWc9XiUtZUEhV1RlOEdSUGJ1dSIydFtmPThbOyhmR19Pa0wzNHVAVWssbWQ1Y0NRMXVDLyUiL2JwU24oT0I6NT5ONUpacVJqZ2FNaCNwOHVEXyhudFlXU0JnVClhWShbdFZXaUZFWSZaVE5tMk5YZ29kZDBlJCk/XzM/NkdPWUkyQjcjRjU1cEkudWhiL21xcGQ5N3IzaigoYEhrM1xYdVRUZDZNaWldYDpuNT9iXDA3YilQU2NdaT4/TztuLyFwJF46VXFcP0EkbjwkPSo8KC8jWExZM2BkaTlMMiI+MUg7aGJ0XkVsMjphUCRRbnRnNlZDWjZNQVA0J1FpXFlYWEBRbDk8OC9dMEUlLExyYEUsaCc6bEJbKHMzPyVUXVZdRWlQYiQtX0NiIWlqZ21ITlhic09cWXI8OClQPipmfj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxMgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDExMiAwMDAwMCBuIAowMDAwMDAwMjE5IDAwMDAwIG4gCjAwMDAwMDAzMzEgMDAwMDAgbiAKMDAwMDAwMDQwOCAwMDAwMCBuIAowMDAwMDAwNjAyIDAwMDAwIG4gCjAwMDAwMDA3OTYgMDAwMDAgbiAKMDAwMDAwMDg2NCAwMDAwMCBuIAowMDAwMDAxMTQ0IDAwMDAwIG4gCjAwMDAwMDEyMDkgMDAwMDAgbiAKMDAwMDAwMzY1OCAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw1MWJmODE3OWZjOTY2OGI2ODM5MWY3M2Y0NjA4ODMyYT48NTFiZjgxNzlmYzk2NjhiNjgzOTFmNzNmNDYwODgzMmE+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDggMCBSCi9Sb290IDcgMCBSCi9TaXplIDEyCj4+CnN0YXJ0eHJlZgo0NDg5CiUlRU9GCg==" class="btn btn--primary nav__cta" download>Download Resume</a>
 </div>
-<div class="subpage-head"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span><span class="fstar" style="left:8%;top:16%;--s:14px;--d:-0.2s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span><span class="fstar" style="left:32%;top:8%;--s:10px;--d:-1.1s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span><span class="fstar" style="left:70%;top:14%;--s:13px;--d:-1.8s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span><span class="fstar" style="left:90%;top:30%;--s:16px;--d:-0.6s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span></div>
-  <span class="tech-grid-bg" aria-hidden="true"></span>
-  <span class="scan-sweep" aria-hidden="true"></span>
-  <div class="wrap">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <span class="sep">/</span>
-      <span class="current">Experience</span>
-    </div>
-  </div>
-</div><section class="section-pad" id="experience"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span><span class="fstar" style="left:5%;top:24%;--s:12px;--d:-0.5s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span><span class="fstar" style="left:26%;top:10%;--s:16px;--d:-1.4s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span><span class="fstar" style="left:58%;top:20%;--s:11px;--d:-0.3s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span><span class="fstar" style="left:85%;top:12%;--s:14px;--d:-2s"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span></div>
-<div class="wrap">
-<div class="section-head reveal">
-<p class="eyebrow">EXPERIENCE</p>
-<h2>6+ years, three roles, one throughline.</h2>
-<p>Every move has widened the scope — from marketing execution, to SEO ownership, to leading web strategy and AI product end-to-end.</p>
+<section class="subpage-head"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
+<div class="wrap" style="position:relative;z-index:1">
+<p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Experience</span></p>
+<p class="eyebrow" style="margin-top:22px">Experience</p>
+<h1 class="case__title">Six years of turning structure into growth.</h1>
+<p class="case__sub">From digital marketing to SEO, then to leading web and SEO strategy for a fertility clinic. Each role added a layer, and the numbers show it.</p>
+</div></section>
+<section class="section-pad"><div class="wrap">
+<div class="exp-stats">
+<div class="exp-stat"><strong>6+</strong><span>Years of continuous SEO and web work</span></div>
+<div class="exp-stat"><strong>4</strong><span>Roles across healthcare and aesthetics</span></div>
+<div class="exp-stat"><strong>2019</strong><span>Career start</span></div>
 </div>
-
-<div class="exp-stats reveal">
-<div class="exp-stat holo-border">
-<strong>6+</strong>
-<span>Years across three organizations</span>
+<div class="exp-layout">
+<div class="timeline"><div class="timeline-item"><div class="years">2025 — Present<div style="margin-top:8px;color:var(--pink);font-size:13px">Current</div></div>
+<div><h3>Website & SEO Specialist</h3><p class="role"><a href="https://inspireivfthailand.com/" target="_blank" rel="noopener">Inspire IVF ↗</a></p><p class="case__prose">Own website structure and SEO strategy for a fertility clinic, alongside the clinic's AI patient assistant. This is where LUNA was designed and shipped.</p><ul class="heart-bullet" style="margin-top:12px"><li>Built the LUNA AI chatbot</li><li>Website and SEO ownership</li><li>AI product governance</li></ul></div></div><div class="timeline-item"><div class="years">2024 — 2025<div style="margin-top:8px;color:var(--pink);font-size:13px">Lelux</div></div>
+<div><h3>Web Lead</h3><p class="role"><a href="https://www.lelux.co.th/" target="_blank" rel="noopener">Lelux Hospital ↗</a></p><p class="case__prose">Set the hospital's web roadmap with technical SEO in the architecture from day one. Owned Core Web Vitals and led with GA4 and Search Console. Restructuring grew monthly leads 70% over four months.</p><ul class="heart-bullet" style="margin-top:12px"><li>Leads +70% in 4 months</li><li>Core Web Vitals ownership</li><li>SEO-driven development</li></ul></div></div><div class="timeline-item"><div class="years">2022 — 2024<div style="margin-top:8px;color:var(--pink);font-size:13px">Master Style</div></div>
+<div><h3>SEO Specialist</h3><p class="role">Master Style (Masterpiece Hospital)</p><p class="case__prose">Restructured the homepage, landing pages, categories and posts for search, then rebuilt keyword strategy: ranking opportunity up 50%. Bounce rate down 30% after PageSpeed diagnostics and compression.</p><ul class="heart-bullet" style="margin-top:12px"><li>Keyword strategy +50%</li><li>Bounce rate −30%</li></ul></div></div><div class="timeline-item"><div class="years">2019 — 2022<div style="margin-top:8px;color:var(--pink);font-size:13px">Grand Esta</div></div>
+<div><h3>Digital Marketing</h3><p class="role">Grand Esta Clinic</p><p class="case__prose">Owned online marketing end to end: SEO and social together. Produced ad creative and campaign content, and kept reading the ad data to improve it.</p><ul class="heart-bullet" style="margin-top:12px"><li>Instagram +20%</li><li>Facebook engagement +35%</li></ul></div></div></div>
+<figure class="portrait" style="position:sticky;top:110px"><img src="assets/restored/pritsana-keram-44f064532e.jpg" alt="Pritsana Keram"></figure>
 </div>
-<div class="exp-stat holo-border">
-<strong>+50%</strong>
-<span>Organic traffic growth delivered (Master Style)</span>
-</div>
-<div class="exp-stat holo-border">
-<strong>100+</strong>
-<span>Real AI conversations in production (Lelux Hospital)</span>
-</div>
-</div>
-
-<div class="timeline reveal">
-<div class="timeline-item">
-<div class="years">2024 — Present</div>
-<div>
-<h3>Lelux Hospital</h3>
-<p class="role">Web Lead</p>
-<ul>
-<li>Web strategy &amp; technical SEO from information architecture through rendering strategy</li>
-<li>Performance optimization — Core Web Vitals, frontend standards, bounce rate reduction</li>
-<li>SEO-driven development — semantic HTML, dynamic rendering, JS frameworks</li>
-<li>Data-informed leadership using GSC &amp; GA4 for site health</li>
-<li>Digital product &amp; AI project ownership (Luna AI chatbot)</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item">
-<div class="years">2022 — 2024</div>
-<div>
-<h3>Master Style</h3>
-<p class="role">SEO Specialist</p>
-<ul>
-<li>Website structure for homepage, landing pages, categories &amp; posts</li>
-<li>Keyword strategy &amp; structure planning</li>
-<li>On-page SEO using Ahrefs &amp; Google Analytics — organic traffic +50%</li>
-<li>Page speed optimization — bounce rate −30%</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item">
-<div class="years">2019 — 2022</div>
-<div>
-<h3>Grand Esta Clinic</h3>
-<p class="role">Digital Marketing</p>
-<ul>
-<li>SEO &amp; social media strategy</li>
-<li>Ad creative &amp; content production</li>
-<li>Instagram followers +20%, Facebook engagement +35%</li>
-<li>Campaign analytics &amp; performance optimization</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section><div class="divider-wave-wrap" style="color:var(--blue);">
-<span class="wave-glow-band" aria-hidden="true"></span>
-<svg class="divider-wave" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
-  <path class="wave-string" d="M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="1 7"/>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:4%;color:var(--pink-3);animation-delay:-0.1s;"><path transform="translate(-5.8,-5.8) scale(0.48)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:18%;color:var(--sky);animation-delay:-1.4s;"><path transform="translate(-7.2,-7.2) scale(0.6)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:32%;color:var(--pink-3);animation-delay:-0.7s;"><path transform="translate(-5.0,-5.0) scale(0.42)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:46%;color:var(--pink-2);animation-delay:-2.0s;"><path transform="translate(-7.9,-7.9) scale(0.66)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:60%;color:var(--sky);animation-delay:-0.4s;"><path transform="translate(-5.3,-5.3) scale(0.44)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:74%;color:var(--pink-3);animation-delay:-1.8s;"><path transform="translate(-7.0,-7.0) scale(0.58)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-  <g class="wave-heart" style="offset-path:path('M0,28 C150,48 300,10 450,28 C600,48 750,10 900,28 C1050,48 1125,20 1200,28');offset-distance:88%;color:var(--sky);animation-delay:-1.0s;"><path transform="translate(-5.5,-5.5) scale(0.46)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z" fill="currentColor"/></g>
-</svg>
-</div>
+<blockquote class="callout" style="margin-top:28px">“Technology is not just a tool. It is a bridge between people and better possibilities.”</blockquote>
+<div class="section-head" style="margin-top:56px"><p class="eyebrow">Toolkit</p><h2>What I bring to a team.</h2></div>
+<div class="skills-grid"><div class="skills-col"><h4>Web platforms</h4><ul class="heart-bullet"><li>WordPress specialist</li><li>Elementor</li><li>Gutenberg</li><li>Page builders</li></ul></div><div class="skills-col"><h4>Web structure & performance</h4><ul class="heart-bullet"><li>Information architecture</li><li>Site mapping</li><li>URL structure</li><li>Core Web Vitals</li><li>PageSpeed Insights</li><li>Image optimisation</li></ul></div><div class="skills-col"><h4>Technical & on-page SEO</h4><ul class="heart-bullet"><li>Meta tags</li><li>Header hierarchy H1–H6</li><li>Internal linking</li><li>Schema markup</li><li>XML sitemaps</li><li>Robots.txt</li></ul></div><div class="skills-col"><h4>Content & strategy</h4><ul class="heart-bullet"><li>Search intent mapping</li><li>Featured-snippet structuring</li><li>Content strategy</li></ul></div><div class="skills-col"><h4>Analytics & research</h4><ul class="heart-bullet"><li>Google Analytics 4</li><li>Search Console</li><li>Ahrefs</li><li>Ubersuggest</li><li>Moz Bar</li><li>Keyword Planner</li></ul></div><div class="skills-col"><h4>Off-page</h4><ul class="heart-bullet"><li>Backlink analysis</li><li>Competitor benchmarking</li><li>Domain authority</li></ul></div><div class="skills-col"><h4>AI & product</h4><ul class="heart-bullet"><li>Claude API</li><li>AI chatbot design</li><li>Tool calling</li><li>Human–AI handoff</li><li>AI safety rules</li><li>Claude Code</li><li>Product thinking</li></ul></div></div>
+</div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="work-seo-growth.html"><span class="dir">SEO Growth</span><span class="title">SEO Growth</span></a><a class="case-nav__link case-nav__link--next" href="more-projects.html"><span class="dir">More work</span><span class="title">More Projects</span></a></div></div></section>
 <footer class="ftr">
   <div class="ftr__wave" aria-hidden="true">
     <svg viewBox="0 0 2880 90" preserveAspectRatio="none"><path fill="#FFE6E6" d="M0 50 C 240 10 480 10 720 50 S 1200 90 1440 50 S 1920 10 2160 50 S 2640 90 2880 50 V90 H0Z"/></svg>

@@ -1170,6 +1170,85 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <link rel="alternate" hreflang="en" href="index.html">
 <link rel="alternate" hreflang="th" href="index-th.html">
 <link rel="alternate" hreflang="x-default" href="index.html">
+
+
+
+
+
+<style id="restored-content">
+.shot-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+@media (max-width:900px){ .shot-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .shot-grid{ grid-template-columns:1fr; } }
+.shot-card{ background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:0 18px 36px -28px rgba(107,169,214,.45); }
+.shot-card img{ width:100%; height:200px; object-fit:cover; object-position:top; display:block; }
+.shot-card figcaption{ padding:12px 14px 14px; font-size:13.5px; }
+.brand-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+@media (max-width:860px){ .brand-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .brand-grid{ grid-template-columns:1fr; } }
+.brand-card{ display:flex; flex-direction:column; background:#fff; border:1px solid var(--line); border-radius:28px; padding:22px 22px 18px; min-height:250px; transition:transform .3s ease, box-shadow .3s ease; }
+.brand-card:hover{ transform:translateY(-4px); box-shadow:0 24px 40px -26px rgba(255,69,115,.32); }
+.brand-card__logo{ height:78px; display:flex; align-items:center; }
+.brand-card__logo img{ max-height:64px; max-width:160px; object-fit:contain; }
+.brand-card--dark .brand-card__logo{ background:#241c33; border-radius:16px; padding:10px 14px; width:fit-content; }
+.brand-card .tag{ font-size:12.5px; color:var(--pink); margin:12px 0 6px; font-weight:400; }
+.brand-card h3{ font-size:20px; margin-bottom:8px; }
+.brand-card p{ font-size:14.5px; color:var(--ink-soft); font-weight:300; margin:0; flex:1; }
+.brand-card__links{ display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; }
+.brand-card__links a{ font-size:13.5px; color:var(--pink); font-weight:400; }
+.ad-marquee{ display:flex; flex-direction:column; gap:12px; }
+.ad-row{ overflow:hidden; }
+.ad-row__track{ display:flex; gap:14px; width:max-content; animation:adMove 80s linear infinite; }
+.ad-row--b .ad-row__track{ animation-duration:96s; animation-direction:reverse; }
+.ad-row--c .ad-row__track{ animation-duration:88s; }
+.ad-row:hover .ad-row__track{ animation-play-state:paused; }
+@keyframes adMove{ to{ transform:translateX(-50%); } }
+.ad-row img{ height:250px; width:auto; border-radius:20px; border:1px solid var(--line); background:#fff; }
+@media (max-width:700px){ .ad-row img{ height:180px; } }
+@media (prefers-reduced-motion: reduce){ .ad-row__track{ animation:none; flex-wrap:wrap; width:auto; } }
+.quote-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:760px){ .quote-grid{ grid-template-columns:1fr; } }
+.quote-card{ border-radius:24px; padding:22px; border:1px solid var(--line); background:#fff; }
+.quote-card--after{ background:linear-gradient(165deg,#fff,var(--pink-pale) 80%); border-color:var(--pink-light); }
+.quote-card h5{ font-size:12px; letter-spacing:.08em; color:var(--pink); font-weight:500; margin:0 0 12px; }
+.quote-card--before h5{ color:var(--gray); }
+.quote-card p{ margin:0; font-size:15px; color:var(--ink-soft); font-weight:300; line-height:1.65; }
+.sys-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media (max-width:800px){ .sys-grid{ grid-template-columns:1fr; } }
+.sys-card{ background:#fff; border:1px solid var(--sky-lighter); border-radius:22px; padding:20px 18px; }
+.sys-card .num{ font-family:var(--serif); font-style:italic; color:var(--sky); font-size:14px; }
+.sys-card h3{ font-size:18px; margin:8px 0; }
+.sys-card p{ margin:0; font-size:14.5px; color:var(--ink-soft); font-weight:300; }
+.luna-chat{ background:#fff; border:1.5px solid var(--sky-lighter); border-radius:28px; padding:18px 16px 14px; box-shadow:0 24px 40px -28px rgba(107,169,214,.5); }
+.luna-chat__url{ font-size:12px; color:var(--gray); margin-bottom:12px; }
+.bubble{ border-radius:18px; padding:11px 14px; font-size:14px; margin:8px 0; max-width:92%; font-weight:300; line-height:1.5; }
+.bubble--bot{ background:var(--sky-pale); }
+.bubble--user{ background:var(--pink-pale); margin-left:auto; }
+.luna-chat__input{ margin-top:8px; border:1px solid var(--line); border-radius:999px; padding:10px 16px; color:var(--gray); font-size:13px; }
+.gov-item{ padding:16px 0; border-top:1px solid var(--line); }
+.gov-item h3{ font-size:17px; margin:0 0 6px; }
+.gov-item p{ margin:0; font-size:14.5px; color:var(--ink-soft); font-weight:300; }
+.portrait{ border-radius:28px; overflow:hidden; border:1px solid var(--pink-light); box-shadow:0 28px 48px -30px rgba(255,69,115,.4); background:#fff; }
+.portrait img{ width:100%; display:block; object-fit:cover; max-height:560px; }
+.exp-layout{ display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:40px; align-items:start; }
+@media (max-width:860px){ .exp-layout{ grid-template-columns:1fr; } .exp-layout .portrait{ order:-1; max-width:280px; } }
+.feature-shot{ border-radius:28px; overflow:hidden; border:1px solid var(--line); background:#fff; margin-top:18px; }
+.feature-shot img{ width:100%; display:block; }
+.feature-shot figcaption{ padding:12px 16px 14px; font-size:13.5px; color:var(--ink-soft); }
+.step-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.step-pill{ background:#fff; border:1px solid var(--pink-light); border-radius:999px; padding:10px 16px; font-size:14px; color:var(--ink-soft); }
+.step-pill b{ color:var(--pink); font-weight:500; margin-right:6px; }
+.work-card__photo{ position:relative; z-index:1; width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+.work-card__photo--logo{ object-fit:contain; padding:16px 18px; background:linear-gradient(180deg,#fff,var(--pink-pale)); }
+.skills-grid{ grid-template-columns:repeat(4,1fr); row-gap:28px; }
+@media (max-width:900px){ .skills-grid{ grid-template-columns:repeat(2,1fr); } }
+.mini-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:28px; }
+@media (max-width:800px){ .mini-stats{ grid-template-columns:1fr 1fr; } }
+.mini-stat{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:16px; }
+.mini-stat strong{ display:block; font-family:var(--serif); font-size:28px; color:var(--pink); font-weight:500; }
+.mini-stat span{ font-size:12.5px; color:var(--gray); }
+.logo-inline{ height:54px; width:auto; object-fit:contain; }
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1315,15 +1394,11 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <div class="work-grid">
 
 <a class="work-card cat-gold reveal" href="work-inspire-ivf.html">
-<span class="work-card__visual" aria-hidden="true">
-  <span class="work-card__visual-frame">
-    <span class="work-card__visual-glyph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span>
-  </span>
-</span>
+<span class="work-card__visual" aria-hidden="true"><img class="work-card__photo work-card__photo--logo" src="assets/restored/inspire-ivf-logo-5f8426e13f.png" alt="Inspire IVF logo"></span>
 <span class="work-card__num">01</span>
 <span class="work-card__title">Inspire IVF</span>
 <span class="work-card__cat">Healthcare Website · Technical SEO</span>
-<span class="work-card__desc">Building a healthcare website around users, search and conversion.</span>
+<span class="work-card__desc">Website structure, information architecture and SEO for a fertility clinic, built so people can trust what they read.</span>
 <span class="work-card__meta">
   <span class="work-card__role">Web Lead · Strategy to build</span>
   <span class="work-card__link">View case study <span class="arrow">→</span></span>
@@ -1339,7 +1414,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 <span class="work-card__num">02</span>
 <span class="work-card__title">LUNA AI</span>
 <span class="work-card__cat">AI Chatbot · Product Design</span>
-<span class="work-card__desc">An AI assistant that knows when to answer — and when to hand off to a human.</span>
+<span class="work-card__desc">An AI chatbot for Inspire IVF: 100+ real conversations, 169 knowledge-base topics, and a handoff when a human should answer.</span>
 <span class="work-card__meta">
   <span class="work-card__role">Product Owner / Project Lead</span>
   <span class="work-card__link">View case study <span class="arrow">→</span></span>
@@ -1347,15 +1422,11 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 </a>
 
 <a class="work-card cat-pink reveal" href="work-inspire-wellness.html">
-<span class="work-card__visual" aria-hidden="true">
-  <span class="work-card__visual-frame">
-    <span class="work-card__visual-glyph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span>
-  </span>
-</span>
+<span class="work-card__visual" aria-hidden="true"><img class="work-card__photo" src="assets/restored/inspire-wellness-website-screenshot-830d1cc414.jpg" alt="Inspire Wellness homepage"></span>
 <span class="work-card__num">03</span>
 <span class="work-card__title">Inspire Wellness</span>
 <span class="work-card__cat">Healthcare Website · UX / Dev</span>
-<span class="work-card__desc">Designing a healthcare website from structure through launch.</span>
+<span class="work-card__desc">Website and SEO for a luxury wellness centre, where premium, healing and credible have to feel like one brand.</span>
 <span class="work-card__meta">
   <span class="work-card__role">Web Lead · Structure to QA</span>
   <span class="work-card__link">View case study <span class="arrow">→</span></span>
@@ -1363,15 +1434,11 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 </a>
 
 <a class="work-card cat-green reveal" href="work-seo-growth.html">
-<span class="work-card__visual" aria-hidden="true">
-  <span class="work-card__visual-frame">
-    <span class="work-card__visual-glyph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span>
-  </span>
-</span>
+<span class="work-card__visual" aria-hidden="true"><img class="work-card__photo" src="assets/restored/lelux-hospital-website-screenshot-8c878d502d.jpg" alt="Lelux Hospital website"></span>
 <span class="work-card__num">04</span>
 <span class="work-card__title">SEO Growth</span>
 <span class="work-card__cat">Technical SEO · Search Strategy</span>
-<span class="work-card__desc">Turning search intent into measurable organic growth.</span>
+<span class="work-card__desc">26 of 29 tracked keywords on page 1, +70% lead growth at Lelux Hospital, and +50% ranking opportunity at Master Style.</span>
 <span class="work-card__meta">
   <span class="work-card__role">SEO Specialist</span>
   <span class="work-card__link">View case study <span class="arrow">→</span></span>
