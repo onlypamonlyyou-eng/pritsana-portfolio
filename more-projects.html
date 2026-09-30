@@ -2163,6 +2163,72 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 }
 </style>
 
+<style id="shot-slide">
+.shot-slider{ position:relative; margin:4px 0 8px; }
+.shot-slider__view{
+  overflow:hidden; padding:14px 0 18px; margin:0 -4px;
+}
+.shot-slider .play-shots{
+  display:flex; gap:18px; align-items:stretch;
+  transition:transform .55s cubic-bezier(.22,.8,.28,1);
+  will-change:transform;
+}
+.shot-slider .play-shots .shot-link{ height:auto; margin:0; }
+.shot-slider .play-shots .shot-card,
+.shot-slider .play-shots .shot-link:nth-child(even) .shot-card{
+  height:auto;
+}
+.shot-slider .play-shots .shot-card img,
+.shot-slider .play-shots .shot-link:first-child .shot-card img{
+  height:340px; min-height:340px;
+}
+.shot-slider__btn{
+  position:absolute; top:42%; z-index:3; width:48px; height:48px; border-radius:50%;
+  border:1.5px solid #ffd0dc; background:#fff; cursor:pointer;
+  box-shadow:0 10px 20px -14px rgba(255,69,115,.6);
+}
+.shot-slider__btn--prev{ left:0; }
+.shot-slider__btn--next{ right:0; border-color:#d4eaf8; }
+.shot-slider__btn::before{
+  content:""; display:block; width:10px; height:10px; margin:0 auto;
+  border-right:2px solid #ff4573; border-bottom:2px solid #ff4573;
+}
+.shot-slider__btn--prev::before{ transform:rotate(135deg); margin-left:18px; }
+.shot-slider__btn--next::before{ transform:rotate(-45deg); margin-right:18px; border-color:#6ba9d6; }
+.shot-slider__btn:hover{ transform:translateY(-2px); }
+.shot-slider__btn:focus-visible{ outline:2px solid #ff4573; outline-offset:3px; }
+.shot-slider__bar{
+  display:flex; align-items:center; justify-content:center; gap:16px; margin-top:2px;
+}
+.shot-slider__dots{ display:flex; gap:8px; }
+.shot-slider__dot{
+  width:9px; height:9px; padding:0; border-radius:50%; border:0; cursor:pointer;
+  background:#ffd0dc;
+}
+.shot-slider__dot:nth-child(even){ background:#d4eaf8; }
+.shot-slider__dot[aria-current="true"]{
+  width:26px; border-radius:999px; background:#ff4573;
+}
+.shot-slider__dot:focus-visible{ outline:2px solid #ff4573; outline-offset:3px; }
+.shot-slider__count{
+  margin:0; min-width:52px; text-align:center; font-size:13px; font-weight:300; color:#6ba9d6;
+  letter-spacing:.04em;
+}
+.shot-slider__count b{ color:#ff4573; font-weight:300; }
+@media (max-width:700px){
+  .shot-slider .play-shots .shot-card img,
+  .shot-slider .play-shots .shot-link:first-child .shot-card img{
+    height:200px; min-height:200px;
+  }
+  .shot-slider__btn{ width:40px; height:40px; top:38%; }
+  .shot-slider__btn--prev::before{ margin-left:15px; }
+  .shot-slider__btn--next::before{ margin-right:15px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .shot-slider .play-shots{ transition:none; }
+}
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -2670,6 +2736,143 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   var shotsGrid = document.querySelector(".play-shots");
   var anchor = shotsGrid || grid;
   anchor.parentNode.insertBefore(bar, anchor);
+})();
+</script>
+
+<script id="shot-slide-js">
+(function () {
+  var grid = document.querySelector(".play-shots");
+  if (!grid || grid.closest(".shot-slider")) return;
+  var thai = /-th\.html/.test(location.pathname);
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var slides = [].slice.call(grid.querySelectorAll(".shot-link"));
+  if (!slides.length) return;
+
+  var slider = document.createElement("div");
+  slider.className = "shot-slider";
+  slider.setAttribute("role", "region");
+  slider.setAttribute("aria-roledescription", "carousel");
+  slider.setAttribute("aria-label", thai ? "สไลด์เว็บไซต์" : "Website slides");
+  var view = document.createElement("div");
+  view.className = "shot-slider__view";
+  grid.parentNode.insertBefore(slider, grid);
+  slider.appendChild(view);
+  view.appendChild(grid);
+
+  function btn(dir) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "shot-slider__btn shot-slider__btn--" + dir;
+    b.setAttribute("aria-label", dir === "prev" ? (thai ? "ก่อนหน้า" : "Previous") : (thai ? "ถัดไป" : "Next"));
+    return b;
+  }
+  var prev = btn("prev");
+  var next = btn("next");
+  slider.appendChild(prev);
+  slider.appendChild(next);
+
+  var bar = document.createElement("div");
+  bar.className = "shot-slider__bar";
+  var dots = document.createElement("div");
+  dots.className = "shot-slider__dots";
+  var count = document.createElement("p");
+  count.className = "shot-slider__count";
+  slides.forEach(function (slide, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "shot-slider__dot";
+    var cap = slide.querySelector("figcaption");
+    var name = cap ? cap.innerText.split("\n")[0].trim() : String(i + 1);
+    b.setAttribute("aria-label", name);
+    b.addEventListener("click", function () { go(i, true); });
+    dots.appendChild(b);
+  });
+  bar.appendChild(dots);
+  bar.appendChild(count);
+  slider.appendChild(bar);
+
+  var index = 0;
+  var timer = null;
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  function layout() {
+    var viewW = view.clientWidth;
+    var card = Math.min(760, Math.round(viewW * 0.78));
+    var gap = 18;
+    slides.forEach(function (slide) {
+      slide.style.flex = "0 0 " + card + "px";
+    });
+    var x = (viewW - card) / 2 - index * (card + gap);
+    grid.style.transform = "translateX(" + x + "px)";
+  }
+
+  function paint() {
+    slides.forEach(function (slide, i) {
+      var on = i === index;
+      slide.setAttribute("aria-hidden", on ? "false" : "true");
+      slide.tabIndex = on ? 0 : -1;
+    });
+    [].forEach.call(dots.children, function (dot, i) {
+      if (i === index) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+    count.innerHTML = "<b>" + pad(index + 1) + "</b> / <span>" + pad(slides.length) + "</span>";
+    layout();
+  }
+
+  function go(i, user) {
+    index = (i + slides.length) % slides.length;
+    paint();
+    if (user) restart();
+  }
+
+  function restart() {
+    if (timer) clearInterval(timer);
+    timer = null;
+    if (reduce) return;
+    timer = setInterval(function () { go(index + 1, false); }, 4200);
+  }
+
+  prev.addEventListener("click", function () { go(index - 1, true); });
+  next.addEventListener("click", function () { go(index + 1, true); });
+  slider.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(index + 1, true); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(index - 1, true); }
+  });
+  slider.addEventListener("mouseenter", function () { if (timer) { clearInterval(timer); timer = null; } });
+  slider.addEventListener("mouseleave", restart);
+  slider.addEventListener("focusin", function () { if (timer) { clearInterval(timer); timer = null; } });
+  slider.addEventListener("focusout", restart);
+
+  var startX = 0;
+  var dragging = false;
+  var moved = false;
+  view.addEventListener("pointerdown", function (e) {
+    if (e.target.closest(".shot-slider__btn")) return;
+    dragging = true;
+    moved = false;
+    startX = e.clientX;
+  });
+  view.addEventListener("pointerup", function (e) {
+    if (!dragging) return;
+    dragging = false;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 40) {
+      moved = true;
+      go(index + (dx < 0 ? 1 : -1), true);
+    }
+  });
+  view.addEventListener("click", function (e) {
+    if (!moved) return;
+    e.preventDefault();
+    e.stopPropagation();
+    moved = false;
+  }, true);
+
+  window.addEventListener("resize", layout);
+  paint();
+  restart();
 })();
 </script>
 
