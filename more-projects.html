@@ -1837,6 +1837,95 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   .play-story .portrait,.play-stats .mini-stat,.play-path .timeline-item,.play-values .values-card{ transform:none; }
 }
 </style>
+<style id="play-extra">
+.play-hero,.play-stage,.play-board,.play-ads{ --heart:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; }
+.play-orbit{
+  position:absolute; right:4%; bottom:8px; width:92px; height:92px; z-index:2;
+  pointer-events:none; animation:orbitSpin 13s linear infinite;
+}
+.play-orbit i{
+  position:absolute; left:50%; top:0; width:14px; height:14px; margin-left:-7px;
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+  animation:orbitSpin 13s linear infinite reverse;
+}
+.play-orbit i:nth-child(2){ top:50%; left:100%; margin:-7px 0 0 -7px; background:#6ba9d6; width:11px; height:11px; }
+.play-orbit i:nth-child(3){ top:100%; left:50%; margin:-14px 0 0 -6px; width:12px; height:12px; }
+.play-orbit i:nth-child(4){ top:48%; left:0; margin:-6px 0 0 -6px; background:#ff8eaa; }
+@keyframes orbitSpin{ to{ transform:rotate(360deg); } }
+.play-path::after{
+  content:""; position:absolute; top:-2px; left:6%; width:16px; height:16px; z-index:3; pointer-events:none;
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+  animation:heartTravel 6.2s linear infinite;
+}
+@keyframes heartTravel{ 0%{ left:5%; } 100%{ left:88%; } }
+.play-line{ position:relative; }
+.play-line::before{
+  content:""; display:block; width:22px; height:22px; margin:0 auto 10px; background:#ff4573;
+  -webkit-mask:var(--heart); mask:var(--heart);
+  animation:logoHeart 1.7s ease-in-out infinite;
+}
+.play-quote{ animation:quoteBob 5.4s ease-in-out infinite; }
+@keyframes quoteBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
+.play-values .values-card{ overflow:visible; }
+.play-burst{
+  position:absolute; left:50%; top:18px; width:12px; height:12px; margin-left:-6px; z-index:5;
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+  pointer-events:none; animation:burst .7s ease-out forwards;
+}
+.play-burst:nth-child(odd){ background:#6ba9d6; }
+@keyframes burst{ to{ transform:translate(var(--x), var(--y)) scale(.3); opacity:0; } }
+.play-stats .mini-stat::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(110deg, transparent 32%, rgba(255,255,255,.9) 50%, transparent 66%);
+  transform:translateX(-130%); animation:cardShine 5.2s ease-in-out infinite;
+}
+.play-stats .mini-stat:nth-child(2)::before{ animation-delay:-1.2s; }
+.play-stats .mini-stat:nth-child(3)::before{ animation-delay:-2.4s; }
+.play-stats .mini-stat:nth-child(4)::before{ animation-delay:-3.6s; }
+@keyframes cardShine{ 0%,50%{ transform:translateX(-130%); } 78%,100%{ transform:translateX(130%); } }
+.play-shots .shot-card::after{
+  content:""; position:absolute; right:14px; bottom:16px; width:16px; height:16px; z-index:2;
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+  animation:logoHeart 2s ease-in-out infinite;
+}
+.play-shots .shot-link:nth-child(even) .shot-card::after{ background:#6ba9d6; animation-delay:-1s; }
+.play-brands .brand-card__logo img{ animation:logoBob 4.6s ease-in-out infinite; }
+.play-brands .brand-card:nth-child(even) .brand-card__logo img{ animation-delay:-1.5s; }
+@keyframes logoBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+.play-brands .brand-card{ cursor:pointer; }
+.play-brands .brand-card:focus-visible{ outline:2px solid #ff4573; outline-offset:3px; }
+.play-brands .brand-card.is-pin{
+  transform:translateY(-8px) rotate(0deg); border-style:solid;
+  box-shadow:0 0 0 4px #fff, 0 0 0 7px #ffd0dc, 0 16px 24px -14px rgba(255,69,115,.45);
+}
+.play-brands .brand-card.is-dim,
+.play-shots .shot-link.is-dim{
+  opacity:.34; transform:none; filter:none;
+}
+.play-brands .brand-card.is-pick{ opacity:1; transform:translateY(-8px) rotate(0deg); border-style:solid; }
+.play-filters{ display:flex; flex-wrap:wrap; gap:8px; margin:2px 0 18px; }
+.play-filter{
+  font:inherit; font-weight:300; font-size:13.5px; color:var(--ink);
+  background:#fff; border:1px solid #ffd0dc; border-radius:999px; padding:8px 14px; cursor:pointer;
+}
+.play-filter:nth-child(even){ border-color:#d4eaf8; }
+.play-filter.is-on{ background:#fff0f4; border-color:#ff8ea6; color:#ff4573; }
+.play-filter:focus-visible{ outline:2px solid #ff4573; outline-offset:2px; }
+.play-ads .ad-row img:nth-child(3n){ transform:rotate(-1.1deg); }
+.play-ads .ad-row img:nth-child(3n+1){ transform:rotate(.8deg); }
+.play-ads .ad-row img:hover{ transform:translateY(-8px) rotate(0deg) scale(1.04); }
+@media (max-width:900px){
+  .play-orbit,.play-path::after{ display:none; }
+  .play-quote{ animation:none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .play-orbit,.play-orbit i,.play-path::after,.play-line::before,.play-quote,.play-burst,
+  .play-stats .mini-stat::before,.play-shots .shot-card::after,.play-brands .brand-card__logo img{
+    animation:none !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1901,7 +1990,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <a class="lang-switch" href="more-projects-th.html" hreflang="th">TH</a>
       <a href="assets/Pritsana-Keram-Resume.pdf" class="btn btn--primary nav__cta" download>Download Resume</a>
 </div>
-<section class="subpage-head play-hero"><div class="play-float" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
+<section class="subpage-head play-hero"><div class="play-float" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="play-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
 <div class="wrap" style="position:relative;z-index:1">
 <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">More Projects</span></p>
 <p class="eyebrow" style="margin-top:22px">More projects</p>
@@ -2254,6 +2343,96 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
     });
     frame.addEventListener("mouseleave", function () { photo.style.transform = ""; });
   }
+})();
+</script>
+
+<script id="play-extra-js">
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".play-values .values-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      if (reduce) return;
+      for (var i = 0; i < 5; i++) {
+        var bit = document.createElement("i");
+        bit.className = "play-burst";
+        bit.setAttribute("aria-hidden", "true");
+        var ang = (-70 + i * 35) * Math.PI / 180;
+        bit.style.setProperty("--x", Math.round(Math.cos(ang) * 40) + "px");
+        bit.style.setProperty("--y", Math.round(Math.sin(ang) * 32 - 6) + "px");
+        card.appendChild(bit);
+        (function (el) {
+          setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 720);
+        })(bit);
+      }
+    });
+  });
+
+  var grid = document.querySelector(".play-brands");
+  if (!grid) return;
+  var cards = grid.querySelectorAll(".brand-card");
+  var shots = document.querySelectorAll(".play-shots .shot-link");
+  var tags = [];
+  cards.forEach(function (card) {
+    var tag = card.querySelector(".tag");
+    if (!tag) return;
+    var name = tag.textContent.trim();
+    if (tags.indexOf(name) < 0) tags.push(name);
+    card.setAttribute("tabindex", "0");
+    function pin(e) {
+      if (e && e.target && e.target.closest && e.target.closest("a")) return;
+      card.classList.toggle("is-pin");
+    }
+    card.addEventListener("click", pin);
+    card.addEventListener("keydown", function (e) {
+      if (e.target !== card) return;
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pin(); }
+    });
+  });
+  var bar = document.createElement("div");
+  bar.className = "play-filters";
+  bar.setAttribute("role", "group");
+  var thai = /about-th|more-projects-th|-th\.html/.test(location.pathname);
+  bar.setAttribute("aria-label", thai ? "กรองตามอุตสาหกรรม" : "Filter by industry");
+  var allLabel = thai ? "ทั้งหมด" : "All";
+  function paint(value, btn) {
+    bar.querySelectorAll(".play-filter").forEach(function (el) {
+      el.classList.remove("is-on");
+      el.setAttribute("aria-pressed", "false");
+    });
+    btn.classList.add("is-on");
+    btn.setAttribute("aria-pressed", "true");
+    var names = [];
+    cards.forEach(function (card) {
+      var tag = card.querySelector(".tag").textContent.trim();
+      var on = !value || tag === value;
+      card.classList.toggle("is-dim", !on);
+      card.classList.toggle("is-pick", !!value && on);
+      if (on) {
+        var h = card.querySelector("h3");
+        if (h) names.push(h.textContent.trim());
+      }
+    });
+    shots.forEach(function (link) {
+      var cap = link.querySelector("figcaption");
+      var name = cap ? cap.innerText.split("\n")[0].trim() : "";
+      link.classList.toggle("is-dim", !!value && names.indexOf(name) < 0);
+    });
+  }
+  function addBtn(label, value) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "play-filter";
+    btn.textContent = label;
+    btn.setAttribute("aria-pressed", value ? "false" : "true");
+    if (!value) btn.classList.add("is-on");
+    btn.addEventListener("click", function () { paint(value, btn); });
+    bar.appendChild(btn);
+  }
+  addBtn(allLabel, "");
+  tags.forEach(function (tag) { addBtn(tag, tag); });
+  var shotsGrid = document.querySelector(".play-shots");
+  var anchor = shotsGrid || grid;
+  anchor.parentNode.insertBefore(bar, anchor);
 })();
 </script>
 
