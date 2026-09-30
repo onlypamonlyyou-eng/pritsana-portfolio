@@ -1886,6 +1886,88 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 </style>
 
 
+<style id="play-more">
+.play-orbit{
+  position:absolute; right:4%; bottom:10px; width:96px; height:96px; z-index:2;
+  pointer-events:none; animation:orbitSpin 14s linear infinite;
+}
+.play-orbit i{
+  position:absolute; left:50%; top:0; width:15px; height:15px; margin-left:-7px;
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+  animation:orbitSpin 14s linear infinite reverse;
+}
+.play-orbit i:nth-child(2){ top:50%; left:100%; margin:-7px 0 0 -8px; background:#6ba9d6; width:12px; height:12px; }
+.play-orbit i:nth-child(3){ top:100%; left:50%; margin:-15px 0 0 -6px; width:11px; height:11px; }
+.play-orbit i:nth-child(4){ top:46%; left:0; margin:-6px 0 0 -6px; background:#ff8eaa; width:13px; height:13px; }
+@keyframes orbitSpin{ to{ transform:rotate(360deg); } }
+.play-tickets .exp-stat{ overflow:hidden; }
+.play-tickets .exp-stat::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(110deg, transparent 34%, rgba(255,255,255,.85) 50%, transparent 66%);
+  transform:translateX(-130%);
+  animation:cardShine 5.4s ease-in-out infinite;
+}
+.play-tickets .exp-stat:nth-child(2)::before{ animation-delay:-1.3s; }
+.play-tickets .exp-stat:nth-child(3)::before{ animation-delay:-2.6s; }
+.play-tickets .exp-stat:nth-child(4)::before{ animation-delay:-3.9s; }
+@keyframes cardShine{ 0%,55%{ transform:translateX(-130%); } 80%,100%{ transform:translateX(130%); } }
+.play-tickets .exp-stat.is-lit{
+  animation:none; z-index:2; transform:translateY(-12px) rotate(0deg) scale(1.035);
+  border-style:solid;
+  box-shadow:0 0 0 5px #fff, 0 0 0 8px #ff9eb6, 0 22px 32px -16px rgba(255,69,115,.55);
+}
+.play-tickets .exp-stat:nth-child(even).is-lit{
+  box-shadow:0 0 0 5px #fff, 0 0 0 8px #9dcef0, 0 22px 32px -16px rgba(107,169,214,.5);
+}
+.play-path .career-step{ overflow:visible; }
+.play-burst{
+  position:absolute; left:50%; top:16px; width:12px; height:12px; margin-left:-6px;
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+  pointer-events:none; z-index:5; animation:burst .7s ease-out forwards;
+}
+.play-burst:nth-child(odd){ background:#6ba9d6; }
+@keyframes burst{ to{ transform:translate(var(--x), var(--y)) scale(.35); opacity:0; } }
+.play-timeline{ position:relative; padding-left:26px; }
+.play-timeline::before{
+  content:""; position:absolute; left:9px; top:12px; bottom:12px; width:2px; z-index:0; pointer-events:none;
+  background:repeating-linear-gradient(180deg, #ffb7c9 0 6px, transparent 6px 13px);
+}
+.play-timeline::after{
+  content:""; position:absolute; left:1px; width:18px; height:18px; z-index:4; pointer-events:none;
+  top:calc(var(--hop, 0) * (100% - 28px));
+  background:#ff4573; -webkit-mask:var(--heart); mask:var(--heart);
+}
+.portrait.play-polaroid{ perspective:800px; }
+.portrait.play-polaroid img{ transition:transform .18s ease; transform-style:preserve-3d; }
+.play-quote{ animation:quoteBob 5.5s ease-in-out infinite; }
+@keyframes quoteBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+.play-skills .skills-col:hover .heart-bullet li::before,
+.play-skills .skills-col.is-hot .heart-bullet li::before{
+  animation:heartHop .55s ease-in-out;
+}
+.play-skills .skills-col li:nth-child(2)::before{ animation-delay:.06s; }
+.play-skills .skills-col li:nth-child(3)::before{ animation-delay:.12s; }
+.play-skills .skills-col li:nth-child(4)::before{ animation-delay:.18s; }
+.play-skills .skills-col li:nth-child(5)::before{ animation-delay:.24s; }
+.play-skills .skills-col li:nth-child(6)::before{ animation-delay:.3s; }
+.play-skills .skills-col li:nth-child(7)::before{ animation-delay:.36s; }
+@keyframes heartHop{
+  0%,100%{ transform:translateY(-50%) scale(1); }
+  45%{ transform:translateY(-9px) scale(1.4); }
+}
+@media (max-width:900px){
+  .play-orbit{ display:none; }
+  .play-quote{ animation:none; }
+}
+@media (max-width:700px){
+  .play-timeline{ padding-left:0; }
+  .play-timeline::before,.play-timeline::after{ display:none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .play-orbit,.play-orbit i,.play-tickets .exp-stat::before,.play-quote,.play-burst{ animation:none !important; }
+  .play-tickets .exp-stat.is-lit{ transform:none; }
+}
+</style>
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1950,7 +2032,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <a class="lang-switch" href="experience.html" hreflang="en">EN</a>
       <a href="assets/Pritsana-Keram-Resume.pdf" class="btn btn--primary nav__cta" download>ดาวน์โหลดเรซูเม่</a>
 </div>
-<section class="subpage-head play-hero"><div class="play-float" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
+<section class="subpage-head play-hero"><div class="play-float" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="play-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
 <div class="wrap" style="position:relative;z-index:1">
 <p class="breadcrumb"><a href="index-th.html">หน้าแรก</a><span class="sep">/</span><span class="current">ประสบการณ์</span></p>
 <p class="eyebrow" style="margin-top:22px">ประสบการณ์</p>
@@ -2235,7 +2317,25 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 </script>
 <script id="play-exp-js">
 (function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var path = document.querySelector(".play-path");
+
+  function burst(btn) {
+    if (reduce) return;
+    var n = 6;
+    for (var i = 0; i < n; i++) {
+      var bit = document.createElement("i");
+      bit.className = "play-burst";
+      var ang = (-70 + (140 / (n - 1)) * i) * Math.PI / 180;
+      bit.style.setProperty("--x", Math.round(Math.cos(ang) * 42) + "px");
+      bit.style.setProperty("--y", Math.round(Math.sin(ang) * 36 - 8) + "px");
+      btn.appendChild(bit);
+      (function (el) {
+        setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 720);
+      })(bit);
+    }
+  }
+
   if (path) {
     var steps = path.querySelectorAll(".career-step");
     steps.forEach(function (btn) {
@@ -2252,6 +2352,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
           path.classList.remove("is-paused");
           return;
         }
+        burst(btn);
         btn.classList.add("is-hot");
         btn.setAttribute("aria-pressed", "true");
         path.classList.add("is-paused");
@@ -2263,6 +2364,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
       });
     });
   }
+
   document.querySelectorAll(".play-skills .skills-col").forEach(function (col) {
     col.setAttribute("tabindex", "0");
     function toggle() {
@@ -2280,8 +2382,57 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
       }
     });
   });
+
+  var tickets = document.querySelector(".play-tickets");
+  if (tickets && !reduce) {
+    var stats = tickets.querySelectorAll(".exp-stat");
+    var lit = 0;
+    function light(i) {
+      stats.forEach(function (el) { el.classList.remove("is-lit"); });
+      if (stats[i]) stats[i].classList.add("is-lit");
+    }
+    light(0);
+    var timer = setInterval(function () {
+      lit = (lit + 1) % stats.length;
+      light(lit);
+    }, 1500);
+    tickets.addEventListener("mouseenter", function () { clearInterval(timer); timer = null; });
+    tickets.addEventListener("mouseleave", function () {
+      if (timer) return;
+      timer = setInterval(function () {
+        lit = (lit + 1) % stats.length;
+        light(lit);
+      }, 1500);
+    });
+  }
+
+  var timeline = document.querySelector(".play-timeline");
+  if (timeline && !reduce) {
+    function hop() {
+      var rect = timeline.getBoundingClientRect();
+      var p = (window.innerHeight * 0.4 - rect.top) / Math.max(rect.height, 1);
+      if (p < 0) p = 0;
+      if (p > 1) p = 1;
+      timeline.style.setProperty("--hop", String(p));
+    }
+    window.addEventListener("scroll", hop, { passive: true });
+    hop();
+  }
+
+  var photo = document.querySelector(".play-polaroid img");
+  if (photo && !reduce && window.matchMedia("(hover: hover)").matches) {
+    var frame = photo.parentNode;
+    frame.addEventListener("mousemove", function (e) {
+      var r = frame.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      photo.style.transform = "rotateY(" + (x * 8).toFixed(2) + "deg) rotateX(" + (-y * 6).toFixed(2) + "deg) scale(1.03)";
+    });
+    frame.addEventListener("mouseleave", function () { photo.style.transform = ""; });
+  }
 })();
 </script>
+
 
 
 </body>
