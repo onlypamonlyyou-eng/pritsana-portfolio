@@ -217,7 +217,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 }
 .nav__mobile-accordion summary::-webkit-details-marker{ display:none; }
 .nav__mobile-accordion summary::after{ content:"+"; font-size:20px; color:var(--pink); }
-.nav__mobile-accordion[open] summary::after{ content:"–"; }
+.nav__mobile-accordion[open] summary::after{ content:"×"; }
 .nav__mobile-accordion .sub-links{ display:flex; flex-direction:column; padding-bottom:14px; }
 .nav__mobile-accordion .sub-links a{
   font-family:var(--sans); font-size:15.5px; font-weight:300; padding:10px 0 10px 14px;
@@ -669,7 +669,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 
 .problem-list{ display:grid; grid-template-columns:1fr 1fr; gap:14px 40px; margin-top:8px; }
 .problem-list li{ font-size:15px; color:var(--ink-soft); padding-left:20px; position:relative; font-weight:300; }
-.problem-list li::before{ content:"—"; position:absolute; left:0; color:var(--sky); }
+.problem-list li::before{ content:""; display:block; width:6px; height:6px; border-radius:50%; background:var(--sky); position:absolute; left:0; top:.55em; }
 @media (max-width:700px){ .problem-list{ grid-template-columns:1fr; } }
 
 .arch{ display:flex; flex-direction:column; align-items:center; margin-top:16px; padding:36px 16px; border:1px solid var(--sky-lighter); background:#fff; border-radius:var(--radius); }
@@ -820,7 +820,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .timeline-item h3{ font-size:21px; font-weight:400; }
 .timeline-item .role{ font-size:15px; color:var(--pink); margin-top:4px; margin-bottom:16px; }
 .timeline-item ul li{ font-size:14.5px; color:var(--ink-soft); padding-left:18px; position:relative; margin-bottom:8px; font-weight:300; }
-.timeline-item ul li::before{ content:"—"; position:absolute; left:0; color:var(--gray); }
+.timeline-item ul li::before{ content:""; display:block; width:6px; height:6px; border-radius:50%; background:var(--gray); position:absolute; left:0; top:.55em; }
 @media (max-width:700px){ .timeline-item{ grid-template-columns:1fr; gap:8px; } }
 
 /* ============================================================
@@ -1664,10 +1664,10 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <details class="nav__mobile-accordion">
     <summary>เคสสตัดดี้</summary>
     <div class="sub-links">
-      <a href="work-inspire-ivf-th.html" class="cat-gold">01 — Inspire IVF</a>
-      <a href="work-luna-ai-th.html" class="cat-blue">02 — Luna AI Chat Bot</a>
-      <a href="work-inspire-wellness-th.html" class="cat-pink">03 — Inspire Wellness</a>
-      <a href="work-seo-growth-th.html" class="cat-green">04 — SEO &amp; Organic Growth</a>
+      <a href="work-inspire-ivf-th.html" class="cat-gold">01 · Inspire IVF</a>
+      <a href="work-luna-ai-th.html" class="cat-blue">02 · Luna AI Chat Bot</a>
+      <a href="work-inspire-wellness-th.html" class="cat-pink">03 · Inspire Wellness</a>
+      <a href="work-seo-growth-th.html" class="cat-green">04 · SEO &amp; Organic Growth</a>
     </div>
   </details>
   <a href="more-projects-th.html">โปรเจกต์อื่น</a>
@@ -1693,22 +1693,22 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 </div>
 <div class="section-head"><p class="eyebrow">เส้นทางอาชีพ</p><h2>ขอบเขตงานที่ขยาย ความรับผิดชอบที่มากขึ้น</h2></div>
 <div class="career-steps" style="margin-bottom:36px">
-<article class="career-step"><b>01</b><strong>Grand Esta</strong><span>2019–2022</span></article>
-<article class="career-step"><b>02</b><strong>Master Style</strong><span>2022–2024</span></article>
-<article class="career-step"><b>03</b><strong>Lelux Hospital</strong><span>2024–2025</span></article>
-<article class="career-step"><b>04</b><strong>Inspire IVF</strong><span>2025–ปัจจุบัน</span></article>
+<article class="career-step"><b>01</b><strong>Grand Esta</strong><span>2019 ถึง 2022</span></article>
+<article class="career-step"><b>02</b><strong>Master Style</strong><span>2022 ถึง 2024</span></article>
+<article class="career-step"><b>03</b><strong>Lelux Hospital</strong><span>2024 ถึง 2025</span></article>
+<article class="career-step"><b>04</b><strong>Inspire IVF</strong><span>2025 ถึงปัจจุบัน</span></article>
 </div>
 <div class="exp-layout">
-<div class="timeline"><div class="timeline-item"><div class="years">2025 — ปัจจุบัน<div style="margin-top:8px;color:var(--pink);font-size:13px">ปัจจุบัน</div></div>
-<div><h3>Website & SEO Specialist</h3><p class="role"><a href="https://inspireivfthailand.com/" target="_blank" rel="noopener">Inspire IVF ↗</a></p><p class="case__prose">ดูแลโครงสร้างเว็บและกลยุทธ์ SEO ของคลินิกรักษาผู้มีบุตรยาก พร้อมผู้ช่วย AI ของคลินิก LUNA ถูกออกแบบและส่งมอบที่นี่</p><ul class="heart-bullet" style="margin-top:12px"><li>พัฒนาแชทบอท LUNA AI</li><li>ดูแลเว็บไซต์และ SEO</li><li>ธรรมาภิบาลผลิตภัณฑ์ AI</li></ul></div></div><div class="timeline-item"><div class="years">2024 — 2025<div style="margin-top:8px;color:var(--pink);font-size:13px">Lelux</div></div>
-<div><h3>หัวหน้าฝ่ายเว็บไซต์</h3><p class="role"><a href="https://www.lelux.co.th/" target="_blank" rel="noopener">Lelux Hospital ↗</a></p><p class="case__prose">กำหนดแผนเว็บของโรงพยาบาล วาง SEO เชิงเทคนิคในโครงสร้างตั้งแต่ต้น ดูแล Core Web Vitals และใช้ GA4 กับ Search Console การปรับโครงสร้างทำให้ Lead รายเดือนโต 70% ใน 4 เดือน</p><ul class="heart-bullet" style="margin-top:12px"><li>Lead +70% ใน 4 เดือน</li><li>ดูแล Core Web Vitals</li><li>พัฒนาเว็บโดยขับเคลื่อนด้วย SEO</li></ul></div></div><div class="timeline-item"><div class="years">2022 — 2024<div style="margin-top:8px;color:var(--pink);font-size:13px">Master Style</div></div>
-<div><h3>ผู้เชี่ยวชาญ SEO</h3><p class="role">Master Style (Masterpiece Hospital)</p><p class="case__prose">ปรับหน้าแรก Landing Page หมวดหมู่ และบทความให้รองรับการค้นหา แล้ววางกลยุทธ์คีย์เวิร์ดใหม่ โอกาสติดอันดับเพิ่ม 50% Bounce Rate ลด 30%</p><ul class="heart-bullet" style="margin-top:12px"><li>กลยุทธ์คีย์เวิร์ด +50%</li><li>Bounce Rate −30%</li></ul></div></div><div class="timeline-item"><div class="years">2019 — 2022<div style="margin-top:8px;color:var(--pink);font-size:13px">Grand Esta</div></div>
+<div class="timeline"><div class="timeline-item"><div class="years">2025 ถึงปัจจุบัน<div style="margin-top:8px;color:var(--pink);font-size:13px">ปัจจุบัน</div></div>
+<div><h3>Website & SEO Specialist</h3><p class="role"><a href="https://inspireivfthailand.com/" target="_blank" rel="noopener">Inspire IVF ↗</a></p><p class="case__prose">ดูแลโครงสร้างเว็บและกลยุทธ์ SEO ของคลินิกรักษาผู้มีบุตรยาก พร้อมผู้ช่วย AI ของคลินิก LUNA ถูกออกแบบและส่งมอบที่นี่</p><ul class="heart-bullet" style="margin-top:12px"><li>พัฒนาแชทบอท LUNA AI</li><li>ดูแลเว็บไซต์และ SEO</li><li>ธรรมาภิบาลผลิตภัณฑ์ AI</li></ul></div></div><div class="timeline-item"><div class="years">2024 ถึง 2025<div style="margin-top:8px;color:var(--pink);font-size:13px">Lelux</div></div>
+<div><h3>หัวหน้าฝ่ายเว็บไซต์</h3><p class="role"><a href="https://www.lelux.co.th/" target="_blank" rel="noopener">Lelux Hospital ↗</a></p><p class="case__prose">กำหนดแผนเว็บของโรงพยาบาล วาง SEO เชิงเทคนิคในโครงสร้างตั้งแต่ต้น ดูแล Core Web Vitals และใช้ GA4 กับ Search Console การปรับโครงสร้างทำให้ Lead รายเดือนโต 70% ใน 4 เดือน</p><ul class="heart-bullet" style="margin-top:12px"><li>Lead +70% ใน 4 เดือน</li><li>ดูแล Core Web Vitals</li><li>พัฒนาเว็บโดยขับเคลื่อนด้วย SEO</li></ul></div></div><div class="timeline-item"><div class="years">2022 ถึง 2024<div style="margin-top:8px;color:var(--pink);font-size:13px">Master Style</div></div>
+<div><h3>ผู้เชี่ยวชาญ SEO</h3><p class="role">Master Style (Masterpiece Hospital)</p><p class="case__prose">ปรับหน้าแรก Landing Page หมวดหมู่ และบทความให้รองรับการค้นหา แล้ววางกลยุทธ์คีย์เวิร์ดใหม่ โอกาสติดอันดับเพิ่ม 50% Bounce Rate ลด 30%</p><ul class="heart-bullet" style="margin-top:12px"><li>กลยุทธ์คีย์เวิร์ด +50%</li><li>Bounce Rate −30%</li></ul></div></div><div class="timeline-item"><div class="years">2019 ถึง 2022<div style="margin-top:8px;color:var(--pink);font-size:13px">Grand Esta</div></div>
 <div><h3>การตลาดดิจิทัล</h3><p class="role">Grand Esta Clinic</p><p class="case__prose">ดูแลการตลาดออนไลน์ทั้งหมด ทั้ง SEO และโซเชียล ผลิตครีเอทีฟโฆษณาและคอนเทนต์แคมเปญ และอ่านข้อมูลโฆษณาเพื่อปรับต่อ</p><ul class="heart-bullet" style="margin-top:12px"><li>Instagram +20%</li><li>การมีส่วนร่วมบน Facebook +35%</li></ul></div></div></div>
 <figure class="portrait" style="position:sticky;top:110px"><img src="assets/restored/pritsana-keram-44f064532e.jpg" alt="Pritsana Keram"></figure>
 </div>
 <blockquote class="callout" style="margin-top:28px">“เทคโนโลยีไม่ใช่แค่เครื่องมือ แต่เป็นสะพานเชื่อมระหว่างผู้คนกับความเป็นไปได้ที่ดีกว่า”</blockquote>
 <div class="section-head" style="margin-top:56px"><p class="eyebrow">ทักษะครบวงจรของนักพัฒนาผลิตภัณฑ์ดิจิทัล</p><h2>สิ่งที่ฉันมอบให้ทีม</h2></div>
-<div class="skills-grid"><div class="skills-col"><h4>AI และผลิตภัณฑ์<span class="count">7</span></h4><ul class="heart-bullet"><li>Claude API</li><li>ออกแบบแชทบอท AI</li><li>Tool Calling</li><li>การส่งต่อระหว่างมนุษย์กับ AI</li><li>กฎความปลอดภัยของ AI</li><li>Claude Code</li><li>การคิดเชิงผลิตภัณฑ์</li></ul></div><div class="skills-col"><h4>โครงสร้างและประสิทธิภาพเว็บไซต์<span class="count">6</span></h4><ul class="heart-bullet"><li>โครงสร้างข้อมูล</li><li>Site Mapping</li><li>โครงสร้าง URL</li><li>Core Web Vitals</li><li>PageSpeed Insights</li><li>ปรับแต่งรูปภาพ</li></ul></div><div class="skills-col"><h4>SEO เชิงเทคนิคและบนหน้าเว็บ<span class="count">6</span></h4><ul class="heart-bullet"><li>Meta Tags</li><li>ลำดับชั้นหัวข้อ H1–H6</li><li>Internal Linking</li><li>Schema Markup</li><li>XML Sitemaps</li><li>Robots.txt</li></ul></div><div class="skills-col"><h4>การวิเคราะห์และการค้นคว้าข้อมูล<span class="count">6</span></h4><ul class="heart-bullet"><li>Google Analytics 4</li><li>Search Console</li><li>Ahrefs</li><li>Ubersuggest</li><li>Moz Bar</li><li>Keyword Planner</li></ul></div><div class="skills-col"><h4>แพลตฟอร์มเว็บไซต์<span class="count">4</span></h4><ul class="heart-bullet"><li>ผู้เชี่ยวชาญ WordPress</li><li>Elementor</li><li>Gutenberg</li><li>Page Builders</li></ul></div><div class="skills-col"><h4>เนื้อหาและกลยุทธ์<span class="count">3</span></h4><ul class="heart-bullet"><li>วิเคราะห์ความตั้งใจการค้นหา</li><li>จัดโครงสร้าง Featured Snippet</li><li>กลยุทธ์เนื้อหา</li></ul></div><div class="skills-col"><h4>Off-page<span class="count">3</span></h4><ul class="heart-bullet"><li>วิเคราะห์ Backlink</li><li>เปรียบเทียบคู่แข่ง</li><li>Domain Authority</li></ul></div></div>
+<div class="skills-grid"><div class="skills-col"><h4>AI และผลิตภัณฑ์<span class="count">7</span></h4><ul class="heart-bullet"><li>Claude API</li><li>ออกแบบแชทบอท AI</li><li>Tool Calling</li><li>การส่งต่อระหว่างมนุษย์กับ AI</li><li>กฎความปลอดภัยของ AI</li><li>Claude Code</li><li>การคิดเชิงผลิตภัณฑ์</li></ul></div><div class="skills-col"><h4>โครงสร้างและประสิทธิภาพเว็บไซต์<span class="count">6</span></h4><ul class="heart-bullet"><li>โครงสร้างข้อมูล</li><li>Site Mapping</li><li>โครงสร้าง URL</li><li>Core Web Vitals</li><li>PageSpeed Insights</li><li>ปรับแต่งรูปภาพ</li></ul></div><div class="skills-col"><h4>SEO เชิงเทคนิคและบนหน้าเว็บ<span class="count">6</span></h4><ul class="heart-bullet"><li>Meta Tags</li><li>ลำดับชั้นหัวข้อ H1 to H6</li><li>Internal Linking</li><li>Schema Markup</li><li>XML Sitemaps</li><li>Robots.txt</li></ul></div><div class="skills-col"><h4>การวิเคราะห์และการค้นคว้าข้อมูล<span class="count">6</span></h4><ul class="heart-bullet"><li>Google Analytics 4</li><li>Search Console</li><li>Ahrefs</li><li>Ubersuggest</li><li>Moz Bar</li><li>Keyword Planner</li></ul></div><div class="skills-col"><h4>แพลตฟอร์มเว็บไซต์<span class="count">4</span></h4><ul class="heart-bullet"><li>ผู้เชี่ยวชาญ WordPress</li><li>Elementor</li><li>Gutenberg</li><li>Page Builders</li></ul></div><div class="skills-col"><h4>เนื้อหาและกลยุทธ์<span class="count">3</span></h4><ul class="heart-bullet"><li>วิเคราะห์ความตั้งใจการค้นหา</li><li>จัดโครงสร้าง Featured Snippet</li><li>กลยุทธ์เนื้อหา</li></ul></div><div class="skills-col"><h4>Off-page<span class="count">3</span></h4><ul class="heart-bullet"><li>วิเคราะห์ Backlink</li><li>เปรียบเทียบคู่แข่ง</li><li>Domain Authority</li></ul></div></div>
 </div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="work-seo-growth-th.html"><span class="dir">SEO Growth</span><span class="title">SEO Growth</span></a><a class="case-nav__link case-nav__link--next" href="more-projects-th.html"><span class="dir">ผลงานอื่น</span><span class="title">โปรเจกต์อื่น</span></a></div></div></section>
 <footer class="ftr">
   <div class="ftr__wave" aria-hidden="true">
@@ -1800,7 +1800,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <div class="ftr__mark" aria-hidden="true"><span style="--i:0">P</span><span style="--i:1">r</span><span style="--i:2">i</span><span style="--i:3">t</span><span style="--i:4">s</span><span style="--i:5">a</span><span style="--i:6">n</span><span style="--i:7">a</span><span class="ftr__markheart" style="--i:8"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z"/></svg></span></div>
 
   <div class="wrap ftr__bar">
-    <p>© <span id="year"></span> Pritsana Keram — เว็บ · SEO · ผลิตภัณฑ์ดิจิทัล · AI</p>
+    <p>© <span id="year"></span> Pritsana Keram · เว็บ · SEO · ผลิตภัณฑ์ดิจิทัล · AI</p>
     <ul>
       <li><a href="index-th.html#contact">ติดต่อ</a></li>
       <li><a href="about-th.html">เกี่ยวกับ</a></li>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUNA AI — Case Study</title>
-<meta name="description" content="Designing an AI assistant that knows when to answer — and when to hand off to a human.">
+<title>LUNA AI · Case Study</title>
+<meta name="description" content="Designing an AI assistant that knows when to answer, and when to hand off to a human.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -217,7 +217,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 }
 .nav__mobile-accordion summary::-webkit-details-marker{ display:none; }
 .nav__mobile-accordion summary::after{ content:"+"; font-size:20px; color:var(--pink); }
-.nav__mobile-accordion[open] summary::after{ content:"–"; }
+.nav__mobile-accordion[open] summary::after{ content:"×"; }
 .nav__mobile-accordion .sub-links{ display:flex; flex-direction:column; padding-bottom:14px; }
 .nav__mobile-accordion .sub-links a{
   font-family:var(--sans); font-size:15.5px; font-weight:300; padding:10px 0 10px 14px;
@@ -669,7 +669,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 
 .problem-list{ display:grid; grid-template-columns:1fr 1fr; gap:14px 40px; margin-top:8px; }
 .problem-list li{ font-size:15px; color:var(--ink-soft); padding-left:20px; position:relative; font-weight:300; }
-.problem-list li::before{ content:"—"; position:absolute; left:0; color:var(--sky); }
+.problem-list li::before{ content:""; display:block; width:6px; height:6px; border-radius:50%; background:var(--sky); position:absolute; left:0; top:.55em; }
 @media (max-width:700px){ .problem-list{ grid-template-columns:1fr; } }
 
 .arch{ display:flex; flex-direction:column; align-items:center; margin-top:16px; padding:36px 16px; border:1px solid var(--sky-lighter); background:#fff; border-radius:var(--radius); }
@@ -820,7 +820,7 @@ h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; color:var(--in
 .timeline-item h3{ font-size:21px; font-weight:400; }
 .timeline-item .role{ font-size:15px; color:var(--pink); margin-top:4px; margin-bottom:16px; }
 .timeline-item ul li{ font-size:14.5px; color:var(--ink-soft); padding-left:18px; position:relative; margin-bottom:8px; font-weight:300; }
-.timeline-item ul li::before{ content:"—"; position:absolute; left:0; color:var(--gray); }
+.timeline-item ul li::before{ content:""; display:block; width:6px; height:6px; border-radius:50%; background:var(--gray); position:absolute; left:0; top:.55em; }
 @media (max-width:700px){ .timeline-item{ grid-template-columns:1fr; gap:8px; } }
 
 /* ============================================================
@@ -1664,10 +1664,10 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <details class="nav__mobile-accordion">
     <summary>Case Studies</summary>
     <div class="sub-links">
-      <a href="work-inspire-ivf.html" class="cat-gold">01 — Inspire IVF</a>
-      <a href="work-luna-ai.html" class="cat-blue">02 — Luna AI Chat Bot</a>
-      <a href="work-inspire-wellness.html" class="cat-pink">03 — Inspire Wellness</a>
-      <a href="work-seo-growth.html" class="cat-green">04 — SEO &amp; Organic Growth</a>
+      <a href="work-inspire-ivf.html" class="cat-gold">01 · Inspire IVF</a>
+      <a href="work-luna-ai.html" class="cat-blue">02 · Luna AI Chat Bot</a>
+      <a href="work-inspire-wellness.html" class="cat-pink">03 · Inspire Wellness</a>
+      <a href="work-seo-growth.html" class="cat-green">04 · SEO &amp; Organic Growth</a>
     </div>
   </details>
   <a href="more-projects.html">More Projects</a>
@@ -1716,8 +1716,8 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:8px">Same question, before and after the response rules.</h2>
 <p class="case__prose">From the response-rules training document written for the AI.</p>
 <div class="quote-grid" style="margin-top:18px">
-<article class="quote-card quote-card--before"><h5>Before</h5><p>“For ICSI treatment preparation, patients should abstain from sexual intercourse and alcohol for at least 3–5 days before egg retrieval. The starting cost of the ICSI program is approximately ฿250,000, depending on the individual treatment plan.”</p></article>
-<article class="quote-card quote-card--after"><h5>After · rewritten rule</h5><p>“Please avoid intercourse and alcohol for about 3–5 days before egg retrieval, and get plenty of rest. For pricing, I'll connect you with our team so they can put together a plan made for you. What day works for a callback?”</p></article>
+<article class="quote-card quote-card--before"><h5>Before</h5><p>“For ICSI treatment preparation, patients should abstain from sexual intercourse and alcohol for at least 3 to 5 days before egg retrieval. The starting cost of the ICSI program is approximately ฿250,000, depending on the individual treatment plan.”</p></article>
+<article class="quote-card quote-card--after"><h5>After · rewritten rule</h5><p>“Please avoid intercourse and alcohol for about 3 to 5 days before egg retrieval, and get plenty of rest. For pricing, I'll connect you with our team so they can put together a plan made for you. What day works for a callback?”</p></article>
 </div></div>
 <div class="two-col case__block">
 <div><div class="case__block-head"><span class="case__block-title">How one message moves</span></div>
@@ -1737,7 +1737,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 </ul></div>
 <div class="case__block"><div class="case__block-head"><span class="case__block-title">Governance</span></div>
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:8px">Five of the ten questions written before leadership review.</h2>
-<article class="gov-item"><h3>What data can (and can't) the AI use?</h3><p>Only approved clinic posts and reviewed FAQ files. It cannot use general medical knowledge to diagnose an individual, or quote a price that is not in the approved knowledge base.</p></article><article class="gov-item"><h3>What happens when it doesn't know?</h3><p>A fixed fallback script hands the conversation to the admin team immediately. It is not allowed to guess.</p></article><article class="gov-item"><h3>When does it hand off to a human?</h3><p>On a red flag, a personal symptom or financial question, whenever a patient asks for a person, or whenever the AI cannot find the answer.</p></article><article class="gov-item"><h3>Why not a "confidence score" cutoff?</h3><p>Claude's API does not expose a real confidence number, so an "below 85%" rule cannot actually be built. The system is grounded in the approved knowledge base instead.</p></article><article class="gov-item"><h3>Who checks the answers, and how often?</h3><p>5–10% of conversations are randomly sampled and audited weekly by senior nursing or admin staff.</p></article></div>
+<article class="gov-item"><h3>What data can (and can't) the AI use?</h3><p>Only approved clinic posts and reviewed FAQ files. It cannot use general medical knowledge to diagnose an individual, or quote a price that is not in the approved knowledge base.</p></article><article class="gov-item"><h3>What happens when it doesn't know?</h3><p>A fixed fallback script hands the conversation to the admin team immediately. It is not allowed to guess.</p></article><article class="gov-item"><h3>When does it hand off to a human?</h3><p>On a red flag, a personal symptom or financial question, whenever a patient asks for a person, or whenever the AI cannot find the answer.</p></article><article class="gov-item"><h3>Why not a "confidence score" cutoff?</h3><p>Claude's API does not expose a real confidence number, so an "below 85%" rule cannot actually be built. The system is grounded in the approved knowledge base instead.</p></article><article class="gov-item"><h3>Who checks the answers, and how often?</h3><p>5 to 10% of conversations are randomly sampled and audited weekly by senior nursing or admin staff.</p></article></div>
 <div class="case__block"><div class="case__block-head"><span class="case__block-title">Next phase · proposed</span></div>
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:8px">Scoping the safety-critical expansion.</h2>
 <p class="case__prose">Beyond the live product, a governance and deployment plan extends LUNA toward a medically safety-critical assistant.</p>
@@ -1833,7 +1833,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <div class="ftr__mark" aria-hidden="true"><span style="--i:0">P</span><span style="--i:1">r</span><span style="--i:2">i</span><span style="--i:3">t</span><span style="--i:4">s</span><span style="--i:5">a</span><span style="--i:6">n</span><span style="--i:7">a</span><span class="ftr__markheart" style="--i:8"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z"/></svg></span></div>
 
   <div class="wrap ftr__bar">
-    <p>© <span id="year"></span> Pritsana Keram — Web · SEO · Digital Product · AI</p>
+    <p>© <span id="year"></span> Pritsana Keram · Web · SEO · Digital Product · AI</p>
     <ul>
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="about.html">About</a></li>
