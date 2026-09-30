@@ -1613,6 +1613,221 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 }
 </style>
 
+
+<style id="luna-play">
+.luna-hero .case__title{
+  font-size:clamp(52px,7vw,84px); line-height:.95; letter-spacing:-.03em; font-weight:300;
+  background-image:linear-gradient(100deg,#3f3f3f 0%,#3f3f3f 28%,#ff4573 46%,#6ba9d6 62%,#3f3f3f 82%);
+  background-size:220% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  animation:heroShimmer 9s linear infinite;
+}
+.luna-hero .luna-numbers{ gap:14px; }
+.luna-hero .luna-num{
+  border-radius:26px; padding:22px 20px 18px; overflow:hidden;
+  border:1px solid #ffd0dc;
+  background:linear-gradient(165deg,#fff 20%,#fff4f7 100%);
+  box-shadow:0 18px 30px -24px rgba(255,69,115,.55);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.luna-hero .luna-num:nth-child(even){
+  border-color:#cfe6f6;
+  background:linear-gradient(165deg,#fff 20%,#f3f9fd 100%);
+  box-shadow:0 18px 30px -24px rgba(107,169,214,.55);
+}
+.luna-hero .luna-num:nth-child(odd) strong{ color:var(--pink); }
+.luna-hero .luna-num::before{
+  content:""; position:absolute; top:14px; right:14px; width:16px; height:16px;
+  background:var(--pink); -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:logoHeart 2.4s ease-in-out infinite;
+}
+.luna-hero .luna-num:nth-child(even)::before{ background:var(--sky); animation-delay:-1s; }
+.luna-hero .luna-num:hover{ transform:translateY(-6px) rotate(-.4deg); }
+.luna-phone{
+  position:relative; overflow:hidden; border-radius:32px; padding:0 0 16px;
+  background:linear-gradient(180deg,#fff 0%,#f8fbfe 100%);
+  border:1.5px solid #d7ebf8;
+  box-shadow:0 28px 48px -28px rgba(107,169,214,.65), 0 0 0 8px rgba(255,240,244,.65);
+}
+.luna-phone__bar{
+  display:flex; align-items:center; gap:6px; padding:12px 16px 10px;
+  background:linear-gradient(90deg,#fff0f4,#eef7fd);
+}
+.luna-phone__bar > span{ width:8px; height:8px; border-radius:50%; background:#ffb7cb; display:block; }
+.luna-phone__bar > span:nth-child(2){ background:#ffd3a8; }
+.luna-phone__bar > span:nth-child(3){ background:#9dcef0; }
+.luna-phone .luna-chat__url{ margin:0 0 0 8px; font-size:12px; color:var(--ink-soft); }
+.luna-phone__thread{ padding:6px 14px 0; min-height:210px; }
+.luna-phone .bubble{
+  opacity:0; animation:lunaPop .55s ease both;
+  box-shadow:0 10px 18px -16px rgba(74,74,74,.45);
+}
+.luna-phone .bubble:nth-child(1){ animation-delay:.2s; }
+.luna-phone .bubble:nth-child(2){ animation-delay:.95s; }
+.luna-phone .bubble:nth-child(3){ animation-delay:1.7s; }
+.luna-phone .bubble:nth-child(4){ animation-delay:2.45s; }
+@keyframes lunaPop{
+  from{ opacity:0; transform:translateY(12px) scale(.96); }
+  to{ opacity:1; transform:none; }
+}
+.luna-phone .luna-chat__input{
+  margin:8px 14px 0; display:flex; align-items:center; gap:10px;
+  background:#fff; border:1.5px solid #d7ebf8; color:var(--gray);
+}
+.luna-phone .luna-chat__input::after{
+  content:""; width:16px; height:16px; margin-left:auto; flex:none;
+  background:var(--pink); -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.luna-handoff{
+  margin:12px 16px 0; font-size:13px; color:var(--sky); font-weight:300;
+  display:flex; align-items:center; gap:8px;
+}
+.luna-handoff::before{
+  content:""; width:14px; height:14px; flex:none; background:var(--pink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:logoHeart 1.7s ease-in-out infinite;
+}
+.luna-move{
+  background:linear-gradient(180deg,rgba(255,245,248,.85),rgba(242,249,253,.9));
+  border:1px solid #ffe3ec; border-radius:32px; padding:26px 22px 22px;
+}
+.luna-path{
+  list-style:none; margin:10px 0 0; padding:4px 0 4px 0; position:relative;
+  display:flex; flex-direction:column; gap:12px; counter-reset:lunaStep;
+}
+.luna-path::before{
+  content:""; position:absolute; left:18px; top:22px; bottom:22px; width:2px;
+  background:repeating-linear-gradient(#ffb7cb,#ffb7cb 5px,transparent 5px,transparent 11px);
+}
+.luna-path::after{
+  content:""; position:absolute; left:11px; width:16px; height:16px; z-index:2;
+  background:var(--pink); -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:lunaTravel 7s ease-in-out infinite;
+}
+@keyframes lunaTravel{
+  0%,12%{ top:10px; }
+  22%,34%{ top:22%; }
+  44%,56%{ top:44%; }
+  66%,78%{ top:66%; }
+  88%,100%{ top:84%; }
+}
+.luna-path li{
+  position:relative; margin:0; min-height:52px; display:flex; align-items:center;
+  padding-left:48px; counter-increment:lunaStep;
+}
+.luna-path li::before{
+  content:counter(lunaStep); position:absolute; left:6px; z-index:1;
+  width:26px; height:26px; border-radius:50%; display:grid; place-items:center;
+  background:#fff; border:1.5px solid #ff8ea6; color:var(--pink);
+  font-size:12px; font-weight:400;
+}
+.luna-path li:nth-child(even)::before{ border-color:#7eb6e2; color:var(--sky); }
+.luna-path li span{
+  display:inline-block; background:#fff; border:1px solid #ffd0dc; border-radius:18px;
+  padding:12px 16px; font-size:14.5px; color:var(--ink); font-weight:300;
+  box-shadow:0 12px 20px -16px rgba(255,69,115,.55);
+  animation:lunaWarm 7s ease-in-out infinite;
+}
+.luna-path li:nth-child(even) span{ background:#f7fbff; border-color:#d4eaf8; }
+.luna-path li:nth-child(1) span{ animation-delay:0s; }
+.luna-path li:nth-child(2) span{ animation-delay:1.4s; }
+.luna-path li:nth-child(3) span{ animation-delay:2.8s; }
+.luna-path li:nth-child(4) span{ animation-delay:4.2s; }
+.luna-path li:nth-child(5) span{ animation-delay:5.6s; }
+@keyframes lunaWarm{
+  0%,14%{ transform:translateX(6px); border-color:#ff4573; box-shadow:0 14px 22px -14px rgba(255,69,115,.5); }
+  24%,100%{ transform:none; }
+}
+.luna-states{ position:relative; }
+.luna-states .step-pill{
+  font:inherit; color:var(--ink-soft); cursor:pointer; appearance:none;
+  background:#fff; border:1px solid #ffd0dc;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  animation:lunaState 8.4s ease-in-out infinite;
+}
+.luna-states .step-pill:nth-child(odd){ animation-name:lunaState; }
+.luna-states .step-pill:nth-child(even){ border-color:#cfe6f6; background:#f7fbff; }
+.luna-states .step-pill:nth-child(1){ animation-delay:0s; }
+.luna-states .step-pill:nth-child(2){ animation-delay:1.2s; }
+.luna-states .step-pill:nth-child(3){ animation-delay:2.4s; }
+.luna-states .step-pill:nth-child(4){ animation-delay:3.6s; }
+.luna-states .step-pill:nth-child(5){ animation-delay:4.8s; }
+.luna-states .step-pill:nth-child(6){ animation-delay:6s; }
+.luna-states .step-pill:nth-child(7){ animation-delay:7.2s; }
+@keyframes lunaState{
+  0%,10%{ transform:translateY(-5px); background:#fff0f4; border-color:#ff8ea6; box-shadow:0 14px 20px -14px rgba(255,69,115,.65); }
+  16%,100%{ transform:none; box-shadow:none; }
+}
+.luna-states.is-paused .step-pill{ animation:none; }
+.luna-states .step-pill.is-hot,
+.luna-states .step-pill:hover{
+  transform:translateY(-4px); background:#fff0f4; border-color:#ff8ea6;
+  box-shadow:0 14px 20px -14px rgba(255,69,115,.6);
+}
+.luna-states .step-pill:focus-visible{ outline:2px solid var(--pink); outline-offset:2px; }
+.luna-gov .gov-item{
+  margin-top:12px; padding:18px 18px 16px; border:1px solid #ffd6e2; border-radius:24px;
+  background:linear-gradient(180deg,#fff,#fff7f9);
+  box-shadow:0 16px 28px -24px rgba(255,69,115,.5);
+  counter-increment:lunaQ; transition:transform .3s ease;
+}
+.luna-gov{ counter-reset:lunaQ; }
+.luna-gov .gov-item:nth-child(even){
+  background:linear-gradient(180deg,#fff,#f4faff); border-color:#d4eaf8;
+}
+.luna-gov .gov-item:hover{ transform:translateY(-4px); }
+.luna-gov .gov-item h3{
+  display:flex; align-items:flex-start; gap:12px; font-size:16.5px;
+}
+.luna-gov .gov-item h3::before{
+  content:counter(lunaQ, decimal-leading-zero); flex:none;
+  width:36px; height:36px; border-radius:50%; display:grid; place-items:center;
+  background:#fff0f4; color:var(--pink); font-size:13px; font-weight:400;
+}
+.luna-gov .gov-item:nth-child(even) h3::before{ background:#e7f4fc; color:var(--sky); }
+.luna-gov .gov-item p{ margin-top:8px; padding-left:48px; }
+.luna-next .sys-grid{ grid-template-columns:1fr 1fr; gap:16px; }
+.luna-next .sys-card{
+  --tilt:-1.1deg; position:relative; overflow:hidden; border-radius:28px;
+  padding:28px 20px 20px; border:1px solid #ffd0dc;
+  background:linear-gradient(180deg,#fff,#fff5f8);
+  box-shadow:0 18px 32px -24px rgba(255,69,115,.55);
+  animation:lunaBob 5.6s ease-in-out infinite;
+}
+.luna-next .sys-card:nth-child(2){ --tilt:1deg; animation-delay:-1.3s; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f3f9fd); }
+.luna-next .sys-card:nth-child(3){ --tilt:.7deg; animation-delay:-2.4s; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f3f9fd); }
+.luna-next .sys-card:nth-child(4){ --tilt:-.8deg; animation-delay:-3.2s; }
+@keyframes lunaBob{
+  0%,100%{ transform:translateY(0) rotate(var(--tilt)); }
+  50%{ transform:translateY(-7px) rotate(var(--tilt)); }
+}
+.luna-next .sys-card:hover{ animation-play-state:paused; transform:translateY(-8px) rotate(0deg); }
+.luna-next .sys-card::before{
+  content:""; position:absolute; top:0; left:22px; width:52px; height:13px;
+  background:rgba(255,166,166,.55); border-radius:0 0 5px 5px;
+}
+.luna-next .sys-card:nth-child(even)::before{ left:auto; right:22px; background:rgba(158,206,240,.7); }
+.luna-next .sys-card .num{
+  display:inline-block; margin-top:6px; padding:3px 10px; border-radius:999px;
+  background:#fff0f4; color:var(--pink); font-style:normal; font-size:12px; letter-spacing:.04em;
+}
+.luna-next .sys-card:nth-child(even) .num{ background:#e7f4fc; color:var(--sky); }
+@media (max-width:760px){
+  .luna-move{ padding:20px 14px 16px; }
+  .luna-next .sys-grid{ grid-template-columns:1fr; }
+  .luna-gov .gov-item p{ padding-left:0; }
+  .luna-hero .case__title{ font-size:clamp(44px,14vw,64px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .luna-hero .case__title,.luna-hero .luna-num::before,.luna-phone .bubble,.luna-path::after,
+  .luna-path li span,.luna-states .step-pill,.luna-next .sys-card,.luna-handoff::before{
+    animation:none !important;
+  }
+  .luna-phone .bubble{ opacity:1; }
+}
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1680,7 +1895,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <section class="luna" id="luna-ai"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
 <div class="wrap" style="position:relative;z-index:1">
 <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">LUNA AI</span></p>
-<div class="case__top" style="margin-top:28px">
+<div class="case__top luna-hero" style="margin-top:28px">
 <div>
 <p class="case__kicker">Case study · 02</p>
 <h1 class="case__title">LUNA AI</h1>
@@ -1693,11 +1908,13 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 </div>
 <p class="case__role-value" style="margin-top:18px">Product Owner / Project Lead · Claude API · Node.js · Railway</p>
 </div>
-<div class="luna-chat">
-<div class="luna-chat__url">inspireivfthailand.com</div>
+<div class="luna-chat luna-phone" data-luna-chat>
+<div class="luna-phone__bar"><span></span><span></span><span></span><div class="luna-chat__url">inspireivfthailand.com</div></div>
+<div class="luna-phone__thread">
 <div class="bubble bubble--bot">Hi, I'm LUNA. Ask me anything about our IVF programs.</div><div class="bubble bubble--user">What's included in the ICSI program?</div><div class="bubble bubble--bot">It covers egg retrieval, fertilization and embryo transfer. Want the price breakdown?</div><div class="bubble bubble--user">Yes, and can someone call me today?</div>
+</div>
 <div class="luna-chat__input">Type a message…</div>
-<p style="margin:12px 0 0;font-size:13px;color:var(--sky)">Handed off to staff, on cue · 100%</p>
+<p class="luna-handoff">Handed off to staff, on cue · 100%</p>
 </div>
 </div>
 <div class="case__block"><div class="case__block-head"><span class="case__block-title">The problem</span></div>
@@ -1719,12 +1936,12 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <article class="quote-card quote-card--before"><h5>Before</h5><p>“For ICSI treatment preparation, patients should abstain from sexual intercourse and alcohol for at least 3 to 5 days before egg retrieval. The starting cost of the ICSI program is approximately ฿250,000, depending on the individual treatment plan.”</p></article>
 <article class="quote-card quote-card--after"><h5>After · rewritten rule</h5><p>“Please avoid intercourse and alcohol for about 3 to 5 days before egg retrieval, and get plenty of rest. For pricing, I'll connect you with our team so they can put together a plan made for you. What day works for a callback?”</p></article>
 </div></div>
-<div class="two-col case__block">
+<div class="two-col case__block luna-move">
 <div><div class="case__block-head"><span class="case__block-title">How one message moves</span></div>
-<div class="flow"><div class="flow__step">Patient messages in</div><div class="flow__arrow">↓</div><div class="flow__step">Intent checked</div><div class="flow__arrow">↓</div><div class="flow__step">Needs a human?</div><div class="flow__arrow">↓</div><div class="flow__step">Answer or handoff</div><div class="flow__arrow">↓</div><div class="flow__step">Logged to CRM</div></div></div>
+<ol class="luna-path"><li><span>Patient messages in</span></li><li><span>Intent checked</span></li><li><span>Needs a human?</span></li><li><span>Answer or handoff</span></li><li><span>Logged to CRM</span></li></ol></div>
 <div><div class="case__block-head"><span class="case__block-title">Seven tracked states</span></div>
 <p class="case__prose">The moment staff pick up a case, AI stops responding. That rule prevents the AI and a person from answering the same patient at once.</p>
-<div class="step-row" style="margin-top:16px"><span class="step-pill"><b>1</b>New</span> <span class="step-pill"><b>2</b>AI responding</span> <span class="step-pill"><b>3</b>Waiting for staff</span> <span class="step-pill"><b>4</b>Staff handling</span> <span class="step-pill"><b>5</b>Appointment success</span> <span class="step-pill"><b>6</b>Follow-up</span> <span class="step-pill"><b>7</b>Closed</span></div></div>
+<div class="step-row luna-states" data-states style="margin-top:16px"><button type="button" class="step-pill" aria-pressed="false"><b>1</b>New</button> <button type="button" class="step-pill" aria-pressed="false"><b>2</b>AI responding</button> <button type="button" class="step-pill" aria-pressed="false"><b>3</b>Waiting for staff</button> <button type="button" class="step-pill" aria-pressed="false"><b>4</b>Staff handling</button> <button type="button" class="step-pill" aria-pressed="false"><b>5</b>Appointment success</button> <button type="button" class="step-pill" aria-pressed="false"><b>6</b>Follow-up</button> <button type="button" class="step-pill" aria-pressed="false"><b>7</b>Closed</button></div></div>
 </div>
 <div class="case__block"><div class="case__block-head"><span class="case__block-title">How I worked</span></div>
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:8px">AI-assisted, human-verified.</h2>
@@ -1735,10 +1952,10 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <li>Database backups before every schema change</li>
 <li>Feedback loop with clinic staff and leadership</li>
 </ul></div>
-<div class="case__block"><div class="case__block-head"><span class="case__block-title">Governance</span></div>
+<div class="case__block luna-gov"><div class="case__block-head"><span class="case__block-title">Governance</span></div>
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:8px">Five of the ten questions written before leadership review.</h2>
 <article class="gov-item"><h3>What data can (and can't) the AI use?</h3><p>Only approved clinic posts and reviewed FAQ files. It cannot use general medical knowledge to diagnose an individual, or quote a price that is not in the approved knowledge base.</p></article><article class="gov-item"><h3>What happens when it doesn't know?</h3><p>A fixed fallback script hands the conversation to the admin team immediately. It is not allowed to guess.</p></article><article class="gov-item"><h3>When does it hand off to a human?</h3><p>On a red flag, a personal symptom or financial question, whenever a patient asks for a person, or whenever the AI cannot find the answer.</p></article><article class="gov-item"><h3>Why not a "confidence score" cutoff?</h3><p>Claude's API does not expose a real confidence number, so an "below 85%" rule cannot actually be built. The system is grounded in the approved knowledge base instead.</p></article><article class="gov-item"><h3>Who checks the answers, and how often?</h3><p>5 to 10% of conversations are randomly sampled and audited weekly by senior nursing or admin staff.</p></article></div>
-<div class="case__block"><div class="case__block-head"><span class="case__block-title">Next phase · proposed</span></div>
+<div class="case__block luna-next"><div class="case__block-head"><span class="case__block-title">Next phase · proposed</span></div>
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:8px">Scoping the safety-critical expansion.</h2>
 <p class="case__prose">Beyond the live product, a governance and deployment plan extends LUNA toward a medically safety-critical assistant.</p>
 <div class="sys-grid" style="margin-top:18px"><article class="sys-card"><div class="num">Proposed</div><h3>Red Flag Protocol</h3><p>An emergency layer that runs before every other rule: phrases like heavy bleeding or severe pain route straight to on-call nursing by SMS.</p></article><article class="sys-card"><div class="num">Proposed</div><h3>Governance Framework</h3><p>Ten answered questions on data use, deferral, knowledge-base ownership and audit, written for clinical and legal review.</p></article><article class="sys-card"><div class="num">Proposed</div><h3>PDPA Consent Flow</h3><p>A consent banner, explicit opt-in before storing contact details, and a retention policy for sensitive fertility data.</p></article><article class="sys-card"><div class="num">Proposed</div><h3>Deploy & ROI Plan</h3><p>A Railway deployment guide, a cost model from 300 to 10,000 chats a month, and a measurement plan against baseline response times.</p></article></div></div>
@@ -1993,5 +2210,44 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 })();
 
 </script>
+
+<script id="luna-play-js">
+(function(){
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var states = document.querySelector("[data-states]");
+  if (states) {
+    states.addEventListener("click", function(e){
+      var pill = e.target.closest(".step-pill");
+      if (!pill) return;
+      var pinned = pill.classList.contains("is-hot") && states.classList.contains("is-paused");
+      states.querySelectorAll(".step-pill").forEach(function(p){
+        p.classList.remove("is-hot");
+        p.setAttribute("aria-pressed", "false");
+      });
+      if (pinned) {
+        states.classList.remove("is-paused");
+        return;
+      }
+      states.classList.add("is-paused");
+      pill.classList.add("is-hot");
+      pill.setAttribute("aria-pressed", "true");
+    });
+  }
+  var chat = document.querySelector("[data-luna-chat]");
+  if (chat && !reduce) {
+    var bubbles = chat.querySelectorAll(".bubble");
+    function replay(){
+      bubbles.forEach(function(b){ b.style.animation = "none"; });
+      void chat.offsetWidth;
+      bubbles.forEach(function(b, i){
+        b.style.animation = "lunaPop .55s ease both";
+        b.style.animationDelay = (0.2 + i * 0.75) + "s";
+      });
+    }
+    setInterval(replay, 9000);
+  }
+})();
+</script>
+
 </body>
 </html>
