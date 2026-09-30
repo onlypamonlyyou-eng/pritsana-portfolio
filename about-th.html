@@ -1613,6 +1613,229 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 }
 </style>
 
+<style id="play-pages">
+.play-hero,.play-stage,.play-board,.play-ads{ --heart:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; }
+.play-hero .case__title{
+  font-size:clamp(32px,4.4vw,56px); line-height:1.18; letter-spacing:-.03em; font-weight:300;
+  background-image:linear-gradient(100deg,#ff4573 0%,#e56b9a 32%,#6ba9d6 68%,#ff7a9a 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  animation:heroShimmer 9s linear infinite;
+}
+.play-hero .case__sub{ max-width:42em; }
+.play-float{ position:absolute; inset:0; pointer-events:none; z-index:0; }
+.play-float i{
+  position:absolute; width:14px; height:14px; background:#ff4573;
+  -webkit-mask:var(--heart); mask:var(--heart);
+  opacity:.75; animation:floatBit 5.8s ease-in-out infinite;
+}
+.play-float i:nth-child(1){ right:8%; top:92px; width:18px; height:18px; }
+.play-float i:nth-child(2){ right:16%; top:150px; width:11px; height:11px; background:#6ba9d6; animation-delay:-1.6s; }
+.play-float i:nth-child(3){ right:5%; bottom:24px; width:13px; height:13px; animation-delay:-2.8s; }
+.play-float i:nth-child(4){ left:8%; top:110px; width:12px; height:12px; background:#ff8eaa; animation-delay:-.8s; }
+@keyframes floatBit{ 0%,100%{ transform:translateY(0) rotate(-8deg); } 50%{ transform:translateY(-10px) rotate(10deg); } }
+.play-stage,.play-board{
+  background-color:#fffdfd;
+  background-image:
+    radial-gradient(circle, rgba(255,170,190,.4) 1.1px, transparent 1.3px),
+    radial-gradient(640px 240px at 0% 0%, rgba(255,230,236,.75), transparent 70%),
+    radial-gradient(520px 260px at 100% 30%, rgba(225,241,251,.8), transparent 72%);
+  background-size:22px 22px, auto, auto, auto;
+}
+.play-head h2{ padding-left:30px; font-weight:300; }
+.play-head h2::before{
+  width:15px; height:15px; top:.45em; bottom:auto; border-radius:0; background:#ff4573;
+  -webkit-mask:var(--heart); mask:var(--heart);
+  animation:logoHeart 2.2s ease-in-out infinite;
+}
+.play-story{ align-items:start; }
+.play-story > *{ min-width:0; }
+.play-story .portrait{
+  position:relative; perspective:800px; width:100%; margin:0; overflow:visible; padding:12px 12px 16px; border-radius:24px;
+  border:1px solid #ffd6e2; background:#fff;
+  box-shadow:0 0 0 6px #fff, 0 0 0 7px #ffd0dc, 0 24px 40px -24px rgba(255,69,115,.5);
+  animation:polaroidSwing 5.4s ease-in-out infinite;
+}
+@keyframes polaroidSwing{ 0%,100%{ transform:rotate(1.6deg); } 50%{ transform:rotate(-1.2deg); } }
+.play-story .portrait img{
+  width:100%; height:340px; max-height:none; object-fit:cover; object-position:center 64%; border-radius:16px;
+}
+.play-story .portrait::before{
+  content:""; position:absolute; top:-8px; left:50%; width:64px; height:16px; margin-left:-32px;
+  background:rgba(255,166,176,.8); border-radius:2px; transform:rotate(-5deg); z-index:2;
+}
+.play-story .portrait figcaption{ text-align:center; letter-spacing:.02em; }
+.play-story .role-badges{ justify-content:center; }
+.play-story .role-badges span{ background:#fff5f8; border-color:#ffd0dc; }
+.play-story .role-badges span:nth-child(2){ background:#f3f9fd; border-color:#d4eaf8; }
+.play-story .portrait:hover{ animation-play-state:paused; transform:rotate(0deg) translateY(-6px); }
+.play-quote{
+  position:relative; margin-top:22px; padding:22px 22px 22px 58px;
+  border:1.5px solid #ffd0dc; border-left:1.5px solid #ffd0dc; border-radius:26px 26px 26px 10px;
+  background:linear-gradient(135deg,#fff,#fff4f8 60%,#f4faff);
+  box-shadow:0 14px 26px -22px rgba(255,69,115,.45);
+  font-family:var(--serif); font-size:clamp(16px,1.8vw,20px); line-height:1.5; color:var(--ink);
+}
+.play-quote::before{
+  content:""; position:absolute; left:18px; top:24px; width:22px; height:22px; background:#ff4573;
+  -webkit-mask:var(--heart); mask:var(--heart);
+  animation:logoHeart 1.8s ease-in-out infinite;
+}
+.play-path{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:40px !important; position:relative;
+}
+.play-path::before{
+  content:""; position:absolute; left:6%; right:6%; top:28px; height:2px; z-index:0; pointer-events:none;
+  background:repeating-linear-gradient(90deg,#ffb7c9 0 7px, transparent 7px 14px);
+}
+.play-path .timeline-item,
+.play-path .timeline-item:last-child{
+  display:block; position:relative; z-index:1; margin:0; padding:18px 14px 14px;
+  border:1.5px dashed #ffd0dc; border-radius:22px; background:#fff;
+  box-shadow:0 12px 22px -18px rgba(255,69,115,.4);
+  animation:stepPop 7s ease-in-out infinite;
+}
+.play-path .timeline-item:nth-child(2){ animation-delay:-1.7s; border-color:#cfe6f6; }
+.play-path .timeline-item:nth-child(3){ animation-delay:-3.4s; }
+.play-path .timeline-item:nth-child(4){ animation-delay:-5.1s; border-color:#cfe6f6; }
+@keyframes stepPop{
+  0%,16%{ transform:translateY(-7px); }
+  30%,100%{ transform:translateY(0); }
+}
+.play-path .timeline-item .years{
+  display:inline-block; margin:0 0 8px; padding:4px 10px; border-radius:999px;
+  background:#fff0f4; color:#ff4573; font-size:12.5px;
+}
+.play-path .timeline-item:nth-child(even) .years{ background:#e8f4fc; color:#6ba9d6; }
+.play-path .timeline-item h3{ font-size:15.5px; font-weight:300; line-height:1.35; margin:0; }
+.play-line{
+  margin:42px auto 8px; padding:26px 28px; max-width:18em;
+  border-radius:32px; border:1.5px solid #ffd0dc;
+  background:linear-gradient(180deg,#fff,#fff5f8);
+  box-shadow:0 0 0 6px #fff, 0 16px 28px -22px rgba(255,69,115,.4);
+  font-weight:300;
+}
+.play-values{
+  gap:14px; background:transparent; border:none; overflow:visible;
+}
+.play-values .values-card{
+  border:1.5px dashed #ffd0dc; border-radius:26px; overflow:hidden;
+  background:linear-gradient(180deg,#fff,#fff7f9);
+  box-shadow:0 0 0 4px #fff, 0 14px 24px -18px rgba(255,69,115,.4);
+  cursor:pointer; animation:stepPop 6.4s ease-in-out infinite;
+}
+.play-values .values-card:nth-child(2){ animation-delay:-1.4s; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f5faff); }
+.play-values .values-card:nth-child(3){ animation-delay:-2.6s; }
+.play-values .values-card:nth-child(4){ animation-delay:-3.8s; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f5faff); }
+.play-values .values-card::before{ display:none; }
+.play-values .values-card::after{
+  content:""; position:absolute; top:0; left:18px; width:42px; height:11px;
+  background:rgba(255,166,166,.7); border-radius:0 0 4px 4px;
+}
+.play-values .values-card:nth-child(even)::after{ left:auto; right:18px; background:rgba(158,206,240,.85); }
+.play-values .values-card:hover,
+.play-values .values-card.is-hot{
+  animation-play-state:paused; transform:translateY(-8px); background:#fff;
+  box-shadow:0 0 0 4px #fff, 0 0 0 7px #ffd0dc, 0 16px 24px -14px rgba(255,69,115,.45);
+}
+.play-values .values-num{ font-size:18px; }
+.play-stats{ gap:14px; }
+.play-stats .mini-stat{
+  position:relative; overflow:hidden; border-radius:26px; padding:22px 18px 16px;
+  border:1.5px dashed #ffb3c8; background:linear-gradient(165deg,#fff,#fff4f7);
+  box-shadow:0 0 0 5px #fff, 0 0 0 6px #ffd6e4, 0 16px 26px -18px rgba(255,69,115,.45);
+  animation:stepPop 5s ease-in-out infinite;
+}
+.play-stats .mini-stat:nth-child(2),
+.play-stats .mini-stat:nth-child(4){
+  border-color:#b7daf3; background:linear-gradient(165deg,#fff,#f3f9fd);
+  box-shadow:0 0 0 5px #fff, 0 0 0 6px #d7ecf8, 0 16px 26px -18px rgba(107,169,214,.4);
+  animation-delay:-1.6s;
+}
+.play-stats .mini-stat:nth-child(3){ animation-delay:-3s; }
+.play-stats .mini-stat strong{ font-size:clamp(32px,3.2vw,44px); font-weight:300; line-height:1; }
+.play-stats .mini-stat:nth-child(even) strong{ color:#6ba9d6; }
+.play-stats .mini-stat span{ display:block; margin-top:8px; }
+.play-stats .mini-stat::after{
+  content:""; position:absolute; top:12px; right:12px; width:14px; height:14px; background:#ff4573;
+  -webkit-mask:var(--heart); mask:var(--heart); animation:logoHeart 2.2s ease-in-out infinite;
+}
+.play-stats .mini-stat:nth-child(even)::after{ background:#6ba9d6; }
+.play-stats .mini-stat.is-lit{
+  animation:none; transform:translateY(-8px) scale(1.03); z-index:1; border-style:solid;
+}
+.play-shots{ gap:16px; }
+.play-shots .shot-card{
+  --tilt:-.9deg; border-radius:26px; border:1px solid #ffd6e2; background:#fff;
+  box-shadow:0 0 0 5px #fff, 0 18px 30px -22px rgba(255,69,115,.45);
+  transform:rotate(var(--tilt)); transition:transform .35s ease;
+}
+.play-shots .shot-link:nth-child(even) .shot-card{ --tilt:.9deg; border-color:#d4eaf8; }
+.play-shots .shot-link:hover .shot-card{ transform:translateY(-8px) rotate(0deg); }
+.play-shots .shot-card img{ height:190px; border-radius:18px 18px 0 0; }
+.play-shots .shot-card figcaption{ text-align:center; }
+.play-brands .brand-card{
+  --tilt:-.6deg; position:relative; overflow:hidden; border-radius:28px; border:1.5px dashed #ffd0dc;
+  background:linear-gradient(180deg,#fff,#fff8fa);
+  box-shadow:0 0 0 4px #fff, 0 16px 26px -20px rgba(255,69,115,.4);
+  transform:rotate(var(--tilt)); transition:transform .35s ease;
+}
+.play-brands .brand-card:nth-child(even){
+  --tilt:.6deg; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f6fbfe);
+}
+.play-brands .brand-card::before{
+  content:""; position:absolute; top:0; left:20px; width:46px; height:12px;
+  background:rgba(255,166,166,.65); border-radius:0 0 4px 4px;
+}
+.play-brands .brand-card:nth-child(even)::before{ left:auto; right:20px; background:rgba(158,206,240,.8); }
+.play-brands .brand-card:hover{ transform:translateY(-8px) rotate(0deg); }
+.play-brands .brand-card__logo{
+  border-radius:16px; background:linear-gradient(180deg,#fff,#fff5f8); padding:8px 12px; width:fit-content;
+}
+.play-brands .brand-card--dark .brand-card__logo{ background:#241c33; }
+.play-brands .brand-card:nth-child(even) .tag{ color:#6ba9d6; }
+.play-ads{
+  background:
+    radial-gradient(520px 180px at 10% 0%, rgba(255,230,236,.8), transparent 70%),
+    radial-gradient(480px 180px at 90% 100%, rgba(225,241,251,.85), transparent 70%);
+}
+.play-ads .ad-marquee{ padding:8px 0 18px; }
+.play-ads .ad-row img{
+  border-radius:18px; border:3px solid #fff;
+  box-shadow:0 12px 22px -16px rgba(255,69,115,.55);
+  transition:transform .3s ease;
+}
+.play-ads .ad-row img:hover{ transform:translateY(-8px) scale(1.04); }
+@media (max-width:900px){
+  .play-values{ grid-template-columns:1fr 1fr; }
+  .play-path{ grid-template-columns:1fr 1fr; }
+  .play-path::before{ display:none; }
+  .play-float i:nth-child(4){ display:none; }
+}
+@media (max-width:860px){
+  .play-story .portrait{
+    order:-1; width:min(100%,280px); margin:0 auto 12px; animation:none; transform:rotate(-1.5deg);
+  }
+  .play-story .portrait img{ height:260px; }
+}
+@media (max-width:700px){
+  .play-hero .case__title{ font-size:clamp(30px,8.5vw,42px); }
+  .play-stats .mini-stat,.play-path .timeline-item,.play-values .values-card{ animation:none; transform:none; }
+}
+@media (max-width:560px){
+  .play-values,.play-path,.play-stats{ grid-template-columns:1fr; }
+  .play-story .portrait,.play-story .portrait:hover{ transform:none; }
+  .play-shots .shot-card,.play-brands .brand-card{ transform:none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .play-hero .case__title,.play-float i,.play-head h2::before,.play-story .portrait,.play-quote::before,
+  .play-path .timeline-item,.play-values .values-card,.play-stats .mini-stat,.play-stats .mini-stat::after{
+    animation:none !important;
+  }
+  .play-story .portrait,.play-stats .mini-stat,.play-path .timeline-item,.play-values .values-card{ transform:none; }
+}
+</style>
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1677,28 +1900,28 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <a class="lang-switch" href="about.html" hreflang="en">EN</a>
       <a href="assets/Pritsana-Keram-Resume.pdf" class="btn btn--primary nav__cta" download>ดาวน์โหลดเรซูเม่</a>
 </div>
-<section class="subpage-head"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
+<section class="subpage-head play-hero"><div class="play-float" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
 <div class="wrap" style="position:relative;z-index:1">
 <p class="breadcrumb"><a href="index-th.html">หน้าแรก</a><span class="sep">/</span><span class="current">เกี่ยวกับ</span></p>
 <p class="eyebrow" style="margin-top:22px">เกี่ยวกับ</p>
 <h1 class="case__title">สวัสดีค่ะ ฉันชื่อ Pritsana ฉันสร้างโครงสร้างที่คนไว้ใจได้</h1>
 <p class="case__sub">Website & SEO Specialist ที่ Inspire IVF และผู้ออกแบบ LUNA ตลอด 6 ปี สิ่งที่ยึดไม่เปลี่ยน คือจัดโครงสร้างให้ถูกก่อน แล้วผลลัพธ์จะตามมา</p>
 </div></section>
-<section class="section-pad"><div class="wrap">
-<div class="about-grid">
+<section class="section-pad play-stage"><div class="wrap">
+<div class="about-grid play-story">
 <div class="about-body">
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:12px">จากโซเชียลมีเดียสู่ระบบโครงสร้าง</h2>
 <p>เริ่มจากการตลาดดิจิทัล ดูแลโซเชียลและโฆษณาให้คลินิกตั้งแต่ปี 2019 ยิ่งทำโฆษณาให้ดีขึ้น ก็ยิ่งเจอคำถามเดิมว่าเว็บไซต์เองทำงานได้จริงหรือ คำถามนั้นพาเข้าสู่งาน SEO งานเทคนิคของโครงสร้างเว็บ และสุดท้ายมาดูแลกลยุทธ์เว็บของโรงพยาบาล</p>
 <p>ที่ Inspire IVF สัญชาตญาณเดียวกันมาสู่งานผลิตภัณฑ์ LUNA คือแชทบอทที่รู้ว่าเมื่อไหร่ควรส่งผู้ป่วยให้คนจริง เครื่องมือเปลี่ยน แต่คำถามไม่เปลี่ยน คือสิ่งที่สร้างขึ้นใช้งานได้จริงสำหรับคนอีกฝั่งหรือไม่</p>
-<blockquote class="callout">“เทคโนโลยีไม่ใช่แค่เครื่องมือ แต่เป็นสะพานเชื่อมระหว่างผู้คนกับความเป็นไปได้ที่ดีกว่า”</blockquote>
+<blockquote class="callout play-quote">“เทคโนโลยีไม่ใช่แค่เครื่องมือ แต่เป็นสะพานเชื่อมระหว่างผู้คนกับความเป็นไปได้ที่ดีกว่า”</blockquote>
 </div>
 <figure class="portrait"><img src="assets/restored/pritsana-keram-44f064532e.jpg" alt="Pritsana Keram"><figcaption style="padding:12px 4px 0;font-size:13px;color:var(--gray)">Pritsana Keram · Bangkok</figcaption>
 <div class="role-badges"><span>Website &amp; SEO Specialist</span><span>กรุงเทพฯ ประเทศไทย</span></div></figure>
 </div>
-<div class="timeline" style="margin-top:48px"><div class="timeline-item"><div class="years">2019 ถึง 2022</div><div><h3>การตลาดดิจิทัล · Grand Esta Clinic</h3></div></div><div class="timeline-item"><div class="years">2022 ถึง 2024</div><div><h3>ผู้เชี่ยวชาญ SEO · Master Style</h3></div></div><div class="timeline-item"><div class="years">2024 ถึง 2025</div><div><h3>หัวหน้าฝ่ายเว็บไซต์ · Lelux Hospital</h3></div></div><div class="timeline-item"><div class="years">2025 ถึงปัจจุบัน</div><div><h3>Website & SEO Specialist · Inspire IVF</h3></div></div></div>
-<p class="manifesto">จัดโครงสร้างก่อน สิ่งอื่นตามมาเอง</p>
-<div class="section-head" style="margin-top:28px"><p class="eyebrow">วิธีทำงาน</p><h2>หลักการที่ยึดเสมอ</h2></div>
-<div class="values-grid"><article class="values-card cat-gold"><div class="values-num">01</div><h4>โครงสร้างมาก่อนเนื้อหา</h4><p>โครงสร้างข้อมูลและ SEO เชิงเทคนิคกำหนดเพดานการติดอันดับและการแปลง แก้ฐานรากก่อนเนื้อหา</p></article><article class="values-card cat-blue"><div class="values-num">02</div><h4>ตัดสินใจด้วยข้อมูล</h4><p>ใช้ GA4, Search Console และบทสนทนาจริง ถ้าชี้ตัวเลขเบื้องหลังการตัดสินใจไม่ได้ จะไปหามันก่อน</p></article><article class="values-card cat-pink"><div class="values-num">03</div><h4>AI ที่รู้ขีดจำกัดของตัวเอง</h4><p>LUNA สอนว่าผลิตภัณฑ์ AI ที่ดีไม่ใช่ตัวที่ตอบเสมอไป แต่คือตัวที่รู้ว่าเมื่อไหร่ควรส่งต่อ</p></article><article class="values-card cat-green"><div class="values-num">04</div><h4>ส่งมอบ แล้วตรวจสอบ</h4><p>เครื่องมืออย่าง Claude Code ช่วยให้ทำงานเร็วขึ้น แต่ทุกการเปลี่ยนแปลงถูกทดสอบกับของจริงก่อนขึ้นใช้งาน</p></article></div>
+<div class="timeline play-path" style="margin-top:48px"><div class="timeline-item"><div class="years">2019 ถึง 2022</div><div><h3>การตลาดดิจิทัล · Grand Esta Clinic</h3></div></div><div class="timeline-item"><div class="years">2022 ถึง 2024</div><div><h3>ผู้เชี่ยวชาญ SEO · Master Style</h3></div></div><div class="timeline-item"><div class="years">2024 ถึง 2025</div><div><h3>หัวหน้าฝ่ายเว็บไซต์ · Lelux Hospital</h3></div></div><div class="timeline-item"><div class="years">2025 ถึงปัจจุบัน</div><div><h3>Website & SEO Specialist · Inspire IVF</h3></div></div></div>
+<p class="manifesto play-line">จัดโครงสร้างก่อน สิ่งอื่นตามมาเอง</p>
+<div class="section-head play-head" style="margin-top:28px"><p class="eyebrow">วิธีทำงาน</p><h2>หลักการที่ยึดเสมอ</h2></div>
+<div class="values-grid play-values"><article class="values-card cat-gold"><div class="values-num">01</div><h4>โครงสร้างมาก่อนเนื้อหา</h4><p>โครงสร้างข้อมูลและ SEO เชิงเทคนิคกำหนดเพดานการติดอันดับและการแปลง แก้ฐานรากก่อนเนื้อหา</p></article><article class="values-card cat-blue"><div class="values-num">02</div><h4>ตัดสินใจด้วยข้อมูล</h4><p>ใช้ GA4, Search Console และบทสนทนาจริง ถ้าชี้ตัวเลขเบื้องหลังการตัดสินใจไม่ได้ จะไปหามันก่อน</p></article><article class="values-card cat-pink"><div class="values-num">03</div><h4>AI ที่รู้ขีดจำกัดของตัวเอง</h4><p>LUNA สอนว่าผลิตภัณฑ์ AI ที่ดีไม่ใช่ตัวที่ตอบเสมอไป แต่คือตัวที่รู้ว่าเมื่อไหร่ควรส่งต่อ</p></article><article class="values-card cat-green"><div class="values-num">04</div><h4>ส่งมอบ แล้วตรวจสอบ</h4><p>เครื่องมืออย่าง Claude Code ช่วยให้ทำงานเร็วขึ้น แต่ทุกการเปลี่ยนแปลงถูกทดสอบกับของจริงก่อนขึ้นใช้งาน</p></article></div>
 </div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="experience-th.html"><span class="dir">ประสบการณ์</span><span class="title">ประสบการณ์</span></a><a class="case-nav__link case-nav__link--next" href="index-th.html#contact"><span class="dir">ติดต่อ</span><span class="title">ติดต่อ</span></a></div></div></section>
 <footer class="ftr">
   <div class="ftr__wave" aria-hidden="true">
@@ -1950,5 +2173,58 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 })();
 
 </script>
+<script id="play-pages-js">
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".play-values .values-card").forEach(function (card) {
+    card.setAttribute("tabindex", "0");
+    function toggle() {
+      var on = card.classList.contains("is-hot");
+      document.querySelectorAll(".play-values .values-card.is-hot").forEach(function (el) {
+        el.classList.remove("is-hot");
+      });
+      if (!on) card.classList.add("is-hot");
+    }
+    card.addEventListener("click", toggle);
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+    });
+  });
+  var statsWrap = document.querySelector(".play-stats");
+  if (statsWrap && !reduce) {
+    var stats = statsWrap.querySelectorAll(".mini-stat");
+    var lit = 0;
+    function light(i) {
+      stats.forEach(function (el) { el.classList.remove("is-lit"); });
+      if (stats[i]) stats[i].classList.add("is-lit");
+    }
+    light(0);
+    var timer = setInterval(function () {
+      lit = (lit + 1) % stats.length;
+      light(lit);
+    }, 1500);
+    statsWrap.addEventListener("mouseenter", function () { clearInterval(timer); timer = null; });
+    statsWrap.addEventListener("mouseleave", function () {
+      if (timer) return;
+      timer = setInterval(function () {
+        lit = (lit + 1) % stats.length;
+        light(lit);
+      }, 1500);
+    });
+  }
+  var photo = document.querySelector(".play-story .portrait img");
+  if (photo && !reduce && window.matchMedia("(hover: hover)").matches) {
+    var frame = photo.parentNode;
+    frame.addEventListener("mousemove", function (e) {
+      var r = frame.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      photo.style.transform = "rotateY(" + (x * 7).toFixed(2) + "deg) rotateX(" + (-y * 5).toFixed(2) + "deg) scale(1.02)";
+    });
+    frame.addEventListener("mouseleave", function () { photo.style.transform = ""; });
+  }
+})();
+</script>
+
 </body>
 </html>
