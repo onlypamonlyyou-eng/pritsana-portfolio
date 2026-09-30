@@ -1613,6 +1613,120 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 }
 </style>
 
+
+<style id="play-case">
+.play-hero .case__title{
+  font-size:clamp(46px,6.2vw,78px); line-height:1.02; letter-spacing:-.03em; font-weight:300;
+  background-image:linear-gradient(100deg,#ff4573 0%,#e56b9a 32%,#6ba9d6 68%,#ff7a9a 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  animation:heroShimmer 9s linear infinite;
+}
+.play-story,.play-structure{ align-items:center; }
+.play-story > *,.play-structure > *{ min-width:0; }
+.play-frame{
+  margin-top:14px; padding:12px 12px 4px; background:#fff; border-radius:30px;
+  border:1px solid #ffd6e2; box-shadow:0 26px 44px -30px rgba(255,69,115,.55), 0 0 0 8px rgba(255,244,247,.8);
+  transform:rotate(-1.15deg); transition:transform .4s ease; overflow:visible;
+}
+.play-structure .play-frame{ transform:rotate(1.1deg); box-shadow:0 26px 44px -30px rgba(107,169,214,.5), 0 0 0 8px rgba(242,249,253,.9); border-color:#d4eaf8; }
+.play-frame img{ border-radius:20px; }
+.play-frame figcaption{ text-align:center; letter-spacing:.02em; }
+.play-frame:hover{ transform:rotate(0deg) translateY(-8px); }
+.play-story .logo-inline{ display:block; animation:playBob 4.8s ease-in-out infinite; }
+@keyframes playBob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
+.play-story .heart-bullet{
+  display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:18px; padding:0;
+}
+.play-story .heart-bullet li{
+  background:#fff; border:1px solid #ffd6e2; border-radius:18px;
+  padding:14px 14px 14px 34px !important; margin:0;
+  box-shadow:0 12px 22px -18px rgba(255,69,115,.55);
+  transition:transform .3s ease;
+}
+.play-story .heart-bullet li:nth-child(even){ background:#f7fbff; border-color:#d4eaf8; }
+.play-story .heart-bullet li::before{ left:12px; }
+.play-story .heart-bullet li:hover{ transform:translateY(-4px); padding-left:34px !important; }
+.play-steps{ position:relative; }
+.play-steps .step-pill{
+  font:inherit; cursor:pointer; appearance:none; background:#fff;
+  animation:playGlow 6.4s ease-in-out infinite;
+}
+.play-steps .step-pill:nth-child(1){ animation-delay:0s; }
+.play-steps .step-pill:nth-child(2){ animation-delay:1.15s; }
+.play-steps .step-pill:nth-child(3){ animation-delay:2.3s; }
+.play-steps .step-pill:nth-child(4){ animation-delay:3.45s; }
+.play-steps .step-pill:nth-child(5){ animation-delay:4.6s; }
+@keyframes playGlow{
+  0%,12%{ transform:translateY(-5px); background:#fff0f4; border-color:#ff8ea6; box-shadow:0 14px 22px -14px rgba(255,69,115,.6); }
+  20%,100%{ transform:none; box-shadow:none; }
+}
+.play-steps.is-paused .step-pill{ animation:none; }
+.play-steps .step-pill.is-hot,.play-steps .step-pill:hover{
+  transform:translateY(-4px); background:#fff0f4; border-color:#ff8ea6;
+  box-shadow:0 14px 22px -14px rgba(255,69,115,.55);
+}
+.play-steps .step-pill:focus-visible{ outline:2px solid var(--pink); outline-offset:2px; }
+.play-own .sys-grid{ grid-template-columns:1fr 1fr; gap:16px; }
+.play-own .sys-card{
+  --tilt:-.9deg; position:relative; overflow:hidden; border-radius:28px; padding:30px 20px 20px;
+  border:1px solid #ffd0dc; background:linear-gradient(180deg,#fff,#fff5f8);
+  box-shadow:0 18px 32px -24px rgba(255,69,115,.5);
+  animation:playCard 5.8s ease-in-out infinite;
+}
+.play-own .sys-card:nth-child(2){ --tilt:.8deg; animation-delay:-1.2s; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f3f9fd); }
+.play-own .sys-card:nth-child(3){ --tilt:.6deg; animation-delay:-2.2s; border-color:#cfe6f6; background:linear-gradient(180deg,#fff,#f3f9fd); }
+.play-own .sys-card:nth-child(4){ --tilt:-.7deg; animation-delay:-3.1s; }
+@keyframes playCard{
+  0%,100%{ transform:translateY(0) rotate(var(--tilt)); }
+  50%{ transform:translateY(-7px) rotate(var(--tilt)); }
+}
+.play-own .sys-card:hover{ animation-play-state:paused; transform:translateY(-8px) rotate(0deg); }
+.play-own .sys-card::before{
+  content:""; position:absolute; top:0; left:22px; width:52px; height:13px;
+  background:rgba(255,166,166,.55); border-radius:0 0 5px 5px;
+}
+.play-own .sys-card:nth-child(even)::before{ left:auto; right:22px; background:rgba(158,206,240,.75); }
+.play-stats{ gap:14px; }
+.play-stats .seo-stat{
+  position:relative; overflow:hidden; border-radius:28px; padding:26px 22px 22px;
+  border:1px solid #ffd0dc; background:linear-gradient(165deg,#fff 10%,#fff4f7 100%);
+  box-shadow:0 18px 32px -24px rgba(255,69,115,.45);
+  transition:transform .35s ease;
+  animation:playPop .7s ease both;
+}
+.play-stats .seo-stat:nth-child(even){
+  border-color:#cfe6f6; background:linear-gradient(165deg,#fff 10%,#f3f9fd 100%);
+  box-shadow:0 18px 32px -24px rgba(107,169,214,.4);
+}
+.play-stats .seo-stat:nth-child(even) strong{ color:var(--sky); }
+.play-stats .seo-stat:nth-child(1){ animation-delay:.05s; }
+.play-stats .seo-stat:nth-child(2){ animation-delay:.15s; }
+.play-stats .seo-stat:nth-child(3){ animation-delay:.25s; }
+.play-stats .seo-stat:nth-child(4){ animation-delay:.35s; }
+.play-stats .seo-stat:nth-child(5){ animation-delay:.45s; }
+.play-stats .seo-stat:nth-child(6){ animation-delay:.55s; }
+@keyframes playPop{ from{ opacity:0; transform:translateY(12px) scale(.98); } to{ opacity:1; transform:none; } }
+.play-stats .seo-stat::after{
+  content:""; position:absolute; top:16px; right:16px; width:16px; height:16px;
+  background:var(--pink); -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:logoHeart 2.4s ease-in-out infinite;
+}
+.play-stats .seo-stat:nth-child(even)::after{ background:var(--sky); animation-delay:-1s; }
+.play-stats .seo-stat:hover{ transform:translateY(-6px); }
+@media (max-width:760px){
+  .play-story .heart-bullet,.play-own .sys-grid{ grid-template-columns:1fr; }
+  .play-frame,.play-structure .play-frame{ transform:none; }
+  .play-hero .case__title{ font-size:clamp(40px,12vw,58px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .play-hero .case__title,.play-story .logo-inline,.play-steps .step-pill,.play-own .sys-card,
+  .play-stats .seo-stat,.play-stats .seo-stat::after{ animation:none !important; }
+  .play-stats .seo-stat{ opacity:1; }
+}
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1677,7 +1791,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <a class="lang-switch" href="work-seo-growth-th.html" hreflang="th">TH</a>
       <a href="assets/Pritsana-Keram-Resume.pdf" class="btn btn--primary nav__cta" download>Download Resume</a>
 </div>
-<section class="subpage-head"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
+<section class="subpage-head play-hero"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
 <div class="wrap" style="position:relative;z-index:1">
 <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">SEO Growth</span></p>
 <p class="eyebrow" style="margin-top:22px">Case study · 04</p>
@@ -1685,7 +1799,7 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <p class="case__sub">Technical SEO, information architecture and keyword strategy: turning website structure into measurable growth across healthcare, beauty and industrial clients.</p>
 </div></section>
 <section class="section-pad"><div class="wrap">
-<div class="seo-stats">
+<div class="seo-stats play-stats">
 <div class="seo-stat"><strong>26/29</strong><span>Keywords on page 1</span></div>
 <div class="seo-stat"><strong>+70%</strong><span>Lead growth in 4 months · Lelux Hospital</span></div>
 <div class="seo-stat"><strong>+50%</strong><span>Ranking opportunity · Master Style</span></div>
@@ -1693,20 +1807,20 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <div class="seo-stat"><strong>90%</strong><span>Page-1 ranking rate</span></div>
 <div class="seo-stat"><strong>10</strong><span>#1 Google rankings</span></div>
 </div>
-<div class="two-col">
+<div class="two-col play-structure">
 <div>
 <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:12px">Structure first: rankings follow.</h2>
 <p class="case__prose">Information architecture, URL structure and rendering strategy set the ceiling for how well anything can rank. Technical and on-page SEO are woven into the build, then content and off-page work sit on top, with GA4 and Search Console keeping decisions grounded.</p>
-<div class="step-row" style="margin-top:16px">
-<span class="step-pill"><b>01</b>Technical audit</span>
-<span class="step-pill"><b>02</b>Information architecture</span>
-<span class="step-pill"><b>03</b>Keyword and content</span>
-<span class="step-pill"><b>04</b>On and off-page</span>
-<span class="step-pill"><b>05</b>Measure and iterate</span>
+<div class="step-row play-steps" data-steps style="margin-top:16px">
+<button type="button" class="step-pill" aria-pressed="false"><b>01</b>Technical audit</button>
+<button type="button" class="step-pill" aria-pressed="false"><b>02</b>Information architecture</button>
+<button type="button" class="step-pill" aria-pressed="false"><b>03</b>Keyword and content</button>
+<button type="button" class="step-pill" aria-pressed="false"><b>04</b>On and off-page</button>
+<button type="button" class="step-pill" aria-pressed="false"><b>05</b>Measure and iterate</button>
 </div>
 </div>
 <div>
-<figure class="feature-shot"><img src="assets/restored/lelux-hospital-website-screenshot-8c878d502d.jpg" alt="Lelux Hospital website"><figcaption>Lelux Hospital · <a href="https://www.lelux.co.th/" target="_blank" rel="noopener">lelux.co.th ↗</a></figcaption></figure>
+<figure class="feature-shot play-frame"><img src="assets/restored/lelux-hospital-website-screenshot-8c878d502d.jpg" alt="Lelux Hospital website"><figcaption>Lelux Hospital · <a href="https://www.lelux.co.th/" target="_blank" rel="noopener">lelux.co.th ↗</a></figcaption></figure>
 </div>
 </div>
 <div class="case__block">
@@ -2013,5 +2127,26 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 })();
 
 </script>
+
+<script id="play-case-js">
+(function(){
+  document.querySelectorAll("[data-steps]").forEach(function(root){
+    root.addEventListener("click", function(e){
+      var pill = e.target.closest(".step-pill");
+      if (!pill) return;
+      var pinned = pill.classList.contains("is-hot") && root.classList.contains("is-paused");
+      root.querySelectorAll(".step-pill").forEach(function(p){
+        p.classList.remove("is-hot");
+        p.setAttribute("aria-pressed", "false");
+      });
+      if (pinned) { root.classList.remove("is-paused"); return; }
+      root.classList.add("is-paused");
+      pill.classList.add("is-hot");
+      pill.setAttribute("aria-pressed", "true");
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
