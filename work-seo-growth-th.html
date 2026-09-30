@@ -1727,6 +1727,113 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 }
 </style>
 
+<style id="kw-play">
+.kw-title{
+  display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+  margin:28px 0 12px; font-size:clamp(18px,2vw,22px); font-weight:300;
+}
+.kw-title::before{
+  content:""; width:16px; height:16px; background:#ff4573;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:logoHeart 1.8s ease-in-out infinite;
+}
+.kw-title--sky::before{ background:#6ba9d6; }
+.kw-title span{
+  font-size:13px; font-weight:300; color:#ff4573; background:#fff0f4;
+  border:1px solid #ffd0dc; border-radius:999px; padding:4px 10px;
+}
+.kw-title--sky span{ color:#6ba9d6; background:#f3f9fd; border-color:#d4eaf8; }
+.kw-sheet{
+  padding:14px; border-radius:28px; border:1px solid #ffe0ea;
+  background:
+    radial-gradient(circle, rgba(255,170,190,.45) 1px, transparent 1.3px),
+    linear-gradient(180deg,#fff8fa,#f4faff);
+  background-size:16px 16px, auto;
+}
+.kw-sheet--sky{
+  border-color:#d7ecf8;
+  background:
+    radial-gradient(circle, rgba(158,206,240,.45) 1px, transparent 1.3px),
+    linear-gradient(180deg,#f5fbfe,#fff8fa);
+  background-size:16px 16px, auto;
+}
+.kw-sheet .rank-table{
+  display:block; width:100%; margin:0; border-collapse:separate;
+}
+.kw-sheet .rank-table thead{
+  position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);
+}
+.kw-sheet .rank-table tbody{
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+}
+.kw-sheet .rank-table tr{
+  display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-rows:auto auto;
+  gap:2px 12px; align-items:center; position:relative; overflow:visible;
+  margin:0; padding:14px 16px; width:auto;
+  border:1.5px solid #ffd6e2; border-radius:22px; background:#fff;
+  box-shadow:0 10px 18px -16px rgba(255,69,115,.45);
+  cursor:pointer; transition:transform .25s ease, box-shadow .25s ease;
+}
+.kw-sheet--sky .rank-table tr{ border-color:#d4eaf8; }
+.kw-sheet .rank-table tr:nth-child(even){ background:linear-gradient(180deg,#fff,#fff7fa); }
+.kw-sheet--sky .rank-table tr:nth-child(even){ background:linear-gradient(180deg,#fff,#f5faff); }
+.kw-sheet .rank-table td{
+  display:block; width:auto; border:none; padding:0; background:transparent;
+}
+.kw-sheet .rank-table td::before{ content:none; display:none; }
+.kw-sheet .rank-table td:first-child{
+  grid-column:1; grid-row:1; color:var(--ink); font-weight:400; font-size:15.5px; line-height:1.35;
+}
+.kw-sheet .rank-table td:nth-child(2){ grid-column:2; grid-row:1 / span 2; justify-self:end; }
+.kw-sheet .rank-table td:nth-child(3){
+  grid-column:1; grid-row:2; color:#9a6a78; font-size:12.5px; font-weight:300;
+}
+.kw-sheet--sky .rank-table td:nth-child(3){ color:#6ba9d6; }
+.kw-sheet .rank-badge{
+  width:44px; height:44px; min-width:44px; padding:0; border-radius:50%;
+  font-size:16px; font-weight:300; background:#fff; color:#ff4573; border:1.5px solid #ffd0dc;
+}
+.kw-sheet .rank-badge.is-one{
+  background:#ff4573; color:#fff; border-color:#ff4573;
+  box-shadow:0 8px 14px -8px rgba(255,69,115,.75);
+}
+.kw-sheet--sky .rank-badge.is-one{
+  background:#6ba9d6; border-color:#6ba9d6;
+  box-shadow:0 8px 14px -8px rgba(107,169,214,.75);
+}
+.kw-sheet .rank-badge.is-star{
+  background:#fff7ea; color:#ff4573; border-color:#ffd7a8; font-size:18px;
+}
+.kw-sheet .rank-table tr:hover,
+.kw-sheet .rank-table tr.is-hot,
+.kw-sheet .rank-table tr.is-pin{
+  transform:translateY(-4px);
+  box-shadow:0 14px 22px -14px rgba(255,69,115,.5);
+  border-color:#ff8ea6; z-index:1;
+}
+.kw-sheet .rank-table tr.is-pin{
+  box-shadow:0 0 0 4px #fff, 0 0 0 6px #ffd0dc, 0 14px 22px -14px rgba(255,69,115,.45);
+}
+.kw-sheet .rank-table tr:focus-visible{ outline:2px solid #ff4573; outline-offset:3px; }
+.kw-burst{
+  position:absolute; left:50%; top:16px; width:12px; height:12px; margin-left:-6px; z-index:4;
+  background:#ff4573; pointer-events:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:kwBurst .7s ease-out forwards;
+}
+.kw-burst:nth-child(odd){ background:#6ba9d6; }
+@keyframes kwBurst{ to{ transform:translate(var(--x), var(--y)) scale(.3); opacity:0; } }
+@media (max-width:700px){
+  .kw-sheet .rank-table tbody{ grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion: reduce){
+  .kw-title::before,.kw-burst{ animation:none !important; }
+  .kw-sheet .rank-table tr.is-hot{ transform:none; }
+}
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1848,10 +1955,10 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <p class="case__prose">ทุกคำคืออันดับที่ติดตามจริง 10 อันดับ 1, Featured snippet 1, ติด 3 อันดับ 7, ติด 10 อันดับ 8, หน้า 2 อีก 3</p>
 <div class="dist-bars"><div class="dist-row"><div class="dist-row__lbl">อันดับ 1</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:35%;background:var(--pink)"></div></div><div class="dist-row__num">10</div></div><div class="dist-row"><div class="dist-row__lbl">Featured Snippet</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:8%;background:var(--sky)"></div></div><div class="dist-row__num">1</div></div><div class="dist-row"><div class="dist-row__lbl">ติด 3 อันดับแรก</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:24%;background:var(--pink-2)"></div></div><div class="dist-row__num">7</div></div><div class="dist-row"><div class="dist-row__lbl">ติด 10 อันดับแรก</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:28%;background:var(--sky)"></div></div><div class="dist-row__num">8</div></div><div class="dist-row"><div class="dist-row__lbl">หน้า 2</div><div class="dist-row__track"><div class="dist-row__fill" style="--w:12%;background:var(--gray)"></div></div><div class="dist-row__num">3</div></div></div>
 <div class="kw-band" aria-hidden="true"><div class="kw-track"><span>Nu Pico <b>#1</b></span><span>Filler augmentation <b>#1</b></span><span>Injectable removal <b>#1</b></span><span>Eye-bag removal <b>#1</b></span><span>Hip filler <b>#1</b></span><span>Double-chin lipo <b>#1</b></span><span>Buccal fat removal <b>#1</b></span><span>Emface Submentum <b>Snippet</b></span><span>Emface <b>#2</b></span><span>Radiesse Plus <b>#2</b></span><span>Oligio <b>#2</b></span><span>Male enhancement <b>#3</b></span><span>Silicone rhinoplasty <b>#3</b></span><span>Foxy Eyes <b>#3</b></span><span>V-Line contouring <b>#4</b></span><span>Forehead augmentation <b>#4</b></span><span>Open rhinoplasty <b>#5</b></span><span>Ultraformer MPT <b>#7</b></span><span>Bloodless circumcision <b>#8</b></span><span>Filler, Chonburi <b>#10</b></span><span>Sculptra <b>#12</b></span><span>Ulthera SPT <b>#12</b></span><span>Belotero Revive <b>#12</b></span><span>Sisal wheel <b>#1</b></span><span>PME compound <b>#1</b></span><span>Solid compound <b>#1</b></span><span>Tosa compound <b>#2</b></span><span>Felt wheel <b>#4</b></span><span>Buff wheel <b>#6</b></span><span>Nu Pico <b>#1</b></span><span>Filler augmentation <b>#1</b></span><span>Injectable removal <b>#1</b></span><span>Eye-bag removal <b>#1</b></span><span>Hip filler <b>#1</b></span><span>Double-chin lipo <b>#1</b></span><span>Buccal fat removal <b>#1</b></span><span>Emface Submentum <b>Snippet</b></span><span>Emface <b>#2</b></span><span>Radiesse Plus <b>#2</b></span><span>Oligio <b>#2</b></span><span>Male enhancement <b>#3</b></span><span>Silicone rhinoplasty <b>#3</b></span><span>Foxy Eyes <b>#3</b></span><span>V-Line contouring <b>#4</b></span><span>Forehead augmentation <b>#4</b></span><span>Open rhinoplasty <b>#5</b></span><span>Ultraformer MPT <b>#7</b></span><span>Bloodless circumcision <b>#8</b></span><span>Filler, Chonburi <b>#10</b></span><span>Sculptra <b>#12</b></span><span>Ulthera SPT <b>#12</b></span><span>Belotero Revive <b>#12</b></span><span>Sisal wheel <b>#1</b></span><span>PME compound <b>#1</b></span><span>Solid compound <b>#1</b></span><span>Tosa compound <b>#2</b></span><span>Felt wheel <b>#4</b></span><span>Buff wheel <b>#6</b></span></div></div>
-<h3 style="margin:22px 0 8px;font-size:18px">คลินิกความงาม · 23 คีย์เวิร์ด</h3>
-<div style="overflow-x:auto"><table class="rank-table"><thead><tr><th>คีย์เวิร์ด</th><th>อันดับ</th><th>อุตสาหกรรม</th></tr></thead><tbody><tr><td>Nu Pico</td><td><span class="rank-badge">1</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Filler augmentation</td><td><span class="rank-badge">1</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Injectable substance removal</td><td><span class="rank-badge">1</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Eye-bag removal, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Hip filler, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Double-chin liposuction, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Buccal fat removal, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Emface Submentum</td><td><span class="rank-badge">★</span></td><td data-label="Industry">ติด Featured บน Google</td></tr><tr><td>Emface</td><td><span class="rank-badge">2</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Radiesse Plus</td><td><span class="rank-badge">2</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Oligio</td><td><span class="rank-badge">2</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Male enhancement treatment</td><td><span class="rank-badge">3</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Silicone rhinoplasty</td><td><span class="rank-badge">3</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Foxy Eyes</td><td><span class="rank-badge">3</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>V-Line contouring</td><td><span class="rank-badge">4</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Forehead augmentation, Chonburi</td><td><span class="rank-badge">4</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Open rhinoplasty</td><td><span class="rank-badge">5</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Ultraformer MPT</td><td><span class="rank-badge">7</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Bloodless circumcision</td><td><span class="rank-badge">8</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Filler, Chonburi</td><td><span class="rank-badge">10</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Sculptra</td><td><span class="rank-badge">12</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Ulthera SPT</td><td><span class="rank-badge">12</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Belotero Revive</td><td><span class="rank-badge">12</span></td><td data-label="Industry">คลินิกความงาม</td></tr></tbody></table></div>
-<h3 style="margin:22px 0 8px;font-size:18px">อุตสาหกรรมการผลิต · 6 คีย์เวิร์ด</h3>
-<div style="overflow-x:auto"><table class="rank-table"><thead><tr><th>คีย์เวิร์ด</th><th>อันดับ</th><th>อุตสาหกรรม</th></tr></thead><tbody><tr><td>Sisal wheel</td><td><span class="rank-badge">1</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>PME polishing compound</td><td><span class="rank-badge">1</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Solid compound</td><td><span class="rank-badge">1</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Tosa polishing compound</td><td><span class="rank-badge">2</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Felt wheel</td><td><span class="rank-badge">4</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Buff wheel</td><td><span class="rank-badge">6</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr></tbody></table></div>
+<h3 class="kw-title">คลินิกความงาม <span>23 คีย์เวิร์ด</span></h3>
+<div class="kw-sheet"><table class="rank-table"><thead><tr><th>คีย์เวิร์ด</th><th>อันดับ</th><th>อุตสาหกรรม</th></tr></thead><tbody><tr><td>Nu Pico</td><td><span class="rank-badge">1</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Filler augmentation</td><td><span class="rank-badge">1</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Injectable substance removal</td><td><span class="rank-badge">1</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Eye-bag removal, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Hip filler, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Double-chin liposuction, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Buccal fat removal, Chonburi</td><td><span class="rank-badge">1</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Emface Submentum</td><td><span class="rank-badge">★</span></td><td data-label="Industry">ติด Featured บน Google</td></tr><tr><td>Emface</td><td><span class="rank-badge">2</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Radiesse Plus</td><td><span class="rank-badge">2</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Oligio</td><td><span class="rank-badge">2</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Male enhancement treatment</td><td><span class="rank-badge">3</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Silicone rhinoplasty</td><td><span class="rank-badge">3</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Foxy Eyes</td><td><span class="rank-badge">3</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>V-Line contouring</td><td><span class="rank-badge">4</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Forehead augmentation, Chonburi</td><td><span class="rank-badge">4</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Open rhinoplasty</td><td><span class="rank-badge">5</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Ultraformer MPT</td><td><span class="rank-badge">7</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Bloodless circumcision</td><td><span class="rank-badge">8</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Filler, Chonburi</td><td><span class="rank-badge">10</span></td><td data-label="Industry">เฉพาะท้องถิ่น · คลินิกความงาม</td></tr><tr><td>Sculptra</td><td><span class="rank-badge">12</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Ulthera SPT</td><td><span class="rank-badge">12</span></td><td data-label="Industry">คลินิกความงาม</td></tr><tr><td>Belotero Revive</td><td><span class="rank-badge">12</span></td><td data-label="Industry">คลินิกความงาม</td></tr></tbody></table></div>
+<h3 class="kw-title kw-title--sky">อุตสาหกรรมการผลิต <span>6 คีย์เวิร์ด</span></h3>
+<div class="kw-sheet kw-sheet--sky"><table class="rank-table"><thead><tr><th>คีย์เวิร์ด</th><th>อันดับ</th><th>อุตสาหกรรม</th></tr></thead><tbody><tr><td>Sisal wheel</td><td><span class="rank-badge">1</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>PME polishing compound</td><td><span class="rank-badge">1</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Solid compound</td><td><span class="rank-badge">1</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Tosa polishing compound</td><td><span class="rank-badge">2</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Felt wheel</td><td><span class="rank-badge">4</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr><tr><td>Buff wheel</td><td><span class="rank-badge">6</span></td><td data-label="Industry">อุปกรณ์ขัดเงาโลหะ</td></tr></tbody></table></div>
 </div>
 <div class="case__block">
 <h2 style="font-size:clamp(26px,3vw,34px);margin-bottom:14px">สองการปรับปรุง สองตัวเลขก่อนและหลัง</h2>
@@ -2144,6 +2251,65 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
       pill.classList.add("is-hot");
       pill.setAttribute("aria-pressed", "true");
     });
+  });
+})();
+</script>
+
+<script id="kw-play-js">
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".kw-sheet").forEach(function (sheet) {
+    var rows = [].slice.call(sheet.querySelectorAll("tbody tr"));
+    rows.forEach(function (row) {
+      var badge = row.querySelector(".rank-badge");
+      if (badge) {
+        var t = badge.textContent.trim();
+        if (t === "1") badge.classList.add("is-one");
+        if (t === "★") badge.classList.add("is-star");
+      }
+      row.tabIndex = 0;
+      function pin() {
+        row.classList.toggle("is-pin");
+        if (reduce) return;
+        for (var i = 0; i < 4; i++) {
+          var bit = document.createElement("i");
+          bit.className = "kw-burst";
+          bit.setAttribute("aria-hidden", "true");
+          var ang = (-60 + i * 40) * Math.PI / 180;
+          bit.style.setProperty("--x", Math.round(Math.cos(ang) * 36) + "px");
+          bit.style.setProperty("--y", Math.round(Math.sin(ang) * 26 - 8) + "px");
+          row.appendChild(bit);
+          (function (el) {
+            setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 720);
+          })(bit);
+        }
+      }
+      row.addEventListener("click", pin);
+      row.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pin(); }
+      });
+    });
+    if (reduce || !rows.length) return;
+    var n = 0;
+    var timer = null;
+    function tick() {
+      rows.forEach(function (r) { r.classList.remove("is-hot"); });
+      rows[n % rows.length].classList.add("is-hot");
+      n++;
+    }
+    function start() {
+      if (timer) return;
+      tick();
+      timer = setInterval(tick, 1400);
+    }
+    function stop() {
+      if (timer) clearInterval(timer);
+      timer = null;
+      rows.forEach(function (r) { r.classList.remove("is-hot"); });
+    }
+    start();
+    sheet.addEventListener("mouseenter", stop);
+    sheet.addEventListener("mouseleave", start);
   });
 })();
 </script>
