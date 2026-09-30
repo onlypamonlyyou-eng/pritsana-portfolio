@@ -1612,6 +1612,13 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   .nav__dropdown.is-open .nav__dropdown-panel--light .nav__dropdown-row, .skill-row h4 i{ animation:none; }
 }
 </style>
+<style id="luna-shot">
+.work-card{ container-type:inline-size; }
+.work-card .work-card__visual{ height:auto; aspect-ratio:16/9; }
+.work-card .work-card__photo{ position:absolute; inset:0; }
+.work-card .work-card__num{ top:calc(100cqi * 9 / 16 - 16px); }
+.work-card--luna .work-card__photo{ object-position:center center; }
+</style>
 
 </head>
 <body>
@@ -1769,12 +1776,8 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 </span>
 </a>
 
-<a class="work-card cat-blue reveal" href="work-luna-ai-th.html">
-<span class="work-card__visual" aria-hidden="true">
-  <span class="work-card__visual-frame">
-    <span class="work-card__visual-glyph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span>
-  </span>
-</span>
+<a class="work-card cat-blue reveal work-card--luna" href="work-luna-ai-th.html">
+<span class="work-card__visual" aria-hidden="true"><img class="work-card__photo work-card__photo--luna" src="assets/luna-ai.jpg" alt="LUNA AI"></span>
 <span class="work-card__num">02</span>
 <span class="work-card__title">LUNA AI</span>
 <span class="work-card__cat">แชตบอต AI · ออกแบบผลิตภัณฑ์</span>
