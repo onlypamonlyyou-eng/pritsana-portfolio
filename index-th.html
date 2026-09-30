@@ -1651,6 +1651,17 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 .contact .hello-card p.lead{ margin-top:10px; }
 .hello-card .contact__row{ margin-top:22px; }
 .hello-card .btn--ghost{ border-color:#ffc2d2; background:#fff; }
+.hello-qr{
+  display:flex; align-items:center; gap:12px; width:max-content; max-width:100%;
+  margin-top:16px; padding:8px 16px 8px 8px; border-radius:20px;
+  background:#fff; border:1px solid #ffd6e4; text-decoration:none; color:var(--ink);
+  box-shadow:0 14px 22px -18px rgba(255,69,115,.6);
+  transition:transform .25s ease;
+}
+.hello-qr:hover{ transform:translateY(-3px); }
+.hello-qr img{ width:64px; height:86px; object-fit:cover; object-position:center; border-radius:12px; display:block; }
+.hello-qr span{ font-size:14.5px; font-weight:300; line-height:1.35; }
+.hello-qr small{ display:block; font-size:11px; letter-spacing:.08em; color:var(--gray); font-weight:300; margin-bottom:2px; }
 .hello-card .contact__details{
   margin:0; padding:0; border:0; display:flex; flex-direction:column; gap:10px; position:relative; z-index:1;
 }
@@ -1971,6 +1982,10 @@ html[lang="th"] .contact .hello-card h2{ max-width:none; font-size:clamp(30px,3.
 <a class="btn btn--ghost" href="https://line.me/ti/p/~Pritsana54" rel="noopener" target="_blank">ทักทาง LINE</a>
 <a class="btn btn--ghost" download="" href="assets/Pritsana-Keram-Resume.pdf">ดาวน์โหลดเรซูเม่</a>
 </div>
+<a class="hello-qr" href="assets/pritsana-portfolio-qr-th.png" download>
+<img src="assets/pritsana-portfolio-qr-th.png" alt="QR code ผลงานของ Pritsana Keram">
+<span><small>การ์ด QR</small>สแกนเพื่อดูผลงาน</span>
+</a>
 </div>
 <div class="contact__details">
 <a class="hello-chip" href="mailto:Pritsana.Keram@gmail.com"><i aria-hidden="true"></i><span><small>อีเมล</small>Pritsana.Keram@gmail.com</span></a>
