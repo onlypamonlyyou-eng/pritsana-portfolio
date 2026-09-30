@@ -1619,6 +1619,72 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 .work-card .work-card__num{ top:calc(100cqi * 9 / 16 - 16px); }
 .work-card--luna .work-card__photo{ object-position:center center; }
 </style>
+<style id="hello-card">
+.contact{ padding:72px 0 48px; }
+.hello-card{
+  position:relative; display:grid; grid-template-columns:1.2fr .8fr; gap:28px 40px; align-items:center;
+  padding:34px 34px 30px; border-radius:32px; overflow:hidden;
+  background:linear-gradient(165deg,#fff 0%,#fff6f8 46%,#f4faff 100%);
+  border:1px solid #ffd6e4;
+  box-shadow:0 28px 48px -34px rgba(255,69,115,.5);
+}
+.hello-card::before{
+  content:""; position:absolute; width:220px; height:220px; right:-70px; top:-80px; border-radius:50%;
+  background:radial-gradient(circle, rgba(255,183,203,.45), transparent 68%); pointer-events:none;
+}
+.hello-card::after{
+  content:""; position:absolute; width:18px; height:18px; right:22px; top:20px;
+  background:var(--pink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:logoHeart 2.4s ease-in-out infinite;
+}
+.contact .hello-card h2{
+  max-width:12ch; font-weight:300; letter-spacing:-.03em;
+  font-size:clamp(32px,4.2vw,52px); line-height:1.12;
+  background-image:linear-gradient(100deg,#ff4573 0%,#e56b9a 32%,#6ba9d6 68%,#ff7a9a 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  animation:heroShimmer 9s linear infinite;
+}
+.contact .hello-card p.lead{ margin-top:10px; }
+.hello-card .contact__row{ margin-top:22px; }
+.hello-card .btn--ghost{ border-color:#ffc2d2; background:#fff; }
+.hello-card .contact__details{
+  margin:0; padding:0; border:0; display:flex; flex-direction:column; gap:10px; position:relative; z-index:1;
+}
+.hello-chip{
+  display:flex; align-items:center; gap:12px; min-width:0;
+  padding:13px 14px; border-radius:20px; background:#fff; border:1px solid #ffd6e4;
+  text-decoration:none; color:var(--ink);
+  box-shadow:0 14px 22px -18px rgba(255,69,115,.6);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.hello-chip:nth-child(even){ border-color:#d4eaf8; box-shadow:0 14px 22px -18px rgba(107,169,214,.55); }
+.hello-chip:hover{ transform:translateY(-3px); }
+.hello-chip i{
+  width:36px; height:36px; flex:none; border-radius:50%; background:#fff0f4; position:relative;
+}
+.hello-chip i::before{
+  content:""; position:absolute; inset:10px; background:var(--pink);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 5 6.4 5c2 0 3.6 1.2 4.6 2.7C12 6.2 13.6 5 15.6 5 19 5 21.1 8.4 19.6 11.8 17.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.hello-chip:nth-child(even) i{ background:#e7f4fc; }
+.hello-chip:nth-child(even) i::before{ background:var(--sky); }
+.hello-chip span{ min-width:0; font-size:15px; font-weight:300; line-height:1.35; color:var(--ink); overflow-wrap:anywhere; }
+.hello-chip small{ display:block; font-size:11px; letter-spacing:.08em; color:var(--gray); font-weight:300; margin-bottom:2px; }
+html[lang="th"] .contact .hello-card h2{ max-width:none; font-size:clamp(30px,3.5vw,44px); }
+@media (max-width:800px){
+  .hello-card{ grid-template-columns:1fr; padding:26px 18px 20px; gap:18px; }
+  .hello-card::after{ display:none; }
+  .contact .hello-card h2{ max-width:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  .hello-card h2, .hello-card::after{ animation:none; }
+}
+</style>
 
 </head>
 <body>
@@ -1895,25 +1961,21 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 <span aria-hidden="true" class="sparkle sparkle--blue sparkle--sm" style="top:16%; left:10%;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span>
 <span aria-hidden="true" class="sparkle sparkle--pink sparkle--sm" style="top:70%; left:88%;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.6 4.8 2.9 7.4 8 8-5.1.6-7.4 3.2-8 8-.6-4.8-2.9-7.4-8-8 5.1-.6 7.4-3.2 8-8z"/></svg></span>
 <div class="wrap">
-<h2 class="reveal">มีโจทย์ดิจิทัลที่อยากแก้ไหม</h2>
-<p class="lead reveal">มาสร้างสิ่งที่ใช้ได้จริงกัน</p>
-<div class="contact__row reveal">
+<div class="hello-card reveal">
+<div class="hello-card__copy">
+<p class="eyebrow">ติดต่อ</p>
+<h2>มีโจทย์ดิจิทัลที่อยากแก้ไหม</h2>
+<p class="lead">มาสร้างสิ่งที่ใช้ได้จริงกัน</p>
+<div class="contact__row">
 <a class="btn btn--primary" href="mailto:Pritsana.Keram@gmail.com">อีเมลหาฉัน</a>
 <a class="btn btn--ghost" href="https://line.me/ti/p/~Pritsana54" rel="noopener" target="_blank">ทักทาง LINE</a>
 <a class="btn btn--ghost" download="" href="assets/Pritsana-Keram-Resume.pdf">ดาวน์โหลดเรซูเม่</a>
 </div>
-<div class="contact__details reveal">
-<div>
-<h5>อีเมล</h5>
-<p>Pritsana.Keram@gmail.com</p>
 </div>
-<div>
-<h5>โทรศัพท์</h5>
-<p>084-014-7791</p>
-</div>
-<div>
-<h5>LINE ID</h5>
-<p>Pritsana54</p>
+<div class="contact__details">
+<a class="hello-chip" href="mailto:Pritsana.Keram@gmail.com"><i aria-hidden="true"></i><span><small>อีเมล</small>Pritsana.Keram@gmail.com</span></a>
+<a class="hello-chip" href="tel:+66840147791"><i aria-hidden="true"></i><span><small>โทรศัพท์</small>084-014-7791</span></a>
+<a class="hello-chip" href="https://line.me/ti/p/~Pritsana54" rel="noopener" target="_blank"><i aria-hidden="true"></i><span><small>LINE ID</small>Pritsana54</span></a>
 </div>
 </div>
 </div>
