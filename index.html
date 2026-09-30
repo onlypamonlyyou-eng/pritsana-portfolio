@@ -1662,6 +1662,18 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 .hello-qr img{ width:64px; height:86px; object-fit:cover; object-position:center; border-radius:12px; display:block; }
 .hello-qr span{ font-size:14.5px; font-weight:300; line-height:1.35; }
 .hello-qr small{ display:block; font-size:11px; letter-spacing:.08em; color:var(--gray); font-weight:300; margin-bottom:2px; }
+.scan-web{
+  margin-top:16px; display:flex; align-items:center; gap:26px;
+  padding:18px 22px; border-radius:28px; background:#fff; border:1px solid #ffd6e4;
+  box-shadow:0 18px 32px -26px rgba(255,69,115,.5);
+}
+.scan-web img{ width:260px; max-width:72vw; height:auto; display:block; background:#fff; border-radius:18px; }
+.scan-web h3{ margin:0 0 8px; font-size:clamp(24px,2.6vw,34px); font-weight:300; line-height:1.25; }
+.scan-web p{ margin:0; max-width:28em; font-size:15.5px; font-weight:300; color:var(--ink-soft); line-height:1.55; }
+@media (max-width:700px){
+  .scan-web{ flex-direction:column; align-items:flex-start; gap:12px; padding:16px; }
+  .scan-web img{ width:min(280px, 100%); }
+}
 .hello-card .contact__details{
   margin:0; padding:0; border:0; display:flex; flex-direction:column; gap:10px; position:relative; z-index:1;
 }
@@ -1991,6 +2003,14 @@ html[lang="th"] .contact .hello-card h2{ max-width:none; font-size:clamp(30px,3.
 <a class="hello-chip" href="mailto:Pritsana.Keram@gmail.com"><i aria-hidden="true"></i><span><small>Email</small>Pritsana.Keram@gmail.com</span></a>
 <a class="hello-chip" href="tel:+66840147791"><i aria-hidden="true"></i><span><small>Phone</small>084-014-7791</span></a>
 <a class="hello-chip" href="https://line.me/ti/p/~Pritsana54" rel="noopener" target="_blank"><i aria-hidden="true"></i><span><small>LINE ID</small>Pritsana54</span></a>
+</div>
+</div>
+<div class="scan-web">
+<img src="assets/pritsana-site-qr.png" width="738" height="738" alt="QR code that opens the portfolio website">
+<div>
+<p class="eyebrow">Website</p>
+<h3>Scan to open the website</h3>
+<p>Point a phone camera here. It opens the portfolio, ready to send or show.</p>
 </div>
 </div>
 </div>
