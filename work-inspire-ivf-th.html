@@ -1834,6 +1834,74 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
 }
 </style>
 
+<style id="ivf-look">
+.ivf-hero__grid{
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:36px; align-items:center;
+}
+.ivf-hero .case__title{
+  font-size:clamp(44px,6.2vw,76px); line-height:1.02; letter-spacing:-.03em; font-weight:300;
+  background-image:linear-gradient(100deg,#ff4573 0%,#e56b9a 34%,#6ba9d6 70%,#ff7a9a 100%);
+  background-size:220% 100%;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+  animation:heroShimmer 9s linear infinite;
+}
+.ivf-hero .case__sub{ max-width:40ch; margin-top:14px; }
+.ivf-pills{ display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; }
+.ivf-pills span{
+  display:inline-flex; align-items:center; padding:6px 12px; border-radius:999px;
+  background:#fff; border:1px solid #ffd6e4; color:var(--ink-soft);
+  font-size:13px; font-weight:300; line-height:1.4;
+}
+.ivf-pills span:nth-child(even){ border-color:#d4eaf8; background:#f7fbff; }
+.ivf-hero .ivf-logo-wrap{ margin:0; }
+.ivf-hero .ivf-logo.feature-shot{
+  margin:0; padding:28px 24px 14px; border-radius:32px;
+  background:linear-gradient(180deg,#fff 0%,#fff5f8 100%);
+  border:1px solid #ffd6e4;
+  box-shadow:0 28px 46px -30px rgba(255,69,115,.55);
+}
+.ivf-hero + .section-pad{ padding-top:8px; }
+.ivf-note{
+  position:relative; border-radius:32px; padding:28px 28px 22px; overflow:hidden;
+  background:linear-gradient(165deg,#fff 0%,#fff6f8 48%,#f4faff 100%);
+  border:1px solid #ffd6e4;
+  box-shadow:0 22px 40px -32px rgba(255,69,115,.5);
+}
+.ivf-note::after{
+  content:""; position:absolute; width:16px; height:16px; right:20px; top:18px;
+  background:var(--pink);
+  -webkit-mask:var(--heart) center/contain no-repeat;
+  mask:var(--heart) center/contain no-repeat;
+  animation:logoHeart 2.2s ease-in-out infinite;
+}
+.ivf-note h2{
+  font-size:clamp(26px,3vw,36px); font-weight:300; line-height:1.25;
+  margin:0 0 12px; max-width:18em; padding-right:28px;
+}
+.story--goals{
+  margin-top:28px; padding:22px 18px 12px; border-radius:36px;
+  background:
+    radial-gradient(440px 170px at 8% 0%, rgba(255,230,230,.95), transparent 72%),
+    radial-gradient(380px 190px at 100% 100%, rgba(225,241,251,.95), transparent 70%),
+    #fff;
+  border:1px solid #ffe0ea;
+  box-shadow:0 24px 44px -36px rgba(255,69,115,.55);
+}
+.story--goals .story-card{ flex-basis:46%; min-height:132px; }
+.story--goals .story__head{ margin-bottom:2px; }
+@media (max-width:860px){
+  .ivf-hero__grid{ grid-template-columns:1fr; gap:22px; }
+  .ivf-hero .ivf-logo-wrap{ max-width:420px; }
+  .ivf-note{ padding:22px 18px 16px; }
+  .story--goals .story-card{ flex-basis:86%; }
+}
+@media (prefers-reduced-motion:reduce){
+  .ivf-hero .case__title, .ivf-note::after{ animation:none; }
+}
+</style>
+
 </head>
 <body>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -1898,28 +1966,28 @@ p,li,.case__prose,.case__sub,.section-head p,.hero__desc,.nav__links a,
   <a class="lang-switch" href="work-inspire-ivf.html" hreflang="en">EN</a>
       <a href="assets/Pritsana-Keram-Resume.pdf" class="btn btn--primary nav__cta" download>ดาวน์โหลดเรซูเม่</a>
 </div>
-<section class="subpage-head"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
-<div class="wrap" style="position:relative;z-index:1">
+<section class="subpage-head ivf-hero"><div class="cute-bg" aria-hidden="true"><span class="fcloud fc1"></span><span class="fcloud fc2"></span><span class="fcloud fc3"></span><span class="fdots"></span></div>
+<div class="wrap ivf-hero__grid" style="position:relative;z-index:1">
+<div>
 <p class="breadcrumb"><a href="index-th.html">หน้าแรก</a><span class="sep">/</span><span class="current">Inspire IVF</span></p>
 <p class="eyebrow" style="margin-top:22px">เคสสตัดดี้ · 01</p>
 <h1 class="case__title">Inspire IVF</h1>
 <p class="case__sub">โครงสร้างเว็บไซต์ โครงสร้างข้อมูล และ SEO สำหรับคลินิกรักษาผู้มีบุตรยาก ออกแบบรอบหัวข้อละเอียดอ่อน ความถูกต้องทางการแพทย์ และความไว้ใจก่อนตัดสินใจโทร</p>
-</div></section>
-<section class="section-pad"><div class="wrap">
-<div class="two-col ivf-intro">
-<div>
-<p class="case__role-label">Website &amp; SEO Specialist · 2025 ถึงปัจจุบัน · WordPress · Technical SEO</p>
+
+<p class="ivf-pills"><span>Website &amp; SEO Specialist</span><span>2025 ถึงปัจจุบัน</span><span>WordPress</span><span>Technical SEO</span></p>
+</div>
 <div class="ivf-logo-wrap">
 <div class="feature-shot ivf-logo"><img src="assets/restored/inspire-ivf-logo-5f8426e13f.png" alt="Inspire IVF logo"><figcaption><a href="https://inspireivfthailand.com/" target="_blank" rel="noopener">inspireivfthailand.com ↗</a></figcaption></div>
 <i class="ivf-logo__heart" aria-hidden="true"></i>
 </div>
-</div>
-<div>
+</div></section>
+<section class="section-pad"><div class="wrap">
+<div class="ivf-note">
 <h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:12px">เว็บไซต์คลินิกต้องสร้างความไว้วางใจก่อนจะได้คลิก</h2>
 <p class="case__prose">IVF, ICSI และ PGT ไม่ใช่การค้นหาทั่วไป ผู้คนมากังวล และมักอ่านเป็นภาษาที่สอง เว็บต้องอธิบายขั้นตอนให้ชัด รักษาความถูกต้องของราคาและอัตราความสำเร็จ และจัดการกฎหมายการอุ้มบุญโดยไม่ดูเย็นชา</p>
 <p class="case__prose">นี่คือโจทย์โครงสร้างก่อนเนื้อหา บริการไหนควรมีหน้าของตัวเอง รายละเอียดควรลึกแค่ไหนก่อนต้องคุยกับคน และยังต้องแข่งอันดับการค้นหา</p>
-<div class="story story--goals" data-deck role="region" aria-roledescription="carousel" aria-label="สิ่งที่เว็บไซต์ต้องทำ"><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><div class="story-card__top"><span class="story-card__num">01</span><i class="story-card__mini" aria-hidden="true"></i></div><p>อธิบาย IVF, ICSI และ PGT ให้ชัดสำหรับผู้อ่านที่ไม่ใช่แพทย์</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">02</span><i class="story-card__mini" aria-hidden="true"></i></div><p>รักษาความถูกต้องของราคาและผลลัพธ์ให้อ้างอิงได้</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">03</span><i class="story-card__mini" aria-hidden="true"></i></div><p>จัดการราคา อัตราความสำเร็จ และการอุ้มบุญอย่างระมัดระวัง</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">04</span><i class="story-card__mini" aria-hidden="true"></i></div><p>เปลี่ยนการค้นคว้าให้เป็นการจองปรึกษา</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">05</span><i class="story-card__mini" aria-hidden="true"></i></div><p>แข่งอันดับกับคลินิกรักษาผู้มีบุตรยากอื่น</p></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 05</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button><button type="button" tabindex="-1" data-go="4" aria-label="การ์ด 5"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
-</div></div>
+</div>
+<div class="story story--goals" data-deck role="region" aria-roledescription="carousel" aria-label="สิ่งที่เว็บไซต์ต้องทำ"><div class="story__head"><p class="case__block-title">สิ่งที่เว็บไซต์ต้องทำ</p></div><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><div class="story-card__top"><span class="story-card__num">01</span><i class="story-card__mini" aria-hidden="true"></i></div><p>อธิบาย IVF, ICSI และ PGT ให้ชัดสำหรับผู้อ่านที่ไม่ใช่แพทย์</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">02</span><i class="story-card__mini" aria-hidden="true"></i></div><p>รักษาความถูกต้องของราคาและผลลัพธ์ให้อ้างอิงได้</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">03</span><i class="story-card__mini" aria-hidden="true"></i></div><p>จัดการราคา อัตราความสำเร็จ และการอุ้มบุญอย่างระมัดระวัง</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">04</span><i class="story-card__mini" aria-hidden="true"></i></div><p>เปลี่ยนการค้นคว้าให้เป็นการจองปรึกษา</p></article><article class="story-card"><div class="story-card__top"><span class="story-card__num">05</span><i class="story-card__mini" aria-hidden="true"></i></div><p>แข่งอันดับกับคลินิกรักษาผู้มีบุตรยากอื่น</p></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 05</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button><button type="button" tabindex="-1" data-go="4" aria-label="การ์ด 5"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
 <div class="story story--steps" data-deck role="region" aria-roledescription="carousel" aria-label="แนวทาง"><div class="story__head"><p class="case__block-title">แนวทาง</p><h2>จัดโครงสร้างตามวิธีคิดจริงของผู้ป่วย</h2></div><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">01</span><h3>วางเส้นทางผู้ป่วย</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">02</span><h3>สร้างโครงสร้างหน้าบริการ</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">03</span><h3>ยึดเนื้อหาและราคากับความจริง</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">04</span><h3>SEO เชิงเทคนิคและความเร็ว</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article><article class="story-card"><span class="story-card__cloud" aria-hidden="true"></span><span class="story-card__num">05</span><h3>ส่งต่อ LUNA ในจุดที่เหมาะ</h3><span class="story-card__trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 05</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button><button type="button" tabindex="-1" data-go="4" aria-label="การ์ด 5"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
 <div class="story story--note" data-deck role="region" aria-roledescription="carousel" aria-label="สิ่งที่ดูแล" data-auto="1"><div class="story__head"><p class="case__block-title">สิ่งที่ดูแล</p><h2>เว็บไซต์และ SEO ตั้งแต่ต้นจนจบ</h2></div><div class="story__viewport" tabindex="0"><div class="story__track"><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">01</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>โครงสร้างข้อมูล</h3><p>หน้าบริการ IVF, ICSI และ PGT จัดตามวิธีที่ผู้ป่วยค้นหาและเปรียบเทียบ ไม่ใช่ตามโครงสร้างภายในคลินิก</p></article><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">02</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>SEO เชิงเทคนิคและบนหน้าเว็บ</h3><p>Schema ลำดับหัวข้อ Internal Linking และ Core Web Vitals พื้นฐานเดียวกับทุกเว็บในพอร์ตนี้ ใช้กับบริบทสุขภาพ</p></article><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">03</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>ความถูกต้องของเนื้อหา</h3><p>คำอธิบายขั้นตอน ราคา และผลลัพธ์ตรวจกับทีมคลินิก เนื้อหาละเอียดอ่อนไม่เขียนจากการเดา</p></article><article class="story-card"><span class="story-card__tape" aria-hidden="true"></span><div class="story-card__top"><span class="story-card__num">04</span><span class="story-card__stamp" aria-hidden="true"><i></i></span></div><h3>จุดที่ LUNA เข้ามา</h3><p>เว็บไซต์รับการค้นคว้า LUNA รับบทสนทนา การส่งต่อจากหน้า ICSI ไปคุยกับ LUNA เป็นประสบการณ์เดียวกัน</p></article></div></div><div class="story__bar"><button type="button" class="story__btn" data-prev aria-label="การ์ดก่อนหน้า" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><p class="story__count" aria-hidden="true"><b>01</b><span> / 04</span></p><div class="story__dots"><button type="button" tabindex="-1" data-go="0" class="is-on" aria-current="true" aria-label="การ์ด 1"></button><button type="button" tabindex="-1" data-go="1" aria-label="การ์ด 2"></button><button type="button" tabindex="-1" data-go="2" aria-label="การ์ด 3"></button><button type="button" tabindex="-1" data-go="3" aria-label="การ์ด 4"></button></div><button type="button" class="story__btn" data-next aria-label="การ์ดถัดไป"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><p class="story__live" aria-live="polite"></p></div>
 </div></section><section class="case-nav"><div class="wrap"><div class="case-nav__row"><a class="case-nav__link" href="index-th.html"><span class="dir">หน้าแรก</span><span class="title">หน้าแรก</span></a><a class="case-nav__link case-nav__link--next" href="work-luna-ai-th.html"><span class="dir">ถัดไป</span><span class="title">LUNA AI</span></a></div></div></section>
